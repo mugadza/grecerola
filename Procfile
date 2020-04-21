@@ -1,1 +1,1 @@
-web: gunicorn personalprofile.wsgi --log-file -
+web: gunicorn grecerola.wsgi --log-file -

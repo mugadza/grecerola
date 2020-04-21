@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'grecerola.core',
+    'grecerola.account',
+    'grecerola.campaign',
 ]
 
 MIDDLEWARE = [
@@ -47,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'personalprofile.urls'
+ROOT_URLCONF = 'grecerola.urls'
 
 TEMPLATES = [
     {
@@ -65,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'personalprofile.wsgi.application'
+WSGI_APPLICATION = 'grecerola.wsgi.application'
 
 
 DATABASES = {
@@ -79,12 +82,15 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = "account.User"
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "OPTIONS": {"min_length": 8},
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -104,8 +110,54 @@ USE_L10N = True
 
 USE_TZ = True
 
+DEFAULT_CURRENCY = os.environ.get("DEFAULT_CURRENCY", "ZAR")
+DEFAULT_DECIMAL_PLACES = 2
+DEFAULT_MAX_DIGITS = 12
+DEFAULT_CURRENCY_CODE_LENGTH = 3
+
+
+VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
+    "campaigns": [
+        ("campaign_gallery", "thumbnail__540x540"),
+        ("campaign_gallery_2x", "thumbnail__1080x1080"),
+        ("campaign_small", "thumbnail__60x60"),
+        ("campaign_small_2x", "thumbnail__120x120"),
+        ("campaign_list", "thumbnail__255x255"),
+        ("campaign_list_2x", "thumbnail__510x510"),
+    ],
+    "background_images": [("header_image", "thumbnail__1080x440")],
+    "user_avatars": [("default", "thumbnail__445x445")],
+}
+
+VERSATILEIMAGEFIELD_SETTINGS = {
+    # Images should be pre-generated on Production environment
+    "create_images_on_demand": get_bool_from_env("CREATE_IMAGES_ON_DEMAND", DEBUG)
+}
+
+PLACEHOLDER_IMAGES = {
+    60: "images/placeholder60x60.png",
+    120: "images/placeholder120x120.png",
+    255: "images/placeholder255x255.png",
+    540: "images/placeholder540x540.png",
+    1080: "images/placeholder1080x1080.png",
+}
+
+DEFAULT_PLACEHOLDER = "images/placeholder255x255.png"
+
+
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+ENABLE_SSL = get_bool_from_env("ENABLE_SSL", False)
+
+if ENABLE_SSL:
+    SECURE_SSL_REDIRECT = not DEBUG
+
+
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
+MEDIA_URL = os.environ.get("MEDIA_URL", "/media/")
+
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
