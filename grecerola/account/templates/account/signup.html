@@ -1,38 +1,52 @@
+{% extends "base/_application_navigation.html" %}
+{% load static %}
+
+{% block content %}
 <main id="main" class="site-main">
+    <!-- Header -->
     <div class="page-title background-page">
         <div class="container">
             <h1>Register</h1>
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="index.html">Home</a><span>/</span></li>
+                    <li><a href="#">Home</a><span>/</span></li>
                     <li>Register</li>
                 </ul>
             </div><!-- .breadcrumbs -->
         </div>
-    </div><!-- .page-title -->
+    </div>
+    <!-- Header end -->
     <div class="container">
         <div class="main-content">
             <div class="form-login form-register">
                 <h2>Register for Free</h2>
-                <form action="s" method="POST" id="registerForm" class="clearfix">
-                      <div class="field">
-                          <input type="text" value="" name="s" placeholder="First Name" />
-                      </div>
-                      <div class="field">
-                          <input type="text" value="" name="s" placeholder="Last Name" />
-                      </div>
-                      <div class="field">
-                          <input type="email" value="" name="s" placeholder="E-mail Address" />
-                      </div>
-                      <div class="field">
-                          <input type="text" value="" name="s" placeholder="Password" />
-                      </div>
-                      <div class="inline clearfix">
-                          <button type="submit" value="Send Messager" class="btn-primary">Register Account</button>
-                          <p>Not a member yet? <a href="login.html">Login Now</a></p>
-                      </div>
-                  </form>
+                <form method="POST" id="registerForm" class="clearfix">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if "Password" in field.label %}
+                            <div class="field">
+                                <input type="password" 
+                                       {% if field.value != None %} value="{{ field.value|stringformat:'s' }}"{% endif %} 
+                                       name="{{ field.name }}"
+                                       placeholder="{{ field.label }}" />
+                            </div>
+                        {% else %}
+                            <div class="field">
+                                <input type="text" 
+                                       {% if field.value != None %} value="{{ field.value|stringformat:'s' }}"{% endif %} 
+                                       name="{{ field.name }}"
+                                       placeholder="{{ field.label }}" />
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="inline clearfix">
+                        <button type="submit" value="Send Messager" class="btn-primary">Register Account</button>
+                        <p>Already a member? <a href="#">Login Now</a></p>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>	
+    </div>
 </main><!-- .site-main -->
+{% endblock content %}
+

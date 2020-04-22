@@ -146,7 +146,7 @@
 								  </form>
 							</div>	
 							<div class="login login-button">
-								<a href="#" class="btn-primary">Login</a>
+								<a href="{% url 'account-signup'%}" class="btn-primary">Login</a>
 							</div><!-- .login -->
 						</div><!--. right-header -->
 					</div><!-- .container -->
@@ -154,8 +154,97 @@
 			</header>
 			<!-- Header end -->
 
+			<!-- Flash messages -->
+			{% if messages%}
+				{%for message in messages %}
+					<div class="alert alert-{{ message.tags }}">
+						{{ message }}
+					</div>
+				{% endfor %}
+			{% endif %}
+			<!-- Flash messages end -->
+
 			{% block content %}
 			{% endblock content%}
+
+			<!-- Footer -->
+			<footer id="footer" class="site-footer">
+				<div class="footer-menu">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-3 col-sm-4 col-4">
+								<div class="footer-menu-item">
+									<h3>Our company</h3>
+									<ul>
+										<li><a href="#">What is Startup Idea</a></li>
+										<li><a href="#">About us</a></li>
+										<li><a href="#">How It Works</a></li>
+										<li><a href="#">What Is This</a></li>
+										<li><a href="#">Jobs</a></li>
+										<li><a href="#">Press</a></li>
+										<li><a href="#">Starts</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-4 col-4">
+								<div class="footer-menu-item">
+									<h3>Campaign</h3>
+									<ul>
+										<li><a href="#">Start Your Campaign</a></li>
+										<li><a href="#">Pricing Campaign</a></li>
+										<li><a href="#">Campaign Support</a></li>
+										<li><a href="#">Trust & Safety</a></li>
+										<li><a href="#">Support</a></li>
+										<li><a href="#">Terms of Use</a></li>
+										<li><a href="#">Privacy Policy</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-4 col-4">
+								<div class="footer-menu-item">
+									<h3>Explore</h3>
+									<ul>
+										<li><a href="#">Design & Art</a></li>
+										<li><a href="#">Crafts</a></li>
+										<li><a href="#">Film & Video</a></li>
+										<li><a href="#">Food</a></li>
+										<li><a href="#">Book</a></li>
+										<li><a href="#">Games</a></li>
+										<li><a href="#">Technology</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-12 col-12">
+								<div class="footer-menu-item newsletter">
+									<h3>Newsletter</h3>
+									<div class="newsletter-description">Private, secure, spam-free</div>
+									<form action="#" method="POST" id="newsletterForm">
+										  <input type="text" value="" name="s" placeholder="Enter your email..." />
+										<button type="submit" value=""><span class="ion-android-drafts"></span></button>
+									  </form>
+									  <div class="follow">
+										  <h3>Follow us</h3>
+										  <ul>
+											  <li class="facebook"><a target="_Blank" href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											  <li class="twitter"><a target="_Blank" href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+											  <li class="instagram"><a target="_Blank" href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+											  <li class="google"><a target="_Blank" href="https://www.google.com"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+											  <li class="youtube"><a target="_Blank" href="https://www.youtube.com"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+										  </ul>
+									  </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- .footer-menu -->
+				<div class="footer-copyright">
+					<div class="container">
+						<p class="copyright">2020 by Grecerola. All Rights Reserved.</p>
+						<a href="#" class="back-top">Back to top<span class="ion-android-arrow-up"></span></a>
+					</div>
+				</div>
+			</footer>
+			<!-- Footer end -->
 		</div>
        
 
@@ -174,5 +263,17 @@
 		  <script src="{% static 'js/quill.js' %}"></script>
 		  <!-- orther script -->
 		  <script src="{% static 'js/main.js' %}"></script>
+		  <script>
+			function validate(evt) {
+			  var theEvent = evt || window.event;
+			  var key = theEvent.keyCode || theEvent.which;
+			  key = String.fromCharCode( key );
+			  var regex = /[0-9]|\./;
+			  if( !regex.test(key) ) {
+				theEvent.returnValue = false;
+				if(theEvent.preventDefault) theEvent.preventDefault();
+			  }
+			}
+		</script>
     </body>
 </html>

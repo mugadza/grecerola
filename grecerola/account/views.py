@@ -1,6 +1,21 @@
-from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth import login, authenticate
+
+from .forms import CustomUserCreationForm
 
 def signup(request):
-    form = UserCreationForm()
+    form = CustomUserCreationForm(request.POST)
+
+    if form.is_valid():
+        form.save()
+        email = form.cleaned_data.get('email')
+        messages.success(request, f'Account created with email {email}!')
+        
+        raw_password = form.cleaned_data.get('password1')
+        user = authenticate(email=email, password=raw_password)
+        login(request, user)
+        
+        return redirect('campaign-home')
+
     return render(request, 'account/signup.html', {'form': form})

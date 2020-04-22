@@ -774,7 +774,7 @@ ul.socials-top li:hover i{
 3. Main / #main
 -------------------------------------------------------------------*/
 .home .site-main{
-    padding-bottom: 0px;
+    padding-bottom: 120px;
 }
 .site-main{
     padding-bottom: 120px;
@@ -1442,7 +1442,7 @@ ul.menu-category li.active:after{
   background-repeat: no-repeat;
 }
 .page-title.background-page{
-  background-image: url('img/banner-img.jpg');
+  background-image: url('../images/campaign.jpg');
 }
 .page-title.background-blog{
   background-image: url('img/blog-list.jpg');
