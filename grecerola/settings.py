@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'grecerola.core',
     'grecerola.account',
     'grecerola.campaign',
+    'grecerola.investment',
 ]
 
 MIDDLEWARE = [

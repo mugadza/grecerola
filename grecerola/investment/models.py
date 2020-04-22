@@ -1,5 +1,8 @@
 from django.db import models
 from django.conf import settings
+from django.utils.timezone import now
+
+from django_prices.models import MoneyField
 
 from . import InvestmentStatus
 from ..campaign.models import Campaign

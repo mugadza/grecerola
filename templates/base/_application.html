@@ -6,9 +6,6 @@
 <!--[if gt IE 8]><!--> 
 <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-
-
         <meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -18,53 +15,31 @@
 		<!-- Always force latest IE rendering engine -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<meta name="description" content="Professional resume for Tatenda Mugadza - University of Cape Town Electrical and Computer Engineer. The site also include the blog and some of the personal projects by Tatenda">
-		<meta name="keywords" content="Tatenda Mugadza, Tatenda, Mugadza, Professional resume, Electrical and Computer Engineer, Computer Engineering, Electrical Engineer">
+		<meta name="description" content="Grecerola allows everyone the opportunity to invest in property with. Find a property you like and contribute towards its purchase - Soon become a share owner of the property.">
+		<meta name="keywords" content="Property, Investment, Real Estate, Land, South Africa">
 
 		<!-- Title -->
-		<title>Tatenda Mugadza | Resume</title>
+		<title>Grecerola | Property Investment</title>
 
-		<!-- Google fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Dosis:100,400,600,700" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-
-		<!-- Font awesome Core CSS -->
-		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-		<link rel="stylesheet" href="{% static 'css/et-line.css' %}">
-
-		<!-- bootstrap css -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-		<!-- YouTubePopUp CSS -->
-		<link rel="stylesheet" href="{% static 'css/YouTubePopUp.css' %}">
-
-		<!-- magnific-popup CSS -->
-		<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-
-		<!-- owl carousel CSS -->
-		<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-		<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+		<!-- Favicon -->
+		<link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon"/>
 
 		<!-- Custom style CSS -->
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 		<!-- responsive CSS -->
 		<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-
-		<!--[if lt IE 9]-->
-		<script src="{% static 'js/html5shiv.min.js' %}"></script>
-		<!--[endif]-->
     </head>
-    <body>
+    <body class="home home-gradient home-top">
         <!-- ====== Preloader ======  -->
-	    <div class="loading">
-			<div class="spinner">
-			  <div class="rect1"></div>
-			  <div class="rect2"></div>
-			  <div class="rect3"></div>
-			  <div class="rect4"></div>
-			  <div class="rect5"></div>
+	    <div class="preloading">
+			<div class="preloader loading">
+			  <span class="slice"></span>
+			  <span class="slice"></span>
+			  <span class="slice"></span>
+			  <span class="slice"></span>
+			  <span class="slice"></span>
+			  <span class="slice"></span>
 			</div>
 		</div>
 		<!-- ======End Preloader ======  -->
@@ -72,63 +47,22 @@
         {% block content %}
         {% endblock content%}
 
-        <!--====== js ======-->
+       
 
-
-		<!-- jQuery -->
-		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-		<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
-
-	  	<!-- bootstrap -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-		<!-- singlePageNav -->
-		<script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
-
-		<!-- YouTubePopUp -->
-		<script src="{% static 'js/YouTubePopUp.jquery.js' %}"></script>
-
-		<!-- magnific-popup -->
-		<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-
-		<!-- owl carousel -->
-		<script src="{% static 'js/owl.carousel.min.js' %}"></script>
-
-		<!-- stellar js -->
-		<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-
-		<!-- jquery.waypoints.min js -->
-      	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-
-      	<!-- jquery.counterup.min js -->
-      	<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
-
-		<!-- typed js -->
-      	<script src="{% static 'js/typed.js' %}"></script>
-
-      	<!-- isotope.pkgd.min js -->
-      	<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-
-      	<!-- animated.headline js -->
-      	<script src="{% static 'js/animated.headline.js' %}"></script>
-
-      	<!-- validator js -->
-      	<script src="{% static 'js/validator.js' %}"></script>
-
-      	<!-- custom js -->
-      	<script src="{% static 'js/custom.js' %}"></script>
-
+		  <!-- jQuery -->    
+		  <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+		  <script src="{% static 'js/popper.js' %}"></script>
+		  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+		  <script src="{% static 'js/carousel.min.js' %}"></script>
+		  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+		  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+		  <script src="{% static 'js/wow.min.js' %}"></script>
+		  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+		  <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+		  <script src="{% static 'js/magicsuggest-min.js' %}"></script>
+		  <script src="{% static 'js/quill.core.js' %}"></script>
+		  <script src="{% static 'js/quill.js' %}"></script>
+		  <!-- orther script -->
+		  <script src="{% static 'js/main.js' %}"></script>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

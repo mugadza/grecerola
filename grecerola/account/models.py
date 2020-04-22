@@ -85,6 +85,6 @@ class User(PermissionsMixin, AbstractBaseUser):
     def get_short_name(self):
         return self.email
 
-    def has_perm(self, perm: BasePermissionEnum, obj=None):  # type: ignore
-        # This method is overridden to accept perm as BasePermissionEnum
-        return super().has_perm(perm.value, obj)
+    # def has_perm(self, perm: BasePermissionEnum, obj=None):  # type: ignore
+    #     # This method is overridden to accept perm as BasePermissionEnum
+    #     return super().has_perm(perm.value, obj)
