@@ -124,10 +124,10 @@ class CampaignImage(SortableModel):
     campaign = models.ForeignKey(
         Campaign, related_name="images", on_delete=models.CASCADE
     )
-    image = VersatileImageField(upload_to="campaigns", ppoi_field="ppoi", blank=False)
-    ppoi = PPOIField()
     alt = models.CharField(max_length=128, blank=True)
 
+    image = VersatileImageField('image', upload_to='campaigns', default='placeholder1080x1080.png')
+  
     class Meta:
         ordering = ("sort_order",)
         app_label = "campaign"

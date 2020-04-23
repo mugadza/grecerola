@@ -4,7 +4,8 @@ from .models import (
     CampaignComment, 
     CampaignQuestion, 
     CampaignUpdate, 
-    CampaignType
+    CampaignType,
+    CampaignImage
 )
 
 @admin.register(Campaign)
@@ -19,6 +20,7 @@ class CampaignAdmin(admin.ModelAdmin):
         "location",
         "estimated_investment_date",
         "posted_by",
+        "images",
         "status",
     )
 
@@ -62,3 +64,10 @@ class CampaignUpdateAdmin(admin.ModelAdmin):
         "campaign",
     )
 
+@admin.register(CampaignImage)
+class CampaignImageAdmin(admin.ModelAdmin):
+    list_display = (
+        "image",
+        "alt",
+        "campaign",
+    )
