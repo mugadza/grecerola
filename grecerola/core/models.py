@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import F, Max, Q
 from django_countries.fields import CountryField
 
 from .permissions import CampaignPermissions

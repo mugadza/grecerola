@@ -20,7 +20,6 @@ class CampaignAdmin(admin.ModelAdmin):
         "location",
         "estimated_investment_date",
         "posted_by",
-        "images",
         "status",
     )
 

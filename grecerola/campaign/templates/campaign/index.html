@@ -26,6 +26,110 @@
         </div>
     </div>
     <!-- Home header end -->
-
+    <div class="project-love">
+        <div class="container">
+            <h2 class="title">Projects We Love</h2>
+            <div class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</div>
+            <div class="tab-menu tab-row">
+                <ul id="bx-pager" class="menu-category">
+                    <li class="mc-option active" data-tab="pp0"><a href="#" data-slide-index="0">Book</a></li>
+                    <li class="mc-option" data-tab="pp1"><a href="#" data-slide-index="1">Comics</a></li>
+                    <li class="mc-option" data-tab="pp2"><a href="#" data-slide-index="2">Crafts</a></li>
+                    <li class="mc-option" data-tab="pp3"><a href="#" data-slide-index="3">Design &amp; Art</a></li>
+                    <li class="mc-option" data-tab="pp4"><a href="#" data-slide-index="4">Fashion</a></li>
+                    <li class="mc-option" data-tab="pp5"><a href="#" data-slide-index="5">Film & Video</a></li>
+                    <li class="mc-option" data-tab="pp6"><a href="#" data-slide-index="6">Food</a></li>
+                    <li class="mc-option" data-tab="pp7"><a href="#" data-slide-index="7">Music</a></li>
+                    <li class="mc-option" data-tab="pp8"><a href="#" data-slide-index="8">Games</a></li>
+                    <li class="mc-option" data-tab="pp9"><a href="#" data-slide-index="9">Performances</a></li>
+                    <li class="mc-option" data-tab="pp10"><a href="#" data-slide-index="10">Publishing</a></li>
+                    <li class="cat-more"><a href="#">More</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="popular-project">
+                        <div id="pp0" class="pp-item active">
+                            <h4>290+ Project Book</h4>
+                            <p>Discover projects1 just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <div id="pp1" class="pp-item">
+                            <h4>290+ Project Comics</h4>
+                            <p>Discover projects2 just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <div id="pp2" class="pp-item">
+                            <h4>290+ Project Crafts</h4>
+                            <p>Discover projects3 just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <div id="pp3" class="pp-item">
+                            <h4>290+ Project Design & Art</h4>
+                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <div id="pp4" class="pp-item">
+                            <h4>290+ Project Fashion</h4>
+                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <div id="pp5" class="pp-item">
+                            <h4>290+ Project Film & Video</h4>
+                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <div id="pp6" class="pp-item">
+                            <h4>290+ Project Food</h4>
+                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <div id="pp7" class="pp-item">
+                            <h4>290+ Project Music</h4>
+                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <div id="pp8" class="pp-item">
+                            <h4>290+ Project Games</h4>
+                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <div id="pp9" class="pp-item">
+                            <h4>290+ Project Performances</h4>
+                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <div id="pp10" class="pp-item">
+                            <h4>290+ Project Publishing</h4>
+                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
+                        </div>
+                        <a href="#" class="btn-primary">Start a Campaign</a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <ul class="project-love-slider pls-col">
+                        {% for campaign in campaigns %}
+                        <li>
+                            <div class="project-love-item clearfix">
+                                <a class="project-love-image" href="#"><img src="{{ campaign.get_first_image.image.url }}" alt=""></a>
+                                <div class="project-love-item-content project-love-box">
+                                    <a href="#" class="category">{{ campaign.campaign_type.name }}</a>
+                                    <h3><a href="#">{{ campaign.name }}</a></h3>
+                                    <div class="project-love-description">{{ campaign.story }}</div>
+                                    <div class="project-love-author">
+                                        <div class="author-profile">
+                                            <a class="author-avatar" href="#"><img src="{{ campaign.posted_by.avatar.url }}" alt=""></a>by <a class="author-name" href="#">{{ campaign.posted_by.get_full_name }}</a>
+                                        </div>
+                                        <div class="author-address"><span class="ion-location"></span>{{ campaign.location.city }}, {{ campaign.location.country }}</div>
+                                    </div>
+                                    <div class="process">
+                                        <div class="raised"><span></span></div>
+                                        <div class="process-info">
+                                            <div class="process-pledged"><span>{{ campaign.total_investment_amount }}</span>Goal</div>
+                                            <div class="process-funded"><span>{{ campaign.investment_raised_amount }}</span>raised</div>
+                                            <div class="process-time"><span>37</span>investers</div>
+                                            <!-- <div class="process-time"><span>23</span>days ago</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- .project-love -->
+    
 </main>
 {% endblock content %}
