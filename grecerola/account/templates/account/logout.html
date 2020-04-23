@@ -1,0 +1,21 @@
+{% extends "base/_application_navigation.html" %}
+{% load static %}
+
+{% block content %}
+<main id="main" class="site-main">
+    <!-- Header -->
+    <div class="page-title background-page">
+        <div class="container">
+            <h1>Logout</h1>
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="{% url 'campaign-home' %}">Home</a><span>/</span></li>
+                    <li>Logout</li>
+                </ul>
+            </div><!-- .breadcrumbs -->
+        </div>
+    </div>
+    <!-- Header end -->
+    <h1>Bye!</h1>
+{% endblock content %}
+

@@ -65,7 +65,7 @@ class User(PermissionsMixin, AbstractBaseUser):
     date_joined = models.DateTimeField(default=timezone.now, editable=False)
     
     
-    avatar = VersatileImageField(upload_to="user-avatars", blank=True, null=True)
+    avatar = VersatileImageField(upload_to="user-avatars", default='placeholder540x540.png')
 
     USERNAME_FIELD = "email"
 

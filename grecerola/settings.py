@@ -164,4 +164,7 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
+LOGIN_REDIRECT_URL = 'campaign-home'
+LOGIN_URL = 'account-login'
+
 django_heroku.settings(locals())

@@ -6,11 +6,11 @@
     <!-- Header -->
     <div class="page-title background-page">
         <div class="container">
-            <h1>Register</h1>
+            <h1>Login</h1>
             <div class="breadcrumbs">
                 <ul>
                     <li><a href="{% url 'campaign-home' %}">Home</a><span>/</span></li>
-                    <li>Register</li>
+                    <li>Login</li>
                 </ul>
             </div><!-- .breadcrumbs -->
         </div>
@@ -19,7 +19,7 @@
     <div class="container">
         <div class="main-content">
             <div class="form-login form-register">
-                <h2>Register for Free</h2>
+                <h2>Log in to your account</h2>
                 <form method="POST" id="registerForm" class="clearfix">
                     {% csrf_token %}
                     {% for field in form %}
@@ -40,8 +40,8 @@
                         {% endif %}
                     {% endfor %}
                     <div class="inline clearfix">
-                        <button type="submit" value="Send Messager" class="btn-primary">Register Account</button>
-                        <p>Already a member? <a href="{% url 'account-login' %}">Login Now</a></p>
+                        <button type="submit" value="Send Messager" class="btn-primary">Login</button>
+                        <p>Not a member yet? <a href="{% url 'account-signup' %}">Sign up Now</a></p>
                     </div>
                 </form>
             </div>

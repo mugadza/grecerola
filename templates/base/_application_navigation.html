@@ -32,7 +32,7 @@
     </head>
     <body class="home home-gradient home-top">
 		<!-- ====== Preloader ======  -->
-	    <div class="preloading">
+	    <!-- <div class="preloading">
 			<div class="preloader loading">
 			  <span class="slice"></span>
 			  <span class="slice"></span>
@@ -41,7 +41,7 @@
 			  <span class="slice"></span>
 			  <span class="slice"></span>
 			</div>
-		</div>
+		</div> -->
 		<!-- ======End Preloader ======  -->
 
 		<div id="wrapper">
@@ -62,7 +62,7 @@
 				<div class="content-header">
 					<div class="container">
 						<div class="site-brand">
-							<a href="#"><img src="{% static 'images/logo.png' %}" alt=""></a>
+							<a href="{% url 'campaign-home' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
 						</div><!-- .site-brand -->
 						<div class="right-header">					
 							<nav class="main-menu">
@@ -144,10 +144,19 @@
 									  <input type="text" value="" name="search" placeholder="Search..." />
 									<button type="submit" value=""><span class="ion-ios-search-strong"></span></button>
 								  </form>
-							</div>	
-							<div class="login login-button">
-								<a href="{% url 'account-signup'%}" class="btn-primary">Login</a>
-							</div><!-- .login -->
+							</div>
+							{% if user.is_authenticated %}	
+								<div class="profile-icon">
+									<a href="{% url 'account-dashboard' %}" class="ion-ios-person-outline"></a>
+								</div>
+								<div class="login login-button">
+									<a href="{% url 'account-logout' %}" class="btn-primary">Logout</a>
+								</div><!-- .logout -->
+							{% else %}	
+								<div class="login login-button">
+									<a href="{% url 'account-login' %}" class="btn-primary">Login</a>
+								</div><!-- .login -->
+							{% endif %}	
 						</div><!--. right-header -->
 					</div><!-- .container -->
 				</div>

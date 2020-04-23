@@ -657,8 +657,10 @@ ul.socials-top li:hover i{
     height: 38px;
     line-height: 38px;
 }
+
 .site-header .login,
 .site-header .search-icon,
+.site-header .profile-icon,
 .site-header .main-menu{
     display: inline-block;
     margin-left: 45px;
@@ -678,6 +680,15 @@ ul.socials-top li:hover i{
     vertical-align: middle;
     padding: 0 5px;
 }
+.site-header .profile-icon a{
+  font-size: 27px;
+  font-weight: bold;
+  line-height: normal;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 0px;
+}
+
 .form-search{
     position: fixed;
     top: 0;

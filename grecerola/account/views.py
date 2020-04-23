@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 
 from .forms import CustomUserCreationForm
 
@@ -19,3 +20,7 @@ def signup(request):
         return redirect('campaign-home')
 
     return render(request, 'account/signup.html', {'form': form})
+
+@login_required
+def dashboard(request):
+    return render(request, 'account/dashboard.html')
