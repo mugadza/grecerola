@@ -25,6 +25,7 @@ from django_prices.models import MoneyField
 class CampaignType(models.Model):
     name = models.CharField(max_length=250)
     slug = models.SlugField(max_length=255, unique=True)
+    description = models.TextField(blank=True)
 
     class Meta:
         app_label = "campaign"
