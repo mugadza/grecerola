@@ -108,6 +108,10 @@ class Campaign(PublishableModel, TimeStampMixin):
         images = list(self.images.all())
         return images[0] if images else None
 
+    def get_campaign_progress(self):
+        progress=(self.investment_raised_amount / self.total_investment_amount)*100
+        return progress
+
     def __repr__(self) -> str:
         class_ = type(self)
         return "<%s.%s(pk=%r, name=%r)>" % (
