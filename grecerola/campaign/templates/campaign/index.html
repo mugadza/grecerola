@@ -7,17 +7,19 @@
     <div class="sideshow">
         <div class="container">
             <div class="sideshow-content">
-                <h1 class="wow fadeInUp" data-wow-delay=".1s">Bring new ideas to life, anywhere</h1>
-                <div class="sideshow-description wow fadeInUp" data-wow-delay=".1s">Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu teus.</div>
+                {% with campaigns.first as main_campaign %}
+                <h1 class="wow fadeInUp" data-wow-delay=".1s">{{ main_campaign.name }}</h1>
+                <div class="sideshow-description wow fadeInUp" data-wow-delay=".1s">{{ main_campaign.story }}</div>
                 <div class="process wow fadeInUp" data-scroll-nav="1">
-                    <div class="raised"><span></span></div>
+                    <div class="raised"><span style="width: 29%;"></span></div>
                     <div class="process-info">
-                        <div class="process-funded"><span>46%</span>funded</div>
-                        <div class="process-pledged"><span>R360 000</span>raised</div>
+                        <div class="process-funded"><span>{{ main_campaign.investment_raised_amount }}</span>raised</div>
+                        <div class="process-pledged"><span>{{ main_campaign.total_investment_amount }}</span>goal</div>
                         <div class="process-backers"><span>32</span>investors</div>
-                        <div class="process-time"><span>21</span>days ago</div>
+                        <!-- <div class="process-time"><span>21</span>days ago</div> -->
                     </div>
                 </div>
+                {% endwith %}
                 <div class="button wow fadeInUp" data-wow-delay="0.1s">
                     <a href="#" class="btn-secondary">See Investment</a>
                     <a href="#" class="btn-primary">Invest Now</a>
@@ -32,67 +34,34 @@
             <div class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</div>
             <div class="tab-menu tab-row">
                 <ul id="bx-pager" class="menu-category">
-                    <li class="mc-option active" data-tab="pp0"><a href="#" data-slide-index="0">Book</a></li>
-                    <li class="mc-option" data-tab="pp1"><a href="#" data-slide-index="1">Comics</a></li>
-                    <li class="mc-option" data-tab="pp2"><a href="#" data-slide-index="2">Crafts</a></li>
-                    <li class="mc-option" data-tab="pp3"><a href="#" data-slide-index="3">Design &amp; Art</a></li>
-                    <li class="mc-option" data-tab="pp4"><a href="#" data-slide-index="4">Fashion</a></li>
-                    <li class="mc-option" data-tab="pp5"><a href="#" data-slide-index="5">Film & Video</a></li>
-                    <li class="mc-option" data-tab="pp6"><a href="#" data-slide-index="6">Food</a></li>
-                    <li class="mc-option" data-tab="pp7"><a href="#" data-slide-index="7">Music</a></li>
-                    <li class="mc-option" data-tab="pp8"><a href="#" data-slide-index="8">Games</a></li>
-                    <li class="mc-option" data-tab="pp9"><a href="#" data-slide-index="9">Performances</a></li>
-                    <li class="mc-option" data-tab="pp10"><a href="#" data-slide-index="10">Publishing</a></li>
+                    {% for type in campaign_types %}
+                        {% if forloop.first %}
+                            <li class="mc-option active" data-tab="{{ type.name }}"><a href="#" data-slide-index="{{ forloop.counter0 }}">{{ type.name }}</a></li>
+                        {% else %}
+                            <li class="mc-option" data-tab="{{ type.name }}"><a href="#" data-slide-index="{{ forloop.counter0 }}">{{ type.name }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
                     <li class="cat-more"><a href="#">More</a></li>
                 </ul>
             </div>
             <div class="row">
                 <div class="col-lg-4">
                     <div class="popular-project">
-                        <div id="pp0" class="pp-item active">
-                            <h4>290+ Project Book</h4>
-                            <p>Discover projects1 just for you and get great recommendations when you select your interests.</p>
-                        </div>
-                        <div id="pp1" class="pp-item">
-                            <h4>290+ Project Comics</h4>
-                            <p>Discover projects2 just for you and get great recommendations when you select your interests.</p>
-                        </div>
-                        <div id="pp2" class="pp-item">
-                            <h4>290+ Project Crafts</h4>
-                            <p>Discover projects3 just for you and get great recommendations when you select your interests.</p>
-                        </div>
-                        <div id="pp3" class="pp-item">
-                            <h4>290+ Project Design & Art</h4>
-                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
-                        </div>
-                        <div id="pp4" class="pp-item">
-                            <h4>290+ Project Fashion</h4>
-                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
-                        </div>
-                        <div id="pp5" class="pp-item">
-                            <h4>290+ Project Film & Video</h4>
-                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
-                        </div>
-                        <div id="pp6" class="pp-item">
-                            <h4>290+ Project Food</h4>
-                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
-                        </div>
-                        <div id="pp7" class="pp-item">
-                            <h4>290+ Project Music</h4>
-                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
-                        </div>
-                        <div id="pp8" class="pp-item">
-                            <h4>290+ Project Games</h4>
-                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
-                        </div>
-                        <div id="pp9" class="pp-item">
-                            <h4>290+ Project Performances</h4>
-                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
-                        </div>
-                        <div id="pp10" class="pp-item">
-                            <h4>290+ Project Publishing</h4>
-                            <p>Discover projects just for you and get great recommendations when you select your interests.</p>
-                        </div>
+                        {% for type in campaign_types %}
+                            {% if forloop.first %}
+                                <div id="{{ type.name }}" class="pp-item active">
+                                    <h4>{{ type.name }}</h4>
+                                    <p>{{ type.description }}</p>
+                                </div>  
+                            {% else %}
+                                <div id="{{ type.name }}" class="pp-item">
+                                    <h4>{{ type.name }}</h4>
+                                    <p>{{ type.description }}</p>
+                                </div> 
+                            {% endif %}
+                        {% endfor %}
+
                         <a href="#" class="btn-primary">Start a Campaign</a>
                     </div>
                 </div>
@@ -113,11 +82,11 @@
                                         <div class="author-address"><span class="ion-location"></span>{{ campaign.location.city }}, {{ campaign.location.country }}</div>
                                     </div>
                                     <div class="process">
-                                        <div class="raised"><span></span></div>
+                                        <div class="raised"><span style="width: 99%;"></span></div>
                                         <div class="process-info">
-                                            <div class="process-pledged"><span>{{ campaign.total_investment_amount }}</span>Goal</div>
+                                            <div class="process-pledged"><span>{{ campaign.total_investment_amount }}</span>goal</div>
                                             <div class="process-funded"><span>{{ campaign.investment_raised_amount }}</span>raised</div>
-                                            <div class="process-time"><span>37</span>investers</div>
+                                            <div class="process-time"><span>37</span>investors</div>
                                             <!-- <div class="process-time"><span>23</span>days ago</div> -->
                                         </div>
                                     </div>
@@ -130,6 +99,5 @@
             </div>
         </div>
     </div><!-- .project-love -->
-    
 </main>
 {% endblock content %}

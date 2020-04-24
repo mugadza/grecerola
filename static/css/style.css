@@ -1210,7 +1210,6 @@ ul.menu-category li.active:after{
     margin-bottom: 18px;
 }
 .popular-project .pp-item{
-    padding-top: 30px;
     display: none;
 }
 .popular-project .pp-item.active{
