@@ -5097,7 +5097,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .bg-grey {
-  background: #f6f9fc !important
+  background: #fbfbfb !important
 }
 
 .bg-dark-grey {
@@ -6560,4 +6560,15 @@ textarea::-webkit-input-placeholder {
   background-position: center center; 
   background-repeat: no-repeat; 
   background-size: cover;
+}
+
+.list-group-item-transparent {
+  position: relative;
+  display: block;
+  padding: .75rem 1.25rem;
+  margin-bottom: -1px;
+}
+
+.list-group-item-transparent:hover {
+  background-color: transparent;
 }
