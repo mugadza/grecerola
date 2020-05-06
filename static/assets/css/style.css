@@ -465,7 +465,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .navbar-nav>.nav-item>.nav-link:hover {
-  color: #76c8ff
+  color: #00d3df
 }
 
 .navbar-toggler {
@@ -520,7 +520,7 @@ textarea::-webkit-input-placeholder {
 .dropdown-item.active,
 .dropdown-item:active,
 .dropdown-item:hover {
-  background: rgb(0, 177, 235);
+  background: #14a1a8;
   color: #fff
 }
 
@@ -601,7 +601,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .is-scrolling .header-inverse {
-  background: rgb(0, 177, 235);
+  background: #14a1a8;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .05), 0 2px 5px 0 rgba(0, 0, 0, .05)
 }
 
@@ -663,7 +663,7 @@ textarea::-webkit-input-placeholder {
 
 .social.social-white a {
   background: #fff;
-  color: rgb(0, 177, 235);
+  color: #1f3c4a;
 }
 
 .social.social-white a:hover {
@@ -737,16 +737,16 @@ textarea::-webkit-input-placeholder {
 }
 
 .btn-primary {
-  background: #f1baf3;
+  background: #14a1a8;
   border: 0;
-  color: #222
+  color: #def2ff
 }
 
 .btn-primary:hover {
-  background: #faeeff;
+  background: #def2ff;
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: #5d4970
+  color: #14a1a8
 }
 
 .btn-white {
@@ -1708,7 +1708,7 @@ textarea::-webkit-input-placeholder {
 .box-shadow-v3,
 .box-shadow-v3--onHover:hover {
   -webkit-box-shadow: 0 5px 50px 0 rgba(22, 104, 183, .05);
-  box-shadow: 0 5px 50px 0 rgba(22, 104, 183, .05)
+  box-shadow: 0 5px 50px 0 rgba(17, 80, 139, 0.05)
 }
 
 .box-shadow-v3--onHover {
@@ -5032,6 +5032,14 @@ textarea::-webkit-input-placeholder {
   color: #def2ff !important
 }
 
+.text-grey {
+  color: #e4e4e4 !important
+}
+
+.text-dark-grey {
+  color: #d1d1d1 !important
+}
+
 .text-black {
   color: #111 !important
 }
@@ -5077,7 +5085,11 @@ textarea::-webkit-input-placeholder {
 }
 
 .bg-primary {
-  background: #5D4970 !important
+  background: #14a1a8 !important
+}
+
+.bg-secondary {
+  background: #1f3c4a !important
 }
 
 .bg-dark {
@@ -6540,3 +6552,12 @@ textarea::-webkit-input-placeholder {
 .text-light-white{color:#fff;}
 .list-group-item.active{background:#5D4970 !important;border-color: #5D4970;}
 .nav-pills .nav-link.active, .show>.nav-pills .nav-link{background:#5D4970 !important;}
+
+.bg-image-bottom-invest{
+  background-image: url(../img/about/bottom-bg.jpg); 
+  width: 100%; 
+  position: relative; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
