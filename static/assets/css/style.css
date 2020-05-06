@@ -736,6 +736,11 @@ textarea::-webkit-input-placeholder {
   box-shadow: 10px 10px 14px 1px rgba(0, 0, 0, .2)
 }
 
+.progress-wrapper {
+  margin:20px
+}
+
+
 .btn-primary {
   background: #f1baf3;
   border: 0;
@@ -6437,7 +6442,8 @@ textarea::-webkit-input-placeholder {
 
 .progress-bar {
   height: 8px;
-  background: #8c47e2 !important
+  background: #00b1eb !important;
+  justify-content: center;
 }
 
 .slick-arrow {
