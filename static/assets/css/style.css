@@ -46,7 +46,7 @@ h4,
 h5,
 h6 {
   font-family: 'Quicksand', sans-serif;
-  color: rgb(0, 142, 207);
+  color: #14a1a8;
   line-height: 1.37em;
   font-weight: 300
 }
@@ -6449,12 +6449,12 @@ textarea::-webkit-input-placeholder {
 }
 
 .progress {
-  background: #d6ebff
+  background: #95b8ca 
 }
 
 .progress-bar {
   height: 8px;
-  background: #00b1eb !important;
+  background: #14a1a8 !important;
   justify-content: center;
 }
 
@@ -6566,4 +6566,21 @@ textarea::-webkit-input-placeholder {
   background-position: center center; 
   background-repeat: no-repeat; 
   background-size: cover;
+}
+
+.description-wrapper{                                        
+  display:inline-block;
+  margin-top: -30px;            
+  width:270px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.author-address {
+  text-align: right;
+  display: inline-block;
+  line-height: 35px;
+  margin-right: 10px;
 }
