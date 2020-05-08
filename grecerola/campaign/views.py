@@ -6,3 +6,4 @@ def campaign_home(request):
 
 def campaign_explore(request):
     return render(request,"campaign/explore.html", {"campaigns":Campaign.objects.all()})
+
