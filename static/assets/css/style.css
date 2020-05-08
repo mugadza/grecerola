@@ -737,7 +737,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .progress-wrapper {
-  margin:20px
+  margin:15px
 }
 
 
@@ -798,20 +798,24 @@ textarea::-webkit-input-placeholder {
 }
 
 .btn-yellow {
-  background: #ffad00;
-  -webkit-box-shadow: 0 5px 40px 0 rgba(255, 173, 0, .3);
-  box-shadow: 0 5px 40px 0 rgba(255, 173, 0, .3);
+  background: #14a1a8;
+  -webkit-box-shadow:none;
+  box-shadow:none ;
   color: #fff !important
 }
 
+
 .btn-yellow:hover {
-  background: #e69c00;
-  color: #fff
+  background: #00d3df;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #14a1a8;
 }
+
 
 .btn-outline-yellow {
   background: 0 0;
-  border-color: #ffad00
+  border-color: #14a1a8
 }
 
 .btn-outline-yellow:hover {
@@ -6568,19 +6572,62 @@ textarea::-webkit-input-placeholder {
   background-size: cover;
 }
 
+.campaign-name {
+  text-align: left;
+  margin-left: 15px;
+  font-weight: 590;
+  margin-top: -20px;
+}
+
 .description-wrapper{                                        
   display:inline-block;
   margin-top: -30px;            
-  width:270px;
+  margin-right: 15px;
+  width: 320px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: left;
+  margin-left: 15px;
 
 }
 
 .author-address {
   text-align: right;
   display: inline-block;
-  line-height: 35px;
-  margin-right: 10px;
+  line-height: 30px;
+  margin-right: 15px;
+  font-size: 12px;
+}
+
+.category {
+  font-size: 12px;
+  margin-top: -30px;
+  margin-left: 15px;
+  text-align: left;
+}
+
+.process-raised {
+  text-align: left;
+  color: #14a1a8;
+  margin-left:15px;
+  font-size: 13px;
+  
+}
+
+.process-goal {
+  text-align: right;
+  margin-right: 15px;
+  margin-top: -30px;
+  font-size: 13px;
+}
+
+.invest-btn {
+  margin-bottom: -15px;
+  float:right;
+}
+
+.details-btn {
+  margin-bottom: -15px;
+  float:left;
 }

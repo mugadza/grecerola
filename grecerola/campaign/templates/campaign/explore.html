@@ -32,11 +32,12 @@
                         </a>
                     </div>
                         <div class="author-address"><span class="fa fa-map-marker"></span> {{ campaign.location.suburb }}, {{ campaign.location.country }}</div>
-                    <div class="py-4">
+                        <div class="category">{{ campaign.campaign_type.name }}</div>
+                        <div class="py-4">
                         <a href="#">
-                            <h4>
+                            <h5 class="campaign-name">
                             {{ campaign.name }}
-                            </h4>
+                            </h5>
                         </a>
                         <p class="mb-0 description-wrapper">
                            {{campaign.description}}
@@ -45,6 +46,14 @@
                         <div class="progress progress-wrapper">
                             <div class="progress-bar" aria-valuenow="{{campaign.get_campaign_progress}}"></div>
                         </div>
+                        <div class="process-raised">R{{ campaign.investment_raised_amount }}<span style="font-size: 13px;"> Invested</span></div>
+                        <div class="process-goal">R{{ campaign.total_investment_amount }}<span style="font-size: 13px;"> Goal</span></div> 
+                        <a class="invest-btn" href="#">
+                            <button class="btn btn-sm btn-rounded btn-yellow px-md-3 m-3">Invest</button>
+                        </a>
+                        <a class="details-btn" href="#">
+                            <button class="btn btn-sm btn-rounded btn-yellow px-md-3 m-3">Details</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -53,7 +62,4 @@
         </div>
     </div>
 </section>
-
-
-
 {% endblock content %}
