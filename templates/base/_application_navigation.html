@@ -6,283 +6,235 @@
 <!--[if gt IE 8]><!--> 
 <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<!-- Always force latest IE rendering engine -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-		<meta name="description" content="Grecerola allows everyone the opportunity to invest in property with. Find a property you like and contribute towards its purchase - Soon become a share owner of the property.">
+		<meta name="description" content="leafbark allows everyone the opportunity to invest in property with. Find a property you like and contribute towards its purchase - Soon become a share owner of the property.">
 		<meta name="keywords" content="Property, Investment, Real Estate, Land, South Africa">
-
-		<!-- Title -->
-		<title>Grecerola | Property Investment</title>
-
-		<!-- Favicon -->
-		<link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon"/>
-
-		<!-- Custom style CSS -->
-		<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-		<!-- responsive CSS -->
-		<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+		<title>leafbark | Property Growdfunding</title>
+		<link rel="icon" href="{% static 'assets/img/favicon/favicon.ico' %}" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'assets/vendor/strokegap/style.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/vendor/font-awesome/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/vendor/linearicons/style.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/bundle.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     </head>
-    <body class="home home-gradient home-top">
-		<!-- ====== Preloader ======  -->
-	    <!-- <div class="preloading">
-			<div class="preloader loading">
-			  <span class="slice"></span>
-			  <span class="slice"></span>
-			  <span class="slice"></span>
-			  <span class="slice"></span>
-			  <span class="slice"></span>
-			  <span class="slice"></span>
+    <body id="top">
+		<header class="header header-shrink header-inverse fixed-top">
+			<div class="container">
+			  <nav class="navbar navbar-expand-lg px-md-0">
+				<a class="navbar-brand" href="index.html">
+				  <span class="logo-default">
+					<h2 class="text-white">LEAFBARK</h2>
+				  </span>
+				  <span class="logo-inverse">
+					<h2 class="text-white">LEAFBARK</h2>
+				  </span>
+				</a>
+				<button class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav">
+				  <div class="hamburger hamburger--spin js-hamburger">
+					<div class="hamburger-box">
+					  <div class="hamburger-inner"></div>
+					</div>
+				  </div>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+				  <ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+					  <a class="nav-link" href="index.html">HOME</a>
+					</li>
+					<li class="nav-item dropdown">
+					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Demos
+						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+					  </a>
+					  <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="app.html">App</a>
+						<a class="dropdown-item" href="software.html">Software</a>
+						<a class="dropdown-item" href="seo.html">SEO</a>
+						 <a class="dropdown-item" href="admin.html">Exclusive Admin</a>
+					  </div>
+					</li>
+					<li class="nav-item dropdown">
+					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						headers
+						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+					  </a>
+					  <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="header-gradient.html">Gradient</a>
+						<a class="dropdown-item" href="header-solid.html">Solid Color</a>
+						<a class="dropdown-item" href="header-parallax.html">parallax</a>
+						<a class="dropdown-item" href="header-typing.html">typing</a>
+						<a class="dropdown-item" href="header-background.html">background image</a>
+					  </div>
+					</li>
+					<li class="nav-item dropdown">
+					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						pages
+						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+					  </a>
+					  <div class="dropdown-menu box-shadow-v2 dropdown__col-2" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="about.html">About</a>
+						<a class="dropdown-item" href="portfolio.html">Portfolio</a>
+						<a class="dropdown-item" href="portfolio-details.html">Portfolio Details</a>
+						<a class="dropdown-item" href="blog.html">Blog</a>
+						<a class="dropdown-item" href="blog-details.html">Blog Details</a>
+						<a class="dropdown-item" href="login.html">Login</a>
+						<a class="dropdown-item" href="sign-up.html">Register</a>
+						<a class="dropdown-item" href="coming-soon.html">Coming soon</a>
+						<a class="dropdown-item" href="contact.html">Contact</a>
+						<a class="dropdown-item" href="404.html">404</a>
+					  </div>
+					</li>
+					<li class="nav-item dropdown">
+					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						elements
+						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+					  </a>
+					  <div class="dropdown-menu box-shadow-v2 dropdown__col-2" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="testimonials.html">testimonial</a>
+						<a class="dropdown-item" href="gallery.html">gallery</a>
+						<a class="dropdown-item" href="team.html">team</a>
+						<a class="dropdown-item" href="clients.html">client</a>
+						<a class="dropdown-item" href="sign-up.html">signup</a>
+						<a class="dropdown-item" href="form.html">Form</a>
+						<a class="dropdown-item" href="footers.html">footer</a>
+						<a class="dropdown-item" href="tabs.html">Tab</a>
+						<a class="dropdown-item" href="accordion.html">Accordion</a>
+						<a class="dropdown-item" href="progress-bars.html">Progressbar</a>
+						<a class="dropdown-item" href="countdown.html">Countdown</a>
+						<a class="dropdown-item" href="buttons.html">Button</a>
+						<a class="dropdown-item" href="list-style.html">List Style</a>
+						<a class="dropdown-item" href="feature.html">feature</a>
+				  </div>
+					</li>
+					<li class="nav-item dropdown">
+					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Blog
+						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+					  </a>
+					  <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="blog.html">blog single</a>
+						<a class="dropdown-item" href="blog-grid.html">blog grid</a>
+						<a class="dropdown-item" href="blog-details.html">blog details</a>
+					  </div>
+					</li>
+					<li class="nav-item dropdown">
+					  <a class="nav-link" href="contact.html">
+						Contact
+					  </a>
+					</li>
+				  </ul>
+				</div>
+			  </nav>
 			</div>
-		</div> -->
-		<!-- ======End Preloader ======  -->
+		  </header>
 
-		<div id="wrapper">
-			<!-- Header  -->
-			<header id="header" class="site-header">
-				<div class="top-header clearfix">
-					<div class="container">
-						<ul class="socials-top">
-							<li><a target="_Blank" href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							  <li><a target="_Blank" href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							  <li><a target="_Blank" href="https://www.google.com"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-							  <li><a target="_Blank" href="http://www.linkedin.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-							  <li><a target="_Blank" href="https://www.youtube.com"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-						</ul>
-						<div class="phone">Call Now +27 73 456 789</div>
-					</div>
+		{% block content %}
+        {% endblock content%}
+
+
+		<footer>
+			<section class="bg-secondary">
+				<div class="container">
+				<hr class="u-my-60 bg-dark-grey">
+				<div class="row">
+				  <div class="col-lg-4">
+					<h2 class="text-dark-grey">LEAFBARK</h2>
+					<p class="u-my-40 text-dark-grey">
+					  Nam liber tempor cum soluta nobis eleifend they option congue is nihil imper per tem por legere is me velit doming vulputate.
+					</p>
+					<form class="form-inline">
+					  <div class="input-group box-shadow-v1 u-rounded-50 bg-secondary u-of-hidden">
+						<div class="input-group-addon bg-secondary border-0 pl-4 pr-3">
+						  <span class="icon icon-Mail text-dark-grey"></span>
+						</div>
+						<input type="text" class="form-control border-0 p-3" placeholder="Enter your email">
+						<button type="submit" class="input-group-btn btn bg-secondary">
+						  <span class="icon icon-Arrow text-dark-grey"></span>
+						</button>
+					  </div>
+					</form>
+				  </div>
+				  <div class="col-lg-2 ml-auto">
+					<h4 class="text-dark-grey">Useful Links</h4>
+					<div class="u-h-4 u-w-50 bg-dark-grey rounded mt-3 u-mb-40"></div>
+					<ul class="list-unstyled u-lh-2">
+					  <li class="text-dark-grey">
+						<a href="#">Our Mission</a>
+					  </li>
+					  <li class="text-dark-grey">
+						<a href="#">Testimonials</a>
+					  </li>
+					  <li class="text-dark-grey">
+						<a href="#">FAQs</a>
+					  </li>
+					  <li class="text-dark-grey">
+						<a href="#">Blog </a>
+					  </li>
+					  <li class="text-dark-grey">
+						<a href="#">Contact</a>
+					  </li>
+					</ul>
+				  </div>
+				  <div class="col-lg-3 ml-auto">
+					<h4 class="text-dark-grey">Contact Info</h4>
+					<div class="u-h-4 u-w-50 bg-dark-grey rounded mt-3 u-mb-40"></div>
+					<ul class="list-unstyled">
+					  <li class="mb-2 text-dark-grey">
+						<span class="icon icon-Phone2 text-dark-grey mr-2"></span> 021 456 7890
+					  </li>
+					  <li class="mb-2 text-dark-grey">
+						<span class="icon icon-Mail text-dark-grey mr-2"></span>
+						<a href="">info@leafbark.com</a>
+					  </li>
+					  <li class="mb-2 text-dark-grey">
+						<span class="icon icon-Pointer text-dark-grey mr-2"></span> Cape Town, South Africa
+					  </li>
+					</ul>
+					<ul class="list-inline social social-rounded social-white mt-4">
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fa fa-facebook"></i>
+						</a>
+					  </li>
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fa fa-twitter"></i>
+						</a>
+					  </li>
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fa fa-google-plus"></i>
+						</a>
+					  </li>
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fa fa-linkedin"></i>
+						</a>
+					  </li>
+					</ul>
+				  </div>
 				</div>
-				<div class="content-header">
-					<div class="container">
-						<div class="site-brand">
-							<a href="{% url 'campaign-home' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
-						</div><!-- .site-brand -->
-						<div class="right-header">					
-							<nav class="main-menu">
-								<button class="c-hamburger c-hamburger--htx"><span></span></button>
-								<ul>
-									<li>
-										<a href="#">Home<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-										<ul class="sub-menu">
-											<li><a href="#">Home v1</a></li>
-											<li><a href="#">Home v2</a></li>
-											<li><a href="#">Home v3</a></li>
-											<li><a href="#">Home Gradient</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">Explore<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-										<ul class="sub-menu">
-											<li><a href="#">Explore Layout One</a></li>
-											<li><a href="#">Explore Layout Two</a></li>
-											<li><a href="#">Explore Layout Three</a></li>
-										</ul>
-									</li>
-									<li>
-									<a href="#">Start a Campaigns<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-									<ul class="sub-menu">
-										<li><a href="#">Create a campaign</a></li>
-										<li><a href="#">Update a campaign</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Pages<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-									<ul class="sub-menu">
-										<li><a href="#">Coming Soon</a></li>
-										<li><a href="#">About Us</a></li>
-										<li><a href="#">404</a></li>
-										<li><a href="#">Login</a></li>
-										<li><a href="#">Register</a></li>
-										<li><a href="#">Faq</a></li>
-										<li><a href="#">Campaign details</a></li>
-									</ul>
-								</li>
-									<li>
-										<a href="#">Blog<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-										<ul class="sub-menu">
-											<li><a href="#">Blog Grid</a></li>
-											<li><a href="#">Blog List</a></li>
-											<li><a href="#">Blog Grid Sidebar</a></li>
-											<li><a href="#">Blog Details</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">Shop<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-										<ul class="sub-menu">
-											<li><a href="#">Shop Grid</a></li>
-											<li><a href="#">Shop Details</a></li>
-											<li><a href="#">Cart</a></li>
-											<li><a href="#">Checkout</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Contact</a></li>
-									<li>
-										<a href="#">Account<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-										<ul class="sub-menu">
-											<li><a href="#">Dashboard</a></li>
-											<li><a href="#">Profile</a></li>
-											<li><a href="#">My Campaigns</a></li>
-											<li><a href="#">Pledges Received</a></li>
-											<li><a href="#">Backed Campaigns</a></li>
-											<li><a href="#">Rewards</a></li>
-											<li><a href="#">Payments</a></li>
-										</ul>
-									</li>
-								</ul>
-							</nav><!-- .main-menu -->
-							<div class="search-icon">
-								<a href="#" class="ion-ios-search-strong"></a>
-								<div class="form-search"></div>
-								<form action="#" method="POST" id="searchForm">
-									  <input type="text" value="" name="search" placeholder="Search..." />
-									<button type="submit" value=""><span class="ion-ios-search-strong"></span></button>
-								  </form>
-							</div>
-							{% if user.is_authenticated %}	
-								<div class="profile-icon">
-									<a href="{% url 'account-dashboard' %}" class="ion-ios-person-outline"></a>
-								</div>
-								<div class="login login-button">
-									<a href="{% url 'account-logout' %}" class="btn-primary">Logout</a>
-								</div><!-- .logout -->
-							{% else %}	
-								<div class="login login-button">
-									<a href="{% url 'account-login' %}" class="btn-primary">Login</a>
-								</div><!-- .login -->
-							{% endif %}	
-						</div><!--. right-header -->
-					</div><!-- .container -->
-				</div>
-			</header>
-			<!-- Header end -->
-
-			<!-- Flash messages -->
-			{% if messages%}
-				{%for message in messages %}
-					<div class="alert alert-{{ message.tags }}">
-						{{ message }}
-					</div>
-				{% endfor %}
-			{% endif %}
-			<!-- Flash messages end -->
-
-			{% block content %}
-			{% endblock content%}
-
-			<!-- Footer -->
-			<footer id="footer" class="site-footer">
-				<div class="footer-menu">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-3 col-sm-4 col-4">
-								<div class="footer-menu-item">
-									<h3>Our company</h3>
-									<ul>
-										<li><a href="#">What is Startup Idea</a></li>
-										<li><a href="#">About us</a></li>
-										<li><a href="#">How It Works</a></li>
-										<li><a href="#">What Is This</a></li>
-										<li><a href="#">Jobs</a></li>
-										<li><a href="#">Press</a></li>
-										<li><a href="#">Starts</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-3 col-sm-4 col-4">
-								<div class="footer-menu-item">
-									<h3>Campaign</h3>
-									<ul>
-										<li><a href="#">Start Your Campaign</a></li>
-										<li><a href="#">Pricing Campaign</a></li>
-										<li><a href="#">Campaign Support</a></li>
-										<li><a href="#">Trust & Safety</a></li>
-										<li><a href="#">Support</a></li>
-										<li><a href="#">Terms of Use</a></li>
-										<li><a href="#">Privacy Policy</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-3 col-sm-4 col-4">
-								<div class="footer-menu-item">
-									<h3>Explore</h3>
-									<ul>
-										<li><a href="#">Design & Art</a></li>
-										<li><a href="#">Crafts</a></li>
-										<li><a href="#">Film & Video</a></li>
-										<li><a href="#">Food</a></li>
-										<li><a href="#">Book</a></li>
-										<li><a href="#">Games</a></li>
-										<li><a href="#">Technology</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-3 col-sm-12 col-12">
-								<div class="footer-menu-item newsletter">
-									<h3>Newsletter</h3>
-									<div class="newsletter-description">Private, secure, spam-free</div>
-									<form action="#" method="POST" id="newsletterForm">
-										  <input type="text" value="" name="s" placeholder="Enter your email..." />
-										<button type="submit" value=""><span class="ion-android-drafts"></span></button>
-									  </form>
-									  <div class="follow">
-										  <h3>Follow us</h3>
-										  <ul>
-											  <li class="facebook"><a target="_Blank" href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-											  <li class="twitter"><a target="_Blank" href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-											  <li class="instagram"><a target="_Blank" href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-											  <li class="google"><a target="_Blank" href="https://www.google.com"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-											  <li class="youtube"><a target="_Blank" href="https://www.youtube.com"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-										  </ul>
-									  </div>
-								</div>
+			  </div>
+			</section>
+			<section class="bg-secondary">
+				<footer class=box-shadow-v4>
+					<div class=container>
+						<div class="row align-items-center">
+							<div class="col-lg-6 py-5 text-center text-lg-left text-dark-grey">
+								<span>© Copyright 2020 -
+									<a target=_blank href="#">leafbark</a>
+								</span>
 							</div>
 						</div>
 					</div>
-				</div><!-- .footer-menu -->
-				<div class="footer-copyright">
-					<div class="container">
-						<p class="copyright">2020 by Grecerola. All Rights Reserved.</p>
-						<a href="#" class="back-top">Back to top<span class="ion-android-arrow-up"></span></a>
-					</div>
-				</div>
-			</footer>
-			<!-- Footer end -->
+				</footer>
+			</section>
+		</footer>
+		<div class="scroll-top bg-white box-shadow-v3">
+		<i class="fa fa-angle-up" aria-hidden="true"></i>
 		</div>
-       
+		<script src="{% static 'assets/js/bundle.js' %}"></script>
+		<script src="{% static 'assets/js/devdap.js' %}"></script>
 
-		  <!-- jQuery -->    
-		  <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
-		  <script src="{% static 'js/popper.js' %}"></script>
-		  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-		  <script src="{% static 'js/carousel.min.js' %}"></script>
-		  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-		  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
-		  <script src="{% static 'js/wow.min.js' %}"></script>
-		  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-		  <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
-		  <script src="{% static 'js/magicsuggest-min.js' %}"></script>
-		  <script src="{% static 'js/quill.core.js' %}"></script>
-		  <script src="{% static 'js/quill.js' %}"></script>
-		  <!-- orther script -->
-		  <script src="{% static 'js/main.js' %}"></script>
-		  <script>
-			function validate(evt) {
-			  var theEvent = evt || window.event;
-			  var key = theEvent.keyCode || theEvent.which;
-			  key = String.fromCharCode( key );
-			  var regex = /[0-9]|\./;
-			  if( !regex.test(key) ) {
-				theEvent.returnValue = false;
-				if(theEvent.preventDefault) theEvent.preventDefault();
-			  }
-			}
-		</script>
     </body>
 </html>

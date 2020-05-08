@@ -2,102 +2,181 @@
 {% load static %}
 
 {% block content %}
-<main id="main" class="site-main">
-    <!-- Home header -->
-    <div class="sideshow">
-        <div class="container">
-            <div class="sideshow-content">
-                {% with campaigns.first as main_campaign %}
-                <h1 class="wow fadeInUp" data-wow-delay=".1s">{{ main_campaign.name }}</h1>
-                <div class="sideshow-description wow fadeInUp" data-wow-delay=".1s">{{ main_campaign.story }}</div>
-                <div class="process wow fadeInUp" data-scroll-nav="1">
-                    <div class="raised"><span style="width: 29%;"></span></div>
-                    <div class="process-info">
-                        <div class="process-funded"><span>{{ main_campaign.investment_raised_amount }}</span>raised</div>
-                        <div class="process-pledged"><span>{{ main_campaign.total_investment_amount }}</span>goal</div>
-                        <div class="process-backers"><span>32</span>investors</div>
-                        <!-- <div class="process-time"><span>21</span>days ago</div> -->
-                    </div>
-                </div>
-                {% endwith %}
-                <div class="button wow fadeInUp" data-wow-delay="0.1s">
-                    <a href="#" class="btn-secondary">See Investment</a>
-                    <a href="#" class="btn-primary">Invest Now</a>
-                </div>
-            </div><!-- .sideshow-content -->
+<section class="u-py-100 u-h-100vh u-flex-center" data-dark-overlay="6" data-parallax="{% static 'assets/img/about/hero.jpg' %}">
+    <div class="container">
+        <div class="row">
+        <div class="col-12 u-mt-80 text-center">
+            <h1 class="display-4 u-fw-300 text-white u-mb-40">
+            Invest in highly vetted property on land.
+            </h1>
+            <p class="u-fs-22 text-white u-lh-1_8 u-mb-40">
+            Own part of valuable land in South Africa with ease.
+            </p>
+            <a href="#" class="btn btn btn-rounded btn-primary ml-3 px-md-5">
+            Sign up
+            </a>
+        </div>
         </div>
     </div>
-    <!-- Home header end -->
-    <div class="project-love">
-        <div class="container">
-            <h2 class="title">Projects We Love</h2>
-            <div class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</div>
-            <div class="tab-menu tab-row">
-                <ul id="bx-pager" class="menu-category">
-                    {% for type in campaign_types %}
-                        {% if forloop.first %}
-                            <li class="mc-option active" data-tab="{{ type.name }}"><a href="#" data-slide-index="{{ forloop.counter0 }}">{{ type.name }}</a></li>
-                        {% else %}
-                            <li class="mc-option" data-tab="{{ type.name }}"><a href="#" data-slide-index="{{ forloop.counter0 }}">{{ type.name }}</a></li>
-                        {% endif %}
-                    {% endfor %}
+</section>
 
-                    <li class="cat-more"><a href="#">More</a></li>
-                </ul>
+<section>
+    <div class=container>
+      <div class="row text-center">
+        <div class="col-lg-4 col-md-6 u-mt-30">
+          <div class="px-4 py-5 px-md-5 u-h-100p rounded box-shadow-v1">
+            <div class="u-w-90 u-h-90 u-flex-center bg-green text-white rounded-circle m-auto">
+              <span class="icon icon-House u-fs-42"></span>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="popular-project">
-                        {% for type in campaign_types %}
-                            {% if forloop.first %}
-                                <div id="{{ type.name }}" class="pp-item active">
-                                    <h4>{{ type.name }}</h4>
-                                    <p>{{ type.description }}</p>
-                                </div>  
-                            {% else %}
-                                <div id="{{ type.name }}" class="pp-item">
-                                    <h4>{{ type.name }}</h4>
-                                    <p>{{ type.description }}</p>
-                                </div> 
-                            {% endif %}
-                        {% endfor %}
+            <h4 class="u-fs-26 u-pt-30 u-pb-20 text-primary">
+              Vetted Properties
+            </h4>
+            <p>
+                Carefully vetted properties that passes our regorous evaluation  
+                which assesses build quality, compliance, location and scope for return.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 u-mt-30">
+          <div class="px-4 py-5 px-md-5 u-h-100p rounded box-shadow-v1">
+            <div class="u-w-90 u-h-90 u-flex-center bg-primary text-white rounded-circle m-auto">
+              <span class="icon icon-Chart2 u-fs-42"></span>
+            </div>
+            <h4 class="u-fs-26 u-pt-30 u-pb-20 text-primary">
+              Easier Diversification
+            </h4>
+            <p>
+                An approach that gives everyone the opportunity to invest 
+                in property. With our low minumum investments, you can diversify your portfolio.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 u-mt-30">
+          <div class="px-4 py-5 px-md-5 u-h-100p rounded box-shadow-v1">
+            <div class="u-w-90 u-h-90 u-flex-center bg-yellow text-white rounded-circle m-auto">
+              <span class="icon icon-Search u-fs-42"></span>
+            </div>
+            <h4 class="u-fs-26 u-pt-30 u-pb-20 text-primary">
+              Transparent
+            </h4>
+            <p>
+                We provide you with honest real data with all the information you need on the properties, 
+                your investments and our fees at your fingertips.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
 
-                        <a href="#" class="btn-primary">Start a Campaign</a>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <ul class="project-love-slider pls-col">
-                        {% for campaign in campaigns %}
-                        <li>
-                            <div class="project-love-item clearfix">
-                                <a class="project-love-image" href="#"><img src="{{ campaign.get_first_image.image.url }}" alt=""></a>
-                                <div class="project-love-item-content project-love-box">
-                                    <a href="#" class="category">{{ campaign.campaign_type.name }}</a>
-                                    <h3><a href="#">{{ campaign.name }}</a></h3>
-                                    <div class="project-love-description">{{ campaign.story }}</div>
-                                    <div class="project-love-author">
-                                        <div class="author-profile">
-                                            <a class="author-avatar" href="#"><img src="{{ campaign.posted_by.avatar.url }}" alt=""></a>by <a class="author-name" href="#">{{ campaign.posted_by.get_full_name }}</a>
-                                        </div>
-                                        <div class="author-address"><span class="ion-location"></span>{{ campaign.location.city }}, {{ campaign.location.country }}</div>
-                                    </div>
-                                    <div class="process">
-                                        <div class="raised"><span style="width: 99%;"></span></div>
-                                        <div class="process-info">
-                                            <div class="process-pledged"><span>{{ campaign.total_investment_amount }}</span>goal</div>
-                                            <div class="process-funded"><span>{{ campaign.investment_raised_amount }}</span>raised</div>
-                                            <div class="process-time"><span>37</span>investors</div>
-                                            <!-- <div class="process-time"><span>23</span>days ago</div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+<section class="bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 m-auto text-center">
+                <h2 class="h1 text-white">
+                    How does it work
+                </h2>
+                <div class="u-h-4 u-w-50 bg-white rounded mt-4 u-mb-40 mx-auto"></div>
             </div>
         </div>
-    </div><!-- .project-love -->
-</main>
+        
+        <div class="row align-items-center">
+            <div class="col-lg-6 my-4">
+                <img src="{% static 'assets/img/about/how-it-works.png' %}" alt="how leafbark it works">
+            </div>
+            <div class="col-lg-6 mt-5">
+              <div class="list-group">
+                <div class="list-group-item-transparent list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-white u-fw-700">
+                      <span class="lnr lnr-checkmark-circle mr-2 text-white u-fs-20"></span>
+                      Browse our vetted properties
+                    </h5>
+                  </div>
+                  <p class="mb-1 text-white">Explore Leafbark’s property listings so you can make an informed decision.</p>
+                </div>
+                <div class="list-group-item-transparent list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-white u-fw-700">
+                      <span class="lnr lnr-checkmark-circle mr-2 text-white u-fs-20"></span>
+                      Invest in a property you like
+                    </h5>
+                  </div>
+                  <p class="mb-1 text-white">Buy property-shares. Our fees are 1.25% to buy and 1.25% to sell.</p>
+                </div>
+                <div class="list-group-item-transparent list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-white u-fw-700">
+                      <span class="lnr lnr-checkmark-circle mr-2 text-white u-fs-20"></span>
+                      Earn interest
+                    </h5>
+                  </div>
+                  <p class="mb-1 text-white">Earn monthly dividends based on your share of the net rental income.</p>
+                </div>
+                <div class="list-group-item-transparent list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-white u-fw-700">
+                      <span class="lnr lnr-checkmark-circle mr-2 text-white u-fs-20"></span>
+                      Sell your shares
+                    </h5>
+                  </div>
+                  <p class="mb-1 text-white">List your property-shares for sale and receive any capital gains when you sell.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <hr class="u-my-60 bg-white">
+    </div>
+</section>
+
+<section class="u-flex-center u-pb-100" data-parallax="{% static 'assets/img/about/hero4.jpg' %}" id="features" style="background: linear-gradient(180deg,#1f3c4ae9, #1f3c4ae9), no-repeat;">
+  <div class=container>
+     <div class="row text-center u-pb-40">
+        <div class=col-12>
+           <h1 class=text-white>Safety and security are our priority</h1>
+           <div class="rounded u-h-4 u-w-50 mt-4 mx-auto bg-pure-white u-mb-40"></div>
+        </div>
+        <div class="col-md-12 col-lg-4 u-mt-30">
+           <div class="rounded box-shadow-v1 bg-pure-white px-4 px-md-5 py-5 u-h-100p">
+              <div class="text-white m-auto rounded-circle u-flex-center u-h-90 u-w-90 bg-green">
+                 <span class="icon u-fs-42 icon-Files"></span>
+              </div>
+              <h4 class="u-fs-26 u-pb-20 u-pt-30">Asset segregation</h4>
+              <p>Each property is held in its own holding company and managed by an independent director.</p>
+           </div>
+        </div>
+        <div class="col-md-12 col-lg-4 u-mt-30">
+           <div class="rounded box-shadow-v1 bg-pure-white px-4 px-md-5 py-5 u-h-100p">
+              <div class="text-white m-auto rounded-circle u-flex-center u-h-90 u-w-90 bg-primary">
+                 <span class="icon u-fs-42 icon-ClosedLock"></span>
+              </div>
+              <h4 class="u-fs-26 u-pb-20 u-pt-30">Data security</h4>
+              <p>We use data encryption to encode your data and keep it safe when in transit.</p>
+           </div>
+        </div>
+        <div class="col-md-12 col-lg-4 u-mt-30">
+           <div class="rounded box-shadow-v1 bg-pure-white px-4 px-md-5 py-5 u-h-100p">
+              <div class="text-white m-auto rounded-circle u-flex-center u-h-90 u-w-90 bg-yellow">
+                 <span class="icon u-fs-42 icon-Wallet"></span>
+              </div>
+              <h4 class="u-fs-26 u-pb-20 u-pt-30">Your Money</h4>
+              <p>Your money is held safe in a trust account separate from Leafbark's own trading account.</p>
+           </div>
+        </div>
+     </div>
+  </div>
+</section>
+
+
+
+<section class="u-py-100 bg-image-bottom-invest">
+    <div class="container">
+       <div class="row">
+          <div class="text-center col-12 align-items-center d-flex justify-content-center">
+             <h2 class="text-white h1 mx-md-5">Start making the best financial decision!</h2>
+             <a href=# class="btn btn-primary btn-rounded">Let’s Talk</a>
+          </div>
+       </div>
+    </div>
+ </section>
 {% endblock content %}
