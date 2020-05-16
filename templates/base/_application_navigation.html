@@ -21,7 +21,7 @@
 		<header class="header header-shrink header-inverse fixed-top">
 			<div class="container">
 			  <nav class="navbar navbar-expand-lg px-md-0">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="{% url 'campaign-home' %}">
 				  <span class="logo-default">
 					<h2 class="text-white">LEAFBARK</h2>
 				  </span>
@@ -38,19 +38,15 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNav">
 				  <ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-					  <a class="nav-link" href="index.html">HOME</a>
-					</li>
 					<li class="nav-item dropdown">
 					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Demos
+						Explore
 						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
 					  </a>
 					  <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="app.html">App</a>
-						<a class="dropdown-item" href="software.html">Software</a>
-						<a class="dropdown-item" href="seo.html">SEO</a>
-						 <a class="dropdown-item" href="admin.html">Exclusive Admin</a>
+						{% for type in campaign_types %}
+							<a class="dropdown-item" href="/explore/{{ type.name }}">{{ type.name }}</a>
+						{% endfor %}
 					  </div>
 					</li>
 					<li class="nav-item dropdown">

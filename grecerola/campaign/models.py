@@ -108,9 +108,22 @@ class Campaign(PublishableModel, TimeStampMixin):
         images = list(self.images.all())
         return images[0] if images else None
 
+    def get_first_image_url(self):
+        images = list(self.images.all())
+        return images[0].image.url if images else "/static/assets/img/placeholder800x470.png"
+
+    def get_first_image_alt(self):
+        images = list(self.images.all())
+        return images[0].alt if images else "placeholder image"
+
     def get_campaign_progress(self):
-        progress=(self.investment_raised_amount / self.total_investment_amount)*100
-        return progress
+        return round(((self.investment_raised_amount)/(self.total_investment_amount))*100, 1)
+
+    def investment_raised_amount_formatted(self):
+        return round(self.investment_raised_amount, 0)
+
+    def total_investment_amount_formatted(self):
+        return round(self.total_investment_amount, 0)
 
     def __repr__(self) -> str:
         class_ = type(self)

@@ -1,61 +1,66 @@
 {% extends "base/_application_navigation.html" %}
 {% load static %}
 
-{%block content%}
-<main id="main" class="site-main">
-    <!-- Header -->
-    <div class="page-title background-page">
-        <div class="container">
-            <h1>Explore Layout Three</h1>
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="index.html">Home</a><span>/</span></li>
-                    <li>Layout</li>
-                </ul>
-            </div><!-- .breadcrumbs -->
-        </div>  <!-- Header end -->
+{% block content %}
+<section class="u-py-100 u-pt-lg-200 u-pb-lg-150 u-flex-center bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center text-white">
+                <h1 class="text-white">
+                    Explore
+                </h1>
+                <div class="u-h-4 u-w-50 bg-white rounded mx-auto my-4"></div>
+                <p class="lead text-white">
+                    Explore our property listings so you can make an informed decisions
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            {% for campaign in campaigns %}
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 box-shadow-v1 u-h-100p">
+                    <img src="{{ campaign.get_first_image_url }}" alt="{{ campaign.get_first_image_alt }}" style="max-height: 225px; height: 225px; width: auto;">
+                    <div class="u-p-20 bg-white">
+                        <h4 class="u-fs-18"><a href="#">{{ campaign.name }}</a></h4>
+                        <p class="d-flex u-fs-14 text-muted">
+                            <span class="float-left mr-5"><i class="icon icon-House mr-1"></i>{{ campaign.campaign_type.name}} </span>
+                            <span class="float-right"><i class="icon icon-Pointer mr-1 ml-3"></i>{{ campaign.location.city }}</span>
+                        </p>
+                        
+                        <div class="row">
+                            <div class="col-md-4 border-right">
+                               <div class="campaign-stat u-fw-400 text-muted u-fs-14"><span class="u-fs-14 text-muted">ERR</span>12%</div>
+                            </div>
+                            <div class="col-md-4 border-right">
+                               <div class="campaign-stat u-fw-400 text-muted u-fs-14"><span class="u-fs-14 text-muted">Term</span>24 Months</div>
+                            </div>
+                            <div class="col-md-4">
+                               <div class="campaign-stat u-fw-400 text-muted u-fs-14"><span class="u-fs-14 text-muted">LTVDV</span>8% p.a</div>
+                            </div>
+                         </div>
 
-    </div><!-- .page-title -->
-
-    <div class="campaigns">
-        <div class="container">
-            <div class="campaign-content">
-                <div class="row">
-                    {%for campaign in campaigns%}
-                    <div class="col-lg-4 col-sm-6 col-6">
-                        <div class="campaign-item">
-                            <a class="overlay" href="campaign_detail.html">
-                                <img src="{{ campaign.get_first_image.image.url }}" alt="">
-                                <span class="ion-ios-search-strong"></span>
-                            </a>
-                            <div class="campaign-box">
-                                <a href="#" class="category">{{ campaign.campaign_type.name }}</a>
-                                <h3><a href="campaign_detail.html">{{ campaign.name}}</a></h3>
-                                <div class="campaign-description">{{ campaign.story }}</div>
-                                <div class="project-love-author">
-                                    <div class="author-profile">
-                                        <a class="author-avatar" href="#"><img src="{{ campaign.posted_by.avatar.url }}" alt=""></a>by <a class="author-name" href="#">{{ campaign.posted_by.get_full_name }}</a>
-                                    </div>
-                                    <div class="author-address"><span class="ion-location"></span> {{ campaign.location.suburb }}, {{ campaign.location.country }}</div>
-                                </div>
-                                <div class="process">
-                                    <div class="raised"><span style="width:{{ campaign.get_campaign_progress }}%;"></span></div>
-                                    <div class="process-info">
-                                        <div class="process-pledged"><span>{{ campaign.total_investment_amount }}</span>Goal</div>
-                                            <div class="process-funded"><span>{{ campaign.investment_raised_amount }}</span>raised</div>
-                                            <!--<div class="process-time"><span>37</span>investers</div>-->
-                                            <!-- <div class="process-time"><span>23</span>days ago</div> -->
-                                    </div>
-                                </div>
+                        <div class="progress-item mb-1 mt-1">
+                            <h4 class="float-right text-primary u-fs-15">{{ campaign.get_campaign_progress }}%</h4>
+                            <div class="progress w-100">
+                                <div class="progress-bar" aria-valuenow="{{ campaign.get_campaign_progress }}"></div>
                             </div>
                         </div>
+                        <div class="mb-3">
+                            <span class="u-fs-14 text-primary">R{{ campaign.investment_raised_amount_formatted }}</span>
+                            <span class="float-right u-fs-14 text-primary">R{{ campaign.total_investment_amount_formatted }}</span>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-primary u-mt-1">More details</a>
+                        </div>
                     </div>
-                    {% endfor %}       
                 </div>
             </div>
-            <div class="latest-button"><a href="#" class="btn-primary">Load more</a></div>
+            {% endfor %}
         </div>
-    </div><!-- .latest -->
-</main><!-- .site-main -->
-
-{%endblock content%}
+    </div>
+</section>
+{% endblock content %}
