@@ -1996,6 +1996,42 @@ textarea::-webkit-input-placeholder {
   width: 56.25rem !important
 }
 
+.u-h-5vh {
+  min-height: 5vh !important
+}
+
+.u-h-10vh {
+  min-height: 10vh !important
+}
+
+.u-h-15vh {
+  min-height: 15vh !important
+}
+
+.u-h-20vh {
+  min-height: 20vh !important
+}
+
+.u-h-25vh {
+  min-height: 25vh !important
+}
+
+.u-h-30vh {
+  min-height: 30vh !important
+}
+
+.u-h-35vh {
+  min-height: 35vh !important
+}
+
+.u-h-40vh {
+  min-height: 40vh !important
+}
+
+.u-h-45vh {
+  min-height: 45vh !important
+}
+
 .u-h-50vh {
   min-height: 50vh !important
 }
