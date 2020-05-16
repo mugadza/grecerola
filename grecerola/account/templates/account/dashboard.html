@@ -1,109 +1,266 @@
-{% extends "base/_application_navigation.html" %}
+{% extends "base/_admin_application.html" %}
 {% load static %}
 
 {% block content %}
-<main id="main" class="site-main">
-    <div class="page-title background-page">
-        <div class="container">
-            <h1>Profile</h1>
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="{% url 'campaign-home' %}">Home</a><span>/</span></li>
-                    <li>Dashboard</li>
-                </ul>
-            </div><!-- .breadcrumbs -->
+    <div id="wrapper">
+     <div class="normalheader">
+        <div class="hpanel">
+           <div class="panel-body">
+              <a class="small-header-action" href="#">
+                 <div class="clip-header">
+                    <i class="fa fa-arrow-up"></i>
+                 </div>
+              </a>
+              <div id="hbreadcrumb" class="pull-right m-t-lg">
+                 <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="index-2.html">Dashboard</a></li>
+                    <li>
+                       <span>App views</span>
+                    </li>
+                    <li class="active">
+                       <span>Profile </span>
+                    </li>
+                 </ol>
+              </div>
+              <h2 class="font-light m-b-xs">
+                 Profile
+              </h2>
+              <small>Show user data in clear profile design</small>
+           </div>
         </div>
-    </div><!-- .page-title -->
-    <div class="account-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <nav class="account-bar">
-                        <ul>
-                            <li><a href="#">Dashboard</a></li>
-                            <li class="active"><a href="#">Profile</a></li>
-                            <li><a href="#">My Investments</a></li>
-                            <li><a href="#">Backed Investments</a></li>
-                            <li><a href="#">Funds Received</a></li>
-                            <li><a href="#">Payments</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-9">
-                    <div class="account-content profile">
-                        <h3 class="account-title">My Profiles</h3>
-                        <div class="account-main">
-                            <div class="author clearfix">
-                                <a class="author-avatar" href="#"><img src="{{ user.avatar.url }}" alt=""></a>
-                                <div class="author-content">
-                                    <div class="author-title"><h3><a href="#">{{ user.get_full_name }}</a></h3></div>
-                                    <div class="author-info">
-                                        <p><a href="#">{{ user.email }}</a></p>
-                                        <p>Grecerola Member since {{ user.date_joined }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="profile-box">
-                                <h3>Profile Infomation</h3>
-                                <ul>
-                                    <li>
-                                        <strong>About Me:</strong>
-                                        <div class="profile-text"><p>I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains us, as it floats around us in an eternity of bliss; and then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Bio:</strong>
-                                        <div class="profile-text"><p>Oh, would I could describe these conceptions, could impress upon paper all that is living so full and warm within me, that it might be the mirror of my soul, as my soul is the mirror of the infinite God!</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>First Name</strong>
-                                        <div class="profile-text"><p>{{ user.first_name }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Last Name:</strong>
-                                        <div class="profile-text"><p>{{ user.last_name }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Mobile:</strong>
-                                        <div class="profile-text"><p>{{ user.phone }}</p></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="profile-box">
-                                <h3>Address</h3>
-                                <ul>
-                                    <li>
-                                        <strong>Address 1:</strong>
-                                        <div class="profile-text"><p>{{ user.address.street_address_1 }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Address 2:</strong>
-                                        <div class="profile-text"><p>{{ user.address.street_address_2 }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Suburb:</strong>
-                                        <div class="profile-text"><p>{{ user.address.suburb }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>City:</strong>
-                                        <div class="profile-text"><p>{{ user.address.city }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Postal Code:</strong>
-                                        <div class="profile-text"><p>{{ user.address.postal_code }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Country:</strong>
-                                        <div class="profile-text"><p>{{ user.address.country.name }}</p></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="#" class="btn-primary">Edit Profiles</a>
-                        </div>
+    </div>
+     <div class="content">
+        <div class="row">
+           <div class="col-lg-4">
+              <div class="hpanel hgreen">
+                 <div class="panel-body no-shadow th-border">
+                    <div class="pull-right text-right">
+                       <div class="btn-group">
+                          <i class="fa fa-facebook btn btn-default btn-xs"></i>
+                          <i class="fa fa-twitter btn btn-default btn-xs"></i>
+                          <i class="fa fa-linkedin btn btn-default btn-xs"></i>
+                       </div>
                     </div>
+                    <img alt="logo" class="img-circle m-b m-t-md img-small" src="{{ user.avatar.url }}">
+                    <h3><a href="#">{{ user.first_name }} {{ user.last_name }}</a></h3>
+                    <div class="text-muted font-bold m-b-xs">California, LA</div>
                 </div>
-            </div>
-        </div><!-- .container -->
-    </div><!-- .account-content -->
-</main><!-- .site-main -->
+                 
+                 <div class="panel-footer contact-footer">
+                    <div class="row">
+                       <div class="col-md-4 border-right">
+                          <div class="contact-stat"><span>Projects: </span> <strong>200</strong></div>
+                       </div>
+                       <div class="col-md-4 border-right">
+                          <div class="contact-stat"><span>Messages: </span> <strong>300</strong></div>
+                       </div>
+                       <div class="col-md-4">
+                          <div class="contact-stat"><span>Views: </span> <strong>400</strong></div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="col-lg-8">
+              <div class="hpanel">
+                 <div class="hpanel">
+                    <ul class="nav nav-tabs">
+                       <li class="active"><a data-toggle="tab" href="#tab-1">Project</a></li>
+                    </ul>
+                    <div class="tab-content">
+                       <div id="tab-1" class="tab-pane active">
+                          <div class="panel-body">
+                             <strong>Lorem ipsum dolor sit amet, consectetuer adipiscing</strong>
+                             <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of
+                                existence in this spot, which was created for the bliss of souls like mine.
+                             </p>
+                             <div class="table-responsive">
+                                <table class="table table-striped">
+                                   <thead>
+                                      <tr>
+                                         <th>#</th>
+                                         <th>Project </th>
+                                         <th>Name </th>
+                                         <th>Phone </th>
+                                         <th>Company </th>
+                                         <th>Completed </th>
+                                         <th>Task</th>
+                                         <th>Date</th>
+                                         <th>Action</th>
+                                      </tr>
+                                   </thead>
+                                   <tbody>
+                                      <tr>
+                                         <td>1</td>
+                                         <td>Project <small>This is example of project</small></td>
+                                         <td>Patrick Smith</td>
+                                         <td>0800 051213</td>
+                                         <td>Inceptos Hymenaeos Ltd</td>
+                                         <td><span class="pie">2/45</span></td>
+                                         <td>20%</td>
+                                         <td>Jul 14, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>2</td>
+                                         <td>Alpha project</td>
+                                         <td>Alice Jackson</td>
+                                         <td>0500 780909</td>
+                                         <td>Nec Euismod In Company</td>
+                                         <td><span class="pie">1/5</span></td>
+                                         <td>40%</td>
+                                         <td>Jul 16, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>3</td>
+                                         <td>Betha project</td>
+                                         <td>John Smith</td>
+                                         <td>0800 1111</td>
+                                         <td>Erat Volutpat</td>
+                                         <td><span class="pie">4/7</span></td>
+                                         <td>75%</td>
+                                         <td>Jul 18, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>4</td>
+                                         <td>Gamma project</td>
+                                         <td>Anna Jordan</td>
+                                         <td>(016977) 0648</td>
+                                         <td>Tellus Ltd</td>
+                                         <td><span class="pie">12/3</span></td>
+                                         <td>18%</td>
+                                         <td>Jul 22, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>2</td>
+                                         <td>Alpha project</td>
+                                         <td>Alice Jackson</td>
+                                         <td>0500 780909</td>
+                                         <td>Nec Euismod In Company</td>
+                                         <td><span class="pie">2/5</span></td>
+                                         <td>40%</td>
+                                         <td>Jul 16, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>1</td>
+                                         <td>Project <small>This is example of project</small></td>
+                                         <td>Patrick Smith</td>
+                                         <td>0800 051213</td>
+                                         <td>Inceptos Hymenaeos Ltd</td>
+                                         <td><span class="pie">1/5</span></td>
+                                         <td>20%</td>
+                                         <td>Jul 14, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>4</td>
+                                         <td>Gamma project</td>
+                                         <td>Anna Jordan</td>
+                                         <td>(016977) 0648</td>
+                                         <td>Tellus Ltd</td>
+                                         <td><span class="pie">2/8</span></td>
+                                         <td>18%</td>
+                                         <td>Jul 22, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>1</td>
+                                         <td>Project <small>This is example of project</small></td>
+                                         <td>Patrick Smith</td>
+                                         <td>0800 051213</td>
+                                         <td>Inceptos Hymenaeos Ltd</td>
+                                         <td><span class="pie">15/5</span></td>
+                                         <td>20%</td>
+                                         <td>Jul 14, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>2</td>
+                                         <td>Alpha project</td>
+                                         <td>Alice Jackson</td>
+                                         <td>0500 780909</td>
+                                         <td>Nec Euismod In Company</td>
+                                         <td><span class="pie">2/3</span></td>
+                                         <td>40%</td>
+                                         <td>Jul 16, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>3</td>
+                                         <td>Betha project</td>
+                                         <td>John Smith</td>
+                                         <td>0800 1111</td>
+                                         <td>Erat Volutpat</td>
+                                         <td><span class="pie">4/5</span></td>
+                                         <td>75%</td>
+                                         <td>Jul 18, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>4</td>
+                                         <td>Gamma project</td>
+                                         <td>Anna Jordan</td>
+                                         <td>(016977) 0648</td>
+                                         <td>Tellus Ltd</td>
+                                         <td><span class="pie">2/12</span></td>
+                                         <td>18%</td>
+                                         <td>Jul 22, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>2</td>
+                                         <td>Alpha project</td>
+                                         <td>Alice Jackson</td>
+                                         <td>0500 780909</td>
+                                         <td>Nec Euismod In Company</td>
+                                         <td><span class="pie">2/3</span></td>
+                                         <td>40%</td>
+                                         <td>Jul 16, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>1</td>
+                                         <td>Project <small>This is example of project</small></td>
+                                         <td>Patrick Smith</td>
+                                         <td>0800 051213</td>
+                                         <td>Inceptos Hymenaeos Ltd</td>
+                                         <td><span class="pie">1/5</span></td>
+                                         <td>20%</td>
+                                         <td>Jul 14, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                      <tr>
+                                         <td>4</td>
+                                         <td>Gamma project</td>
+                                         <td>Anna Jordan</td>
+                                         <td>(016977) 0648</td>
+                                         <td>Tellus Ltd</td>
+                                         <td><span class="pie">10/50</span></td>
+                                         <td>18%</td>
+                                         <td>Jul 22, 2013</td>
+                                         <td><a href="#"><i class="fa fa-check text-success"></i></a></td>
+                                      </tr>
+                                   </tbody>
+                                </table>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     
+     <footer class="footer">
+        <span class="pull-right">
+        LEAFBARK
+        </span>
+     </footer>
+  </div>
 {% endblock content %}
 

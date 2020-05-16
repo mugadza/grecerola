@@ -80,43 +80,33 @@
 						<a class="dropdown-item" href="404.html">404</a>
 					  </div>
 					</li>
-					<li class="nav-item dropdown">
-					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						elements
-						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-					  </a>
-					  <div class="dropdown-menu box-shadow-v2 dropdown__col-2" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="testimonials.html">testimonial</a>
-						<a class="dropdown-item" href="gallery.html">gallery</a>
-						<a class="dropdown-item" href="team.html">team</a>
-						<a class="dropdown-item" href="clients.html">client</a>
-						<a class="dropdown-item" href="sign-up.html">signup</a>
-						<a class="dropdown-item" href="form.html">Form</a>
-						<a class="dropdown-item" href="footers.html">footer</a>
-						<a class="dropdown-item" href="tabs.html">Tab</a>
-						<a class="dropdown-item" href="accordion.html">Accordion</a>
-						<a class="dropdown-item" href="progress-bars.html">Progressbar</a>
-						<a class="dropdown-item" href="countdown.html">Countdown</a>
-						<a class="dropdown-item" href="buttons.html">Button</a>
-						<a class="dropdown-item" href="list-style.html">List Style</a>
-						<a class="dropdown-item" href="feature.html">feature</a>
-				  </div>
-					</li>
+				
 					<li class="nav-item dropdown">
 					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Blog
 						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
 					  </a>
 					  <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="blog.html">blog single</a>
-						<a class="dropdown-item" href="blog-grid.html">blog grid</a>
-						<a class="dropdown-item" href="blog-details.html">blog details</a>
+						<a class="dropdown-item" href="#">blog single</a>
+						<a class="dropdown-item" href="#">blog grid</a>
+						<a class="dropdown-item" href="#">blog details</a>
 					  </div>
 					</li>
 					<li class="nav-item dropdown">
 					  <a class="nav-link" href="contact.html">
 						Contact
 					  </a>
+					</li>
+					<li>
+						{% if user.is_authenticated %}	
+							<a href="{% url 'account-dashboard' %}" class="btn btn-primary  u-ml-30 u-w-140">
+								Dashboard
+							</a>
+						{% else %}
+							<a href="{% url 'account-login' %}" class="btn btn-primary  u-ml-30 u-w-100">
+								Login
+							</a>
+						{% endif %}
 					</li>
 				  </ul>
 				</div>
