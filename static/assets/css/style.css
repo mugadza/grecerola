@@ -731,22 +731,22 @@ textarea::-webkit-input-placeholder {
   border-radius: 100em !important;
 }
 
-.btn-primary,
 .btn-white {
   box-shadow: 10px 10px 14px 1px rgba(0, 0, 0, .2)
 }
 
 .btn-primary {
   background: #14a1a8;
-  border: 0;
-  color: #def2ff
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  border-color: #14a1a8;
 }
 
 .btn-primary:hover {
-  background: #def2ff;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  color: #14a1a8
+  background: #14a1a8;
+  color: #fff;
+  border-color: #14a1a8;
 }
 
 .btn-white {
@@ -4944,40 +4944,40 @@ textarea::-webkit-input-placeholder {
 }
 
 .bg-primary-opacity-0_1 {
-  background: rgba(0, 129, 255, .1)
+  background: rgba(20, 161, 168, .1) !important
 }
 
 .bg-primary-opacity-0_2 {
-  background: rgba(0, 129, 255, .2)
+  background: rgba(20, 161, 168, .2) !important
 }
 
 .bg-primary-opacity-0_3 {
-  background: rgba(0, 129, 255, .3)
+  background: rgba(20, 161, 168, .3) !important
 }
 
 .bg-primary-opacity-0_4 {
-  background: rgba(0, 129, 255, .4)
+  background: rgba(20, 161, 168, .4) !important
 }
 
 .bg-primary-opacity-0_5,
 .slick-dots>li>span {
-  background: rgba(0, 129, 255, .5)
+  background: rgba(20, 161, 168, .5) !important
 }
 
 .bg-primary-opacity-0_6 {
-  background: rgba(0, 129, 255, .6)
+  background: rgba(20, 161, 168, .6) !important
 }
 
 .bg-primary-opacity-0_7 {
-  background: rgba(0, 129, 255, .7)
+  background: rgba(20, 161, 168, .7) !important
 }
 
 .bg-primary-opacity-0_8 {
-  background: rgba(0, 129, 255, .8)
+  background: rgba(20, 161, 168, .8) !important
 }
 
 .bg-primary-opacity-0_9 {
-  background: rgba(0, 129, 255, .9)
+  background: rgba(20, 161, 168, .9) !important
 }
 
 .bg-facebook {
@@ -5034,6 +5034,10 @@ textarea::-webkit-input-placeholder {
 
 .text-grey {
   color: #e4e4e4 !important
+}
+
+.text-light-grey {
+  color: #9d9fa2 !important;
 }
 
 .text-dark-grey {
@@ -6449,7 +6453,7 @@ textarea::-webkit-input-placeholder {
 
 .progress-bar {
   height: 8px;
-  background: #8c47e2 !important
+  background: #14a1a8 !important
 }
 
 .slick-arrow {
@@ -6571,4 +6575,21 @@ textarea::-webkit-input-placeholder {
 
 .list-group-item-transparent:hover {
   background-color: transparent;
+}
+
+
+.border-right {
+  border-right: 1px solid #e0e0e0;
+}
+
+.campaign-stat {
+  padding: 8px 0;
+  text-align: center;
+}
+
+.campaign-stat span {
+  font-size: 10px;
+  font-weight: 400;
+  display: block;
+  text-transform: uppercase;
 }

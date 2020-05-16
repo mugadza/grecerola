@@ -9,10 +9,10 @@ django-prices==2.2.0
 django-versatileimagefield==2.0
 enmerkar==0.7.1
 gunicorn==20.0.4
+mysqlclient==1.4.6
 phonenumberslite==8.12.1
 Pillow==7.1.1
 prices==1.0.0
-psycopg2==2.8.5
 python-magic==0.4.15
 pytz==2019.3
 sqlparse==0.3.1

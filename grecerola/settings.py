@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'grecerola.context_processors.add_campaign_types_to_context',
             ],
         },
     },
@@ -74,12 +75,15 @@ WSGI_APPLICATION = 'grecerola.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': get_value_from_env("DBNAME", 'personalprofile'),
-        'USER': get_value_from_env("DBUSER", 'admin'),
-        'PASSWORD': get_value_from_env("DBPASSWORD",''),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': get_value_from_env("DBNAME", 'campaign_development'),
+        'USER': get_value_from_env("DBUSER", 'db_admin'),
+        'PASSWORD': get_value_from_env("DBPASSWORD",'ElephantsFly'),
         'HOST': get_value_from_env("DBHOST",'localhost'),
-        'PORT': get_value_from_env("DBPORT",''),
+        'PORT': get_value_from_env("DBPORT",'3306'),
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
 
