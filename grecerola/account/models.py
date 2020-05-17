@@ -85,6 +85,25 @@ class User(PermissionsMixin, AbstractBaseUser):
     def get_short_name(self):
         return self.email
 
-    # def has_perm(self, perm: BasePermissionEnum, obj=None):  # type: ignore
-    #     # This method is overridden to accept perm as BasePermissionEnum
-    #     return super().has_perm(perm.value, obj)
+    def get_campaigns(self):
+        return self.campaigns_owened.all()
+
+    def get_campaigns_count(self):
+        return len(self.campaigns_owened.all())
+
+    def get_city_country_address(self):
+        address = ""
+        if self.address == None:
+            return address
+            
+        if self.address.city == None:
+            if self.address.country.name == None:
+                return address
+            else:
+                return self.address.country.name 
+        else:
+            if self.address.country.name == None:
+                return self.address.country.name
+            else:
+                return self.address.country.name + ", " + self.address.city
+
