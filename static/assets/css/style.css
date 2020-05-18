@@ -2050,6 +2050,27 @@ textarea::-webkit-input-placeholder {
   min-height: 50vh !important
 }
 
+.u-h-55vh {
+  min-height: 55vh !important
+}
+
+.u-h-60vh {
+  min-height: 60vh !important
+}
+
+.u-h-65vh {
+  min-height: 65vh !important
+}
+
+.u-h-70vh {
+  min-height: 70vh !important
+}
+
+.u-h-75vh {
+  min-height: 75vh !important
+}
+
+
 .u-h-100vh {
   min-height: 100vh !important
 }

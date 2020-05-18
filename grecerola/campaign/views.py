@@ -3,8 +3,10 @@ from django.views.generic import ListView
 from .models import Campaign, CampaignType
 
 def campaign_home(request):
-    return render(request, "campaign/index.html", {"campaigns": Campaign.objects.all()})
+    return render(request, "campaign/index.html")
 
+def campaign_management(request):
+    return render(request, "campaign/management.html")
 
 class CampaignListView(ListView):
     model = Campaign

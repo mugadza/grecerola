@@ -50,52 +50,24 @@
 					  </div>
 					</li>
 					<li class="nav-item dropdown">
-					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						headers
-						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-					  </a>
-					  <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="header-gradient.html">Gradient</a>
-						<a class="dropdown-item" href="header-solid.html">Solid Color</a>
-						<a class="dropdown-item" href="header-parallax.html">parallax</a>
-						<a class="dropdown-item" href="header-typing.html">typing</a>
-						<a class="dropdown-item" href="header-background.html">background image</a>
-					  </div>
+						<a class="nav-link" href="{% url 'campaign-management' %}">
+							Management
+						</a>
 					</li>
 					<li class="nav-item dropdown">
-					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						pages
-						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-					  </a>
-					  <div class="dropdown-menu box-shadow-v2 dropdown__col-2" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="about.html">About</a>
-						<a class="dropdown-item" href="portfolio.html">Portfolio</a>
-						<a class="dropdown-item" href="portfolio-details.html">Portfolio Details</a>
-						<a class="dropdown-item" href="blog.html">Blog</a>
-						<a class="dropdown-item" href="blog-details.html">Blog Details</a>
-						<a class="dropdown-item" href="login.html">Login</a>
-						<a class="dropdown-item" href="sign-up.html">Register</a>
-						<a class="dropdown-item" href="coming-soon.html">Coming soon</a>
-						<a class="dropdown-item" href="contact.html">Contact</a>
-						<a class="dropdown-item" href="404.html">404</a>
-					  </div>
-					</li>
-				
-					<li class="nav-item dropdown">
-					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Blog
-						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-					  </a>
-					  <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">blog single</a>
-						<a class="dropdown-item" href="#">blog grid</a>
-						<a class="dropdown-item" href="#">blog details</a>
-					  </div>
+						<a class="nav-link" href="#">
+						  About
+						</a>
 					</li>
 					<li class="nav-item dropdown">
-					  <a class="nav-link" href="contact.html">
+					  <a class="nav-link" href="#">
 						Contact
 					  </a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link" href="#">
+						  FAQs
+						</a>
 					</li>
 					<li>
 						{% if user.is_authenticated %}	
@@ -108,13 +80,6 @@
 							</a>
 						{% endif %}
 					</li>
-					<!-- <li>
-						{% if user.is_authenticated %}	
-							<a href="{% url 'account-logout' %}" class="btn btn-primary  u-ml-30 u-w-140">
-								Logout
-							</a>
-						{% endif %}
-					</li> -->
 				  </ul>
 				</div>
 			  </nav>
