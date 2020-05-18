@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<section class="u-py-100 u-h-100vh u-flex-center" data-dark-overlay="6" data-parallax="{% static 'assets/img/about/hero.jpg' %}">
+<!-- <section class="u-py-100 u-h-100vh u-flex-center" data-dark-overlay="6" data-parallax="{% static 'assets/img/about/hero.jpg' %}">
     <div class="container">
         <div class="row">
         <div class="col-12 u-mt-80 text-center">
@@ -18,9 +18,180 @@
         </div>
         </div>
     </div>
+</section> -->
+
+<section class="u-py-100 u-h-100vh u-flex-center" data-dark-overlay="1" style="background:url({% static 'assets/img/about/hero.jpg' %}) no-repeat;background-size:cover;background-position:top right">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 u-mt-80">
+        <h1 class="display-4 u-fw-600 text-white">
+          Highly vetted properties on land
+        </h1>
+        <p class="u-fs-22 text-white u-lh-1_8 py-4">
+          Own part of valuable land in South Africa with ease.
+        </p>
+        <a href="#" class="btn btn btn-rounded btn-primary px-md-5">
+          Get Started
+        </a>
+        <a href="#" class="btn btn btn-rounded btn-white ml-3 px-md-5">
+          Learn more
+        </a>
+      </div>
+      <div class="col-lg-6 u-mt-80">
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
+<section class="bg-gra-v2">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5 text-right mt-5">
+        <div class="u-mb-30">
+          <h4 class="u-mb-15">
+            Best Quality Smooth Bands
+          </h4>
+          <p>
+            Nam liber tempor cum soluta nois eleif end option congue is nihil tem imper is the nihil per tem labore por legere
+          </p>
+        </div>
+        <div class="mb-0">
+          <h4 class="u-mb-15">
+            The Craftsmanship Behind the Case
+          </h4>
+          <p>
+            Nam liber tempor cum soluta nois eleif end option congue is nihil tem imper is the nihil per tem labore por legere
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-5 ml-auto mt-5 text-center">
+        <img src="{% static 'assets/img/about/Expand.svg' %}" alt="">
+      </div>
+    </div>
+    <hr class="u-my-md-100">
+    <div class="row align-items-center">
+      <div class="col-lg-5 mr-auto mb-5 mb-lg-0 text-center">
+        <img src="{% static 'assets/img/about/Platform.svg' %}" alt="">
+      </div>
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <div class="u-mb-30">
+          <h4 class="mb-4">
+            Elegant & Brilliantly Scratch-Resistant
+          </h4>
+          <p>
+            Nam liber tempor cum soluta nois eleif end option congue is nihil tem imper is the nihil per tem labore por legere
+          </p>
+        </div>
+        <div class="mb-0">
+          <h4 class="mb-4">
+            Best Quality Smooth Bands
+          </h4>
+          <p>
+            Nam liber tempor cum soluta nois eleif end option congue is nihil tem imper is the nihil per tem labore por legere
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="bg-gray-v2 pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="h1">
+          Our solution
+        </h2>
+        <div class="u-h-4 u-w-50 bg-primary rounded mt-4 mb-5 mx-auto"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 u-mb-70">
+        <div class="media">
+          <span class="icon icon-Hourglass text-primary u-fs-44 mr-4 mt-2"></span>
+          <div class="media-body">
+            <h4>
+              GPS Tracking
+            </h4>
+            <p>
+              Nam liber tempor cum soluta nois eleifend option congue is nihil tem imper per tem por legere.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 u-mb-70">
+        <div class="media">
+          <span class="icon icon-Timer text-primary u-fs-44 mr-4 mt-2"></span>
+          <div class="media-body">
+            <h4>
+              Track Anything
+            </h4>
+            <p>
+              Nam liber tempor cum soluta nois eleifend option congue is nihil tem imper per tem por legere.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 u-mb-70">
+        <div class="media">
+          <span class="icon icon-Layers text-primary u-fs-44 mr-4 mt-2"></span>
+          <div class="media-body">
+            <h4>
+              Easily Add New Projects
+            </h4>
+            <p>
+              Nam liber tempor cum soluta nois eleifend option congue is nihil tem imper per tem por legere.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 u-mb-70">
+        <div class="media">
+          <span class="icon icon-Bulb text-primary u-fs-44 mr-4 mt-2"></span>
+          <div class="media-body">
+            <h4>
+              Heartbeat Analysis
+            </h4>
+            <p>
+              Nam liber tempor cum soluta nois eleifend option congue is nihil tem imper per tem por legere.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 u-mb-70">
+        <div class="media">
+          <span class="icon icon-Starship2 text-primary u-fs-44 mr-4 mt-2"></span>
+          <div class="media-body">
+            <h4>
+              Proven Technology
+            </h4>
+            <p>
+              Nam liber tempor cum soluta nois eleifend option congue is nihil tem imper per tem por legere.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 u-mb-70">
+        <div class="media">
+          <span class="icon icon-OpenedLock text-primary u-fs-44 mr-4 mt-2"></span>
+          <div class="media-body">
+            <h4>
+              Secure Your Data
+            </h4>
+            <p>
+              Nam liber tempor cum soluta nois eleifend option congue is nihil tem imper per tem por legere.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mt-4">
+        <img src="assets/img/product/p-2_1.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="bg-white">
     <div class=container>
       <div class="row text-center">
         <div class="col-lg-4 col-md-6 u-mt-30">
@@ -67,9 +238,9 @@
         </div>
       </div>
     </div>
-</section>
+</section> -->
 
-<section class="bg-primary">
+<!-- <section class="bg-primary">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 m-auto text-center">
@@ -127,9 +298,40 @@
         </div>
         <hr class="u-my-60 bg-white">
     </div>
+</section> -->
+
+<section class="u-flex-center bg-pure-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-3">
+            <div class="text-center border p-4 rounded text-primary">
+                  <h2 class="text-primary u-fs-48">15 000+</h2>
+                  <p>Total Investors</p>
+            </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+            <div class="text-center border p-4 rounded text-primary">
+                  <h2 class="text-primary u-fs-48">R15 Mil+</h2>
+                  <p>Funds raised</p>
+            </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+            <div class="text-center border p-4 rounded text-primary">
+                  <h2 class="text-primary u-fs-48">300+</h2>
+                  <p>Properties</p>
+            </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+            <div class="text-center border p-4 rounded text-primary">
+                  <h2 class="text-primary u-fs-48">5</h2>
+                  <p>Cities</p>
+            </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="u-flex-center u-pb-100" data-parallax="{% static 'assets/img/about/hero4.jpg' %}" id="features" style="background: linear-gradient(180deg,#1f3c4ae9, #1f3c4ae9), no-repeat;">
+<!-- <section class="u-flex-center u-pb-100" data-parallax="{% static 'assets/img/about/hero4.jpg' %}" id="features" style="background: linear-gradient(180deg,#1f3c4ae9, #1f3c4ae9), no-repeat;">
   <div class=container>
      <div class="row text-center u-pb-40">
         <div class=col-12>
@@ -165,11 +367,9 @@
         </div>
      </div>
   </div>
-</section>
+</section> -->
 
-
-
-<section class="u-py-100 bg-image-bottom-invest">
+<!-- <section class="u-py-100 bg-image-bottom-invest">
     <div class="container">
        <div class="row">
           <div class="text-center col-12 align-items-center d-flex justify-content-center">
@@ -178,5 +378,5 @@
           </div>
        </div>
     </div>
- </section>
+ </section> -->
 {% endblock content %}

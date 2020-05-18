@@ -769,7 +769,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .btn-white:hover {
-  background: #f1baf3;
+  background: #14a1a8;
   color: #fff !important
 }
 
@@ -6627,6 +6627,9 @@ textarea::-webkit-input-placeholder {
   background-color: transparent;
 }
 
+.border-primary {
+  border: 1px solid #14a1a8 !important;
+}
 
 .border-right {
   border-right: 1px solid #e0e0e0;
