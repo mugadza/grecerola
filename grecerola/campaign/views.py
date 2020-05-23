@@ -8,6 +8,9 @@ def campaign_home(request):
 def campaign_management(request):
     return render(request, "campaign/management.html")
 
+def contact_us(request):
+    return render(request,"campaign/contact.html")
+
 class CampaignListView(ListView):
     model = Campaign
     context_object_name = 'campaigns'
