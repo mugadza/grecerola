@@ -913,27 +913,27 @@ textarea::-webkit-input-placeholder {
 }
 
 .accordion__faq {
-  border-bottom: 1px solid #eaecef
+  border-bottom: 1px solid #eaecef;
 }
 
 .accordion__title {
   font-size: 20px;
   font-family: 'Quicksand', sans-serif;
-  color: #273f59;
-  font-weight: 600;
-  display: block
+  color: #14a1a8;
+  font-weight: 400;
+  display: block;
 }
 
 .accordion__title.active>i {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
-  transform: rotate(180deg)
+  transform: rotate(180deg);
 }
 
 .accordion__text {
   padding-left: 30px;
   padding-bottom: 30px;
-  padding-right: 30px
+  padding-right: 30px;
 }
 
 .tabs-v1 .bg-white {
@@ -5148,7 +5148,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .text-lime {
-  color: #c8d046 !important
+  color: #1f3c4a !important
 }
 
 .color-heading {
