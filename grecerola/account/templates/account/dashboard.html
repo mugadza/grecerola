@@ -1,109 +1,179 @@
-{% extends "base/_application_navigation.html" %}
+{% extends "base/_admin_application.html" %}
 {% load static %}
 
 {% block content %}
-<main id="main" class="site-main">
-    <div class="page-title background-page">
-        <div class="container">
-            <h1>Profile</h1>
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="{% url 'campaign-home' %}">Home</a><span>/</span></li>
-                    <li>Dashboard</li>
-                </ul>
-            </div><!-- .breadcrumbs -->
+    <div id="wrapper">
+     <div class="normalheader">
+        <div class="hpanel">
+           <div class="panel-body">
+              <a class="small-header-action" href="#">
+                 <div class="clip-header">
+                    <i class="fa fa-arrow-up"></i>
+                 </div>
+              </a>
+              <div id="hbreadcrumb" class="pull-right m-t-lg">
+                 <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="index-2.html">Dashboard</a></li>
+                    <li>
+                       <span>App views</span>
+                    </li>
+                    <li class="active">
+                       <span>Dashboard </span>
+                    </li>
+                 </ol>
+              </div>
+              <h2 class="font-light m-b-xs">
+                Account Summary
+              </h2>
+              <small>Show user data in clear profile design</small>
+           </div>
         </div>
-    </div><!-- .page-title -->
-    <div class="account-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <nav class="account-bar">
-                        <ul>
-                            <li><a href="#">Dashboard</a></li>
-                            <li class="active"><a href="#">Profile</a></li>
-                            <li><a href="#">My Investments</a></li>
-                            <li><a href="#">Backed Investments</a></li>
-                            <li><a href="#">Funds Received</a></li>
-                            <li><a href="#">Payments</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-9">
-                    <div class="account-content profile">
-                        <h3 class="account-title">My Profiles</h3>
-                        <div class="account-main">
-                            <div class="author clearfix">
-                                <a class="author-avatar" href="#"><img src="{{ user.avatar.url }}" alt=""></a>
-                                <div class="author-content">
-                                    <div class="author-title"><h3><a href="#">{{ user.get_full_name }}</a></h3></div>
-                                    <div class="author-info">
-                                        <p><a href="#">{{ user.email }}</a></p>
-                                        <p>Grecerola Member since {{ user.date_joined }}</p>
-                                    </div>
-                                </div>
+    </div>
+     <div class="content">
+        <div class="row">
+           <div class="col-lg-3">
+                <div class="hpanel hgreen contact-panel">
+                    <div class="panel-body">
+                        <span class="label label-success pull-right">NEW</span>
+                        <img alt="logo" class="img-circle m-b" src="{{ user.avatar.url }}">
+                        <h3><a href="#">{{ user.first_name }} {{ user.last_name }}</a></h3>
+                        <div class="text-muted font-bold m-b-xs">{{ user.get_city_country_address }}</div>
+                        <p>
+                            {{ user.note }}
+                        </p>
+                    </div>
+                    <div class="panel-footer contact-footer">
+                        <div class="row">
+                            <div class="col-md-4 border-right">
+                                <div class="contact-stat"><span>Own: </span> <strong>{{ user.get_campaigns_count }}</strong></div>
                             </div>
-                            <div class="profile-box">
-                                <h3>Profile Infomation</h3>
-                                <ul>
-                                    <li>
-                                        <strong>About Me:</strong>
-                                        <div class="profile-text"><p>I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains us, as it floats around us in an eternity of bliss; and then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Bio:</strong>
-                                        <div class="profile-text"><p>Oh, would I could describe these conceptions, could impress upon paper all that is living so full and warm within me, that it might be the mirror of my soul, as my soul is the mirror of the infinite God!</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>First Name</strong>
-                                        <div class="profile-text"><p>{{ user.first_name }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Last Name:</strong>
-                                        <div class="profile-text"><p>{{ user.last_name }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Mobile:</strong>
-                                        <div class="profile-text"><p>{{ user.phone }}</p></div>
-                                    </li>
-                                </ul>
+                            <div class="col-md-4 border-right">
+                                <div class="contact-stat"><span>Invested: </span> <strong>300</strong></div>
                             </div>
-                            <div class="profile-box">
-                                <h3>Address</h3>
-                                <ul>
-                                    <li>
-                                        <strong>Address 1:</strong>
-                                        <div class="profile-text"><p>{{ user.address.street_address_1 }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Address 2:</strong>
-                                        <div class="profile-text"><p>{{ user.address.street_address_2 }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Suburb:</strong>
-                                        <div class="profile-text"><p>{{ user.address.suburb }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>City:</strong>
-                                        <div class="profile-text"><p>{{ user.address.city }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Postal Code:</strong>
-                                        <div class="profile-text"><p>{{ user.address.postal_code }}</p></div>
-                                    </li>
-                                    <li>
-                                        <strong>Country:</strong>
-                                        <div class="profile-text"><p>{{ user.address.country.name }}</p></div>
-                                    </li>
-                                </ul>
+                            <div class="col-md-4">
+                                <div class="contact-stat"><span>Sold: </span> <strong>400</strong></div>
                             </div>
-                            <a href="#" class="btn-primary">Edit Profiles</a>
                         </div>
                     </div>
                 </div>
+
+                <div class="hpanel stats">
+                    <div class="panel-body no-shadow th-border h-200">
+                        <div class="stats-title pull-left">
+                            <h4>Overview</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-credit fa-4x"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="m-t-xs">
+                            <div class="row">
+                                <div class="col-xs-6" style="">
+                                    <small class="stat-label">Today</small>
+                                    <h4>
+                                        R170,20
+                                        <i class="fa fa-level-down text-warning"></i>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-6" style="">
+                                    <small class="stat-label">Last week</small>
+                                    <h4>
+                                        R580,90
+                                        <i class="fa fa-level-up text-primary"></i>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6" style="">
+                                    <small class="stat-label">Today</small>
+                                    <h4>
+                                        R620,20
+                                        <i class="fa fa-level-up text-primary"></i>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-6" style="">
+                                    <small class="stat-label">Last week</small>
+                                    <h4>
+                                        R140,70
+                                        <i class="fa fa-level-up text-primary"></i>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hpanel">
+                    <div class="panel-body text-center h-200 round-corners-down">
+                        <i class="pe-7s-graph1 text-info fa-4x"></i>
+                        <h1 class="m-xs">R1 206,90</h1>
+                        <h3 class="font-extra-bold no-margins text-primary">
+                            All Income
+                        </h3>
+                        <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum.</small>
+                    </div>
+                </div>
             </div>
-        </div><!-- .container -->
-    </div><!-- .account-content -->
-</main><!-- .site-main -->
+            <div class="col-lg-9">
+              <div class="hpanel">
+                 <div class="hpanel">
+                    <ul class="nav nav-tabs">
+                       <li class="active"><a data-toggle="tab" href="#tab-1">Investments</a></li>
+                    </ul>
+                    <div class="tab-content">
+                       <div id="tab-1" class="tab-pane active">
+                          <div class="panel-body">
+                             <div class="table-responsive">
+                                <table class="table table-striped">
+                                   <thead>
+                                      <tr>
+                                         <th>Investment </th>
+                                         <th>Type </th>
+                                         <th>City </th>
+                                         <th>Progress </th>
+                                         <th>Archived</th>
+                                         <th>Closing Date</th>
+                                         <th>Action</th>
+                                      </tr>
+                                   </thead>
+                                   <tbody>
+                                       {% for campaign in user.get_campaigns %}
+                                          <tr>
+                                             <td>{{ campaign.name }}</td>
+                                             <td>{{ campaign.campaign_type.name }}</td>
+                                             <td>{{ campaign.location.city }}</td>
+                                             <td><span class="pie">{{ campaign.get_campaign_progress }}/100</span></td>
+                                             <td>{{ campaign.get_campaign_progress }}%</td>
+                                             <td>{{ campaign.estimated_investment_date|date:" M d, Y" }}</td>
+                                             <td>
+                                                <div class="btn-group">
+                                                   <button data-toggle="dropdown" class="btn btn-info btn-xs dropdown-toggle" aria-expanded="false">Action <span class="caret"></span></button>
+                                                   <ul class="dropdown-menu">
+                                                      <li><a href="#">Sell</a></li>
+                                                      <li class="divider"></li>
+                                                      <li><a href="#">details</a></li>
+                                                   </ul>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       {% endfor %}
+                                   </tbody>
+                                </table>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     
+     <footer class="footer">
+        <span class="pull-right">
+        LEAFBARK
+        </span>
+     </footer>
+  </div>
 {% endblock content %}
 

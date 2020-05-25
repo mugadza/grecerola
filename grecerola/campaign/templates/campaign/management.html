@@ -1,0 +1,137 @@
+{% extends "base/_application_navigation.html" %}
+{% load static %}
+
+{% block content %}
+<section class="u-py-100 u-pt-lg-200 u-pb-lg-150 u-flex-center bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center text-white">
+                <h1 class="text-white">
+                    Investment Management
+                </h1>
+                <div class="u-h-4 u-w-50 bg-white rounded mx-auto my-4"></div>
+                <p class="lead text-white">
+                    We partnered with the professionals to look after your investment.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2 class="h1 text-primary">
+                    Looking after your investment
+                </h2>
+                <div class="u-h-4 u-w-50 bg-primary rounded mx-auto mt-3 mb-3"></div>
+                <p>
+                    We only work with capable and competent property managers who meet our standards 
+                    and criteria. They will be using well established and clearly defined processes 
+                    to ensure that your property is in safe hands.
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-12 u-mt-30">
+                <div class="px-4 py-5 px-md-5 u-h-100p rounded box-shadow-v1" style="width: 550px;">
+                  <div class="u-w-90 u-h-90 u-flex-center bg-green text-white rounded-circle m-auto">
+                    <span class="icon icon-Users u-fs-42"></span>
+                  </div>
+                  <h4 class="u-fs-26 u-pt-30 u-pb-20 text-primary">
+                    Our property managers
+                  </h4>
+                  <p>
+                    Well established, experienced property management companies that have a proven track record 
+                    in providing consistently good service for owners and tenants.
+                  </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 u-mt-30">
+                <div class="px-4 py-5 px-md-5 u-h-100p rounded box-shadow-v1" style="width: 550px;">
+                  <div class="u-w-90 u-h-90 u-flex-center bg-green text-white rounded-circle m-auto">
+                    <span class="icon icon-Search u-fs-42"></span>
+                  </div>
+                  <h4 class="u-fs-26 u-pt-30 u-pb-20 text-primary">
+                    Selecting our property managers
+                  </h4>
+                  <p>
+                    There are is strict criteria that property managers need to meet. We take into consideration Operational, 
+                    regulatory and performance measures of the manager.
+                  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-gray-v2">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-3">
+              <h2 class="h1">
+                How it works
+              </h2>
+              <div class="u-h-4 u-w-50 bg-primary rounded mt-4 mb-1 mx-auto"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row align-items-center">
+				<div class="col-lg-4 text-center mt-4 u-h-70vh">
+					<img class="w-100 rounded box-shadow-v1" src="{% static 'assets/img/how/how1.jpg' %}" alt="">
+					<div class="my-md-4">
+						<h4 class="mb-0">
+							Managing repairs
+						</h4>
+						<p class="my-2">
+                            A maintenance fund is raised for potential repairs and maintenance issues. 
+                            This is then topped up from rent payments. Repairs are 
+                            handled efficiently to ensure properties are always well maintained.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-4 text-center mt-4 u-h-70vh">
+					<img class="w-100 rounded box-shadow-v1" src="{% static 'assets/img/how/how2.jpg' %}" alt="">
+					<div class="my-md-4">
+						<h4 class="mb-0">
+							Tenants
+						</h4>
+						<p class="my-2">
+                            The property management companies collect the rent. All expenses including the property 
+                            management fees are deducted and then forwarded to
+                            LeafBark for distribution to the PropertyShare owners.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-4 text-center mt-4 u-h-70vh">
+					<img class="w-100 rounded box-shadow-v1" src="{% static 'assets/img/how/how3.jpg' %}" alt="">
+					<div class="my-md-4">
+						<h4 class="mb-0">
+							Returns
+						</h4>
+						<p class="my-2">
+                            Tenants access secure long term tenancies that are well maintained. 
+                            They have the option to buy PropertyShares and progress into ownership.
+						</p>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+</section>
+
+<section class="u-py-100 bg-image-bottom-invest">
+    <div class="container">
+       <div class="row">
+          <div class="text-center col-12 align-items-center justify-content-center">
+             <h2 class="text-white u-fs-36 mx-md-5">Invest in property the simple way, with LeafBark.</h2>
+             <p class="text-white">
+                Hands free investing with the opportunity to diversify across different property 
+                markets around the country. LeafBark is the perfect way for passive income for low capital outlay.
+             </p>
+             <a href=# class="btn btn-primary btn-rounded px-md-5 mt-3">Start Investing</a>
+          </div>
+       </div>
+    </div>
+ </section>
+{% endblock content %}

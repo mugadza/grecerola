@@ -1,52 +1,76 @@
-{% extends "base/_application_navigation.html" %}
+{% extends "base/_application.html" %}
 {% load static %}
 
 {% block content %}
-<main id="main" class="site-main">
-    <!-- Header -->
-    <div class="page-title background-page">
-        <div class="container">
-            <h1>Login</h1>
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="{% url 'campaign-home' %}">Home</a><span>/</span></li>
-                    <li>Login</li>
-                </ul>
-            </div><!-- .breadcrumbs -->
-        </div>
-    </div>
-    <!-- Header end -->
+
+<section  data-dark-overlay="5" class="u-h-100vh u-flex-center" style="background: url({% static 'assets/img/about/hero.jpg' %}) no-repeat;background-size:cover;background-position:top center">
     <div class="container">
-        <div class="main-content">
-            <div class="form-login form-register">
-                <h2>Log in to your account</h2>
-                <form method="POST" id="registerForm" class="clearfix">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        {% if "Password" in field.label %}
-                            <div class="field">
-                                <input type="password" 
-                                       {% if field.value != None %} value="{{ field.value|stringformat:'s' }}"{% endif %} 
-                                       name="{{ field.name }}"
-                                       placeholder="{{ field.label }}" />
+        <div class="row">
+            <div class="col-lg-5 m-auto text-center">
+                <div class="card box-shadow-v2 bg-white u-of-hidden">
+                    <h2 class="bg-secondary m-0 py-3 text-white">Login</h2>
+                    <div class="p-4 p-md-5">
+                        <form method="POST" id="signinForm">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                {% if "Password" in field.label %}
+                                    <div class="input-group u-rounded-50 border u-of-hidden u-mb-20">
+                                        <div class="input-group-addon bg-primary border-0 pl-4 ">
+                                            <span class="icon icon-ClosedLock text-grey"></span>
+                                        </div>
+                                        <input type="password" 
+                                               class="form-control border-0 p-3"
+                                               {% if field.value != None %} value="{{ field.value|stringformat:'s' }}"{% endif %} 
+                                               name="{{ field.name }}"
+                                               placeholder="{{ field.label }}" />
+                                    </div>
+                                {% else %}
+                                    <div class="input-group u-rounded-50 border u-of-hidden u-mb-20">
+                                        <div class="input-group-addon bg-primary border-0 pl-4 ">
+                                            <span class="icon icon-Mail text-grey"></span>
+                                        </div>
+                                        <input type="text" 
+                                               class="form-control border-0 p-3"
+                                               {% if field.value != None %} value="{{ field.value|stringformat:'s' }}"{% endif %} 
+                                               name="{{ field.name }}"
+                                               placeholder="{{ field.label }}" />
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label class="custom-control custom-checkbox text-left">
+                                    <!-- <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator mt-1"></span>
+                                    <span class="custom-control-description">Remember me</span> -->
+                                </label>
+                                <a href="#">Forgot password?</a>
                             </div>
-                        {% else %}
-                            <div class="field">
-                                <input type="text" 
-                                       {% if field.value != None %} value="{{ field.value|stringformat:'s' }}"{% endif %} 
-                                       name="{{ field.name }}"
-                                       placeholder="{{ field.label }}" />
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                    <div class="inline clearfix">
-                        <button type="submit" value="Send Messager" class="btn-primary">Login</button>
-                        <p>Not a member yet? <a href="{% url 'account-signup' %}">Sign up Now</a></p>
+                            <button type="submit" class="btn btn-primary u-mt-20 u-w-170">
+                                Login
+                            </button>
+                        </form>
+                        <ul class="list-inline u-my-40">
+                            <li class="mb-3">Or Sign In with</li>
+                            <li class="list-inline-item">
+                                <a href="#" class="fa fa-linkedin u-w-45 u-h-45 u-flex-center text-white rounded-circle bg-linkedin"></a>
+                            </li>
+                            <!-- <li class="list-inline-item">
+                                <a href="#" class="fa fa-twitter u-w-45 u-h-45 u-flex-center text-white rounded-circle bg-twitter"></a>
+                            </li> -->
+                            <li class="list-inline-item">
+                                <a href="#" class="fa fa-google-plus u-w-45 u-h-45 u-flex-center text-white rounded-circle bg-google"></a>
+                            </li>
+                        </ul>
+                        <p>
+                            Don't have an account?
+                            <a href="{% url 'account-signup' %}" class="text-primary">Sign up</a>
+                        </p>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</main><!-- .site-main -->
-{% endblock content %}
+</section>
 
+{% endblock content %}

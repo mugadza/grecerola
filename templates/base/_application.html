@@ -6,63 +6,23 @@
 <!--[if gt IE 8]><!--> 
 <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<!-- Always force latest IE rendering engine -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-		<meta name="description" content="Grecerola allows everyone the opportunity to invest in property with. Find a property you like and contribute towards its purchase - Soon become a share owner of the property.">
+		<meta name="description" content="leafbark allows everyone the opportunity to invest in property with. Find a property you like and contribute towards its purchase - Soon become a share owner of the property.">
 		<meta name="keywords" content="Property, Investment, Real Estate, Land, South Africa">
-
-		<!-- Title -->
-		<title>Grecerola | Property Investment</title>
-
-		<!-- Favicon -->
-		<link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon"/>
-
-		<!-- Custom style CSS -->
-		<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-		<!-- responsive CSS -->
-		<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+		<title>leafbark | Property Growdfunding</title>
+		<link rel="icon" href="{% static 'assets/img/favicon/favicon.ico' %}" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'assets/vendor/strokegap/style.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/vendor/font-awesome/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/vendor/linearicons/style.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/bundle.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     </head>
-    <body class="home home-gradient home-top">
-        <!-- ====== Preloader ======  -->
-	    <!-- <div class="preloading">
-			<div class="preloader loading">
-			  <span class="slice"></span>
-			  <span class="slice"></span>
-			  <span class="slice"></span>
-			  <span class="slice"></span>
-			  <span class="slice"></span>
-			  <span class="slice"></span>
-			</div>
-		</div> -->
-		<!-- ======End Preloader ======  -->
+    <body id="top">
 
-        {% block content %}
+		{% block content %}
         {% endblock content%}
-
-       
-
-		  <!-- jQuery -->    
-		  <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
-		  <script src="{% static 'js/popper.js' %}"></script>
-		  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-		  <script src="{% static 'js/carousel.min.js' %}"></script>
-		  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-		  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
-		  <script src="{% static 'js/wow.min.js' %}"></script>
-		  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-		  <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
-		  <script src="{% static 'js/magicsuggest-min.js' %}"></script>
-		  <script src="{% static 'js/quill.core.js' %}"></script>
-		  <script src="{% static 'js/quill.js' %}"></script>
-		  <!-- orther script -->
-		  <script src="{% static 'js/main.js' %}"></script>
+		
+		<script src="{% static 'assets/js/bundle.js' %}"></script>
+		<script src="{% static 'assets/js/devdap.js' %}"></script>
     </body>
 </html>
