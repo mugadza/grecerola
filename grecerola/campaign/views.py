@@ -14,6 +14,10 @@ def contact_us(request):
 def faq(request):
     return render(request,"campaign/faq.html")
 
+def about(request):
+    return  render(request,"campaign/about.html")
+    
+
 class CampaignListView(ListView):
     model = Campaign
     context_object_name = 'campaigns'

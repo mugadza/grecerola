@@ -5,6 +5,7 @@ from .views import (
     CampaignListView,
     contact_us,
     faq,
+    about,
 
 )
 
@@ -14,4 +15,5 @@ urlpatterns = [
     path('explore/<typename>', CampaignListView.as_view()),
     path('contact/', contact_us, name='contact-us'),
     path('faq/', faq, name='faq'),
+    path('about/', about, name='about'),
 ]
