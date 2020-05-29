@@ -30,9 +30,11 @@
         <p class="u-fs-22 text-white u-lh-1_8 py-4">
           Own part of valuable land in South Africa with ease.
         </p>
-        <a href="#" class="btn btn btn-rounded btn-primary px-md-5">
+        {% for type in campaign_types %}
+        <a href="/explore/{{ type.name }}" class="btn btn btn-rounded btn-primary px-md-5">
           Get Started
         </a>
+        {% endfor %}
         <a href="#" class="btn btn btn-rounded btn-white ml-3 px-md-5">
           Learn more
         </a>
