@@ -5,22 +5,22 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> 
 <html class="no-js" lang="en"> <!--<![endif]-->
-    <head>
+   <head>
 		<meta name="description" content="leafbark allows everyone the opportunity to invest in property with. Find a property you like and contribute towards its purchase - Soon become a share owner of the property.">
 		<meta name="keywords" content="Property, Investment, Real Estate, Land, South Africa">
 		<title>leafbark | Property Growdfunding</title>
 		<link rel="icon" href="{% static 'assets/img/favicon/favicon.ico' %}" type="image/x-icon">
         
-        <link rel="stylesheet" href="{% static 'assets/admin/vendor/fontawesome/css/font-awesome.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/admin/vendor/metisMenu/dist/metisMenu.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/admin/vendor/animate.css/animate.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/admin/vendor/bootstrap/dist/css/bootstrap.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/admin/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/admin/fonts/pe-icon-7-stroke/css/helper.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/admin/styles/style.css' %}" />
-    </head>
-    <body id="light-skin fixed-navbar sidebar-scroll">
-        <div id="header">
+      <link rel="stylesheet" href="{% static 'assets/admin/vendor/fontawesome/css/font-awesome.css' %}" />
+      <link rel="stylesheet" href="{% static 'assets/admin/vendor/metisMenu/dist/metisMenu.css' %}" />
+      <link rel="stylesheet" href="{% static 'assets/admin/vendor/animate.css/animate.css' %}" />
+      <link rel="stylesheet" href="{% static 'assets/admin/vendor/bootstrap/dist/css/bootstrap.css' %}" />
+      <link rel="stylesheet" href="{% static 'assets/admin/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css' %}" />
+      <link rel="stylesheet" href="{% static 'assets/admin/fonts/pe-icon-7-stroke/css/helper.css' %}" />
+      <link rel="stylesheet" href="{% static 'assets/admin/styles/style.css' %}" />
+   </head>
+   <body id="light-skin fixed-navbar sidebar-scroll">
+      <div id="header">
             <div class="color-line"></div>
             <div id="logo" class="dark-version">
                <span>
@@ -183,49 +183,57 @@
                   </ul>
                </div>
             </nav>
+      </div>
+      <aside id="menu">
+         <div id="navigation">
+            <ul class="nav" id="side-menu">
+               <li>
+                  <a href="#">
+                  <span class="nav-label">Dashboard</span>
+                  <span class="label label-success pull-right">v.1</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                  <span class="nav-label">Profile</span>
+                  <span class="label label-warning pull-right">NEW</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                  <span class="nav-label">Investments</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="{% url 'investor-wallet' %}">
+                  <span class="nav-label">Wallet</span>
+                  <span class="label label-success pull-right">Special</span>
+                  </a>
+               </li>
+            </ul>
          </div>
-         <aside id="menu">
-            <div id="navigation">
-               <ul class="nav" id="side-menu">
-                  <li>
-                     <a href="#">
-                     <span class="nav-label">Dashboard</span>
-                     <span class="label label-success pull-right">v.1</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#">
-                     <span class="nav-label">Profile</span>
-                     <span class="label label-warning pull-right">NEW</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#">
-                     <span class="nav-label">My Investments</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#">
-                     <span class="nav-label">Payments</span>
-                     <span class="label label-success pull-right">Special</span>
-                     </a>
-                  </li>
-               </ul>
-            </div>
-         </aside>
+      </aside>
 
-		{% block content %}
-        {% endblock content%}
+      <div id="wrapper">
+         {% block content %}
+         {% endblock content%}
+
+         <footer class="footer">
+            <span class="pull-right">
+            LEAFBARK
+            </span>
+         </footer>
+      </div>
 		
-        <script src="{% static 'assets/admin/vendor/jquery/dist/jquery.min.js' %}"></script>
-        <script src="{% static 'assets/admin/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
-        <script src="{% static 'assets/admin/vendor/slimScroll/jquery.slimscroll.min.js' %}"></script>
-        <script src="{% static 'assets/admin/vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'assets/admin/vendor/metisMenu/dist/metisMenu.min.js' %}"></script>
-        <script src="{% static 'assets/admin/vendor/iCheck/icheck.min.js' %}"></script>
-        <script src="{% static 'assets/admin/vendor/sparkline/index.js' %}"></script>
-        <script src="{% static 'assets/admin/vendor/peity/jquery.peity.min.js' %}"></script>
-        <script src="{% static 'assets/admin/scripts/devdap.js' %}"></script>
-        <script src="{% static 'assets/admin/scripts/charts.js' %}"></script>
-    </body>
+      <script src="{% static 'assets/admin/vendor/jquery/dist/jquery.min.js' %}"></script>
+      <script src="{% static 'assets/admin/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+      <script src="{% static 'assets/admin/vendor/slimScroll/jquery.slimscroll.min.js' %}"></script>
+      <script src="{% static 'assets/admin/vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'assets/admin/vendor/metisMenu/dist/metisMenu.min.js' %}"></script>
+      <script src="{% static 'assets/admin/vendor/iCheck/icheck.min.js' %}"></script>
+      <script src="{% static 'assets/admin/vendor/sparkline/index.js' %}"></script>
+      <script src="{% static 'assets/admin/vendor/peity/jquery.peity.min.js' %}"></script>
+      <script src="{% static 'assets/admin/scripts/devdap.js' %}"></script>
+      <script src="{% static 'assets/admin/scripts/charts.js' %}"></script>
+   </body>
 </html>

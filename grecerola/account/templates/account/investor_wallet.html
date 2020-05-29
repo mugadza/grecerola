@@ -1,0 +1,33 @@
+{% extends "base/_admin_application.html" %}
+{% load static %}
+
+{% block content %}
+<div class="normalheader">
+    <div class="hpanel">
+       <div class="panel-body no-shadow th-border">
+          <a class="small-header-action" href="#">
+             <div class="clip-header">
+                <i class="fa fa-arrow-up"></i>
+             </div>
+          </a>
+          <div id="hbreadcrumb" class="pull-right m-t-lg">
+             <ol class="hbreadcrumb breadcrumb">
+               <li><a href="{% url 'campaign-home' %}">Home</a></li>
+               <li class="active">
+                  <span>Wallet</span>
+               </li>
+             </ol>
+          </div>
+          <h2 class="font-light m-b-xs">
+             Wallet
+          </h2>
+          <small>See all payment history of your investments and account balance.</small>
+       </div>
+    </div>
+ </div>
+
+
+ <!-- <i class="pe-7s-credit fa-5x text-muted"></i> -->
+
+{% endblock content %}
+
