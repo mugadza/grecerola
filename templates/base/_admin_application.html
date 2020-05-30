@@ -186,9 +186,42 @@
       </div>
       <aside id="menu">
          <div id="navigation">
+
+            <div class="profile-picture contact-panel">
+               <a href="#">
+                   <img src="{{ user.avatar.url }}" class="img-circle m-b" alt="logo">
+               </a>
+   
+               <div class="stats-label text-color">
+                   <span class="font-extra-bold font-uppercase">{{ user.first_name }} {{ user.last_name }}</span>
+   
+                   <div class="dropdown">
+                       <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                           <small class="text-muted">Investor<b class="caret"></b></small>
+                       </a>
+                       <ul class="dropdown-menu animated flipInX m-t-xs">
+                           <li><a href="#">Contacts</a></li>
+                           <li><a href="#">Profile</a></li>
+                           <li><a href="#">Analytics</a></li>
+                           <li class="divider"></li>
+                           <li><a href="#">Logout</a></li>
+                       </ul>
+                   </div>
+   
+   
+                   <div id="sparkline1" class="small-chart m-t-sm"><canvas width="119" height="30" style="display: inline-block; width: 119px; height: 30px; vertical-align: top;"></canvas></div>
+                   <div>
+                       <h4 class="font-extra-bold m-b-xs">
+                           R60 104,20
+                       </h4>
+                       <small class="text-muted">Your income from the last year in rental income.</small>
+                   </div>
+               </div>
+           </div>
+
             <ul class="nav" id="side-menu">
                <li>
-                  <a href="#">
+                  <a href="{% url 'account-dashboard' %}">
                   <span class="nav-label">Dashboard</span>
                   <span class="label label-success pull-right">v.1</span>
                   </a>
