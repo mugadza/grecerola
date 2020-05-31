@@ -8,10 +8,33 @@
 <section class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9 mx-auto box-shadow-v2 bg-pure-white" style="padding:0">
-                <h4 class="u-fs-18 u-h-5vh">{{ campaign.name }}</h4>
+            <div class="col-lg-8 mx-auto u-h-100p box-shadow-v2 bg-pure-white" style="padding:0">
+                <div class="d-flex flex-wrap u-pl-17 u-pr-17">
+                    <h4 class="u-fs-19">{{ campaign.name }}</h4>
+                    <div class="ml-auto text-muted"><i class="icon icon-Pointer mr-1 ml-3"></i>{{ campaign.location.city }}</div>
+                </div>
                 <div class="img-fluid">
-                    <img src="{{ campaign.get_first_image_url }}" alt="">
+                    <img src="{{ campaign.get_first_image_url }}" alt="" style="max-height: 508px; height: 508px; width: auto;">
+                </div>
+                <div class="u-pl-17 u-pr-17 ">
+                    <div class="row">
+                        <div class="col-md-4 ">
+                           <div class="campaign-stat u-fw-400 text-muted u-fs-14"><span class="u-fs-14 text-primary">Share Price</span>R 3000</div>
+                        </div>
+                        <div class="col-md-4 ">
+                           <div class="campaign-stat u-fw-400 text-muted u-fs-14"><span class="u-fs-14 text-primary">Est Rental Yield</span>9%</div>
+                        </div>
+                        <div class="col-md-4 ">
+                           <div class="campaign-stat u-fw-400 text-muted u-fs-14"><span class="u-fs-14 text-primary">Closes</span>12 May 2020</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="u-fw-500">About</h6>
+                        <P>
+                            he Gemini housing project (GHP) is a housing development planned for the suburbs of Accra, Ghana. This deal is currently being analyzed, using our stringent Due-Diligence process, and will soon be ready to receive investments.
+                        </P>
+                    </div>
+
                 </div>
             </div>
         </div>
