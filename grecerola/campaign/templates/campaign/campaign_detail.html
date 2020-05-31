@@ -1,1 +1,21 @@
-{{ campaign.name }}
+{% extends "base/_application_navigation.html" %}
+{% load static %}
+
+{% block content %}
+<section class="u-py-40 u-pt-lg-50 u-pb-lg-50 u-flex-center bg-primary">
+
+</section>
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto box-shadow-v2 bg-pure-white" style="padding:0">
+                <h4 class="u-fs-18 u-h-5vh">{{ campaign.name }}</h4>
+                <div class="img-fluid">
+                    <img src="{{ campaign.get_first_image_url }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock content %}

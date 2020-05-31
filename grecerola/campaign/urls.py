@@ -17,5 +17,5 @@ urlpatterns = [
     path('contact/', contact_us, name='contact-us'),
     path('faq/', faq, name='faq'),
     path('about/', about, name='about'),
-    path('campaign/<int:pk>/', campaign_detail, name='campaign-detail'),
+    path('explore/campaign-no=?<int:pk>/', campaign_detail, name='campaign-detail'),
 ]
