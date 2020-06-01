@@ -610,6 +610,10 @@ textarea::-webkit-input-placeholder {
   padding-bottom: 0
 }
 
+.hr{
+  color:  #14a1a8;
+}
+
 .is-scrolling .logo-default {
   opacity: 0;
   -webkit-transition: .3s;
@@ -5120,7 +5124,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .text-blue {
-  color: #5D4970 !important
+  color: #008ecf !important
 }
 
 .text-purple {
