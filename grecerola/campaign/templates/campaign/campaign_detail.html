@@ -6,10 +6,10 @@
 
 <section class="bg-pure-white">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-start">
             <div class="text-center col-lg-7 mb-4 mr-auto" >
                 <img alt="{{ campaign.get_first_image_alt }}" class="rounded w-100 wow fadeInLeft"
-                    src="{{ campaign.get_first_image_url }}" style="max-height: 500px; width: auto;">
+                    src="{{ campaign.get_first_image_url }}" style="max-height: 360px; height: 360px; width: auto;">
             </div>
             <div class="col-lg-5 box-shadow-v1">
                 <div class="mx-2 my-4">
@@ -33,10 +33,15 @@
                         <div class="col-sm-6  text-muted u-fs-14 d-flex justify-content-end">20 May 20</div> 
                     </div>
                     <div class="row justify-content-center mt-4">
-                        <a href="{% url 'campaign-detail' pk=campaign.pk %}" class="btn btn-primary"
-                            style="width: 96%;">Buy Shares in this property</a>
+                        {% if user.is_authenticated %}	
+                        <a href="#" class="btn btn-primary"
+                            style="width: 96%;">BUY SHARES</a>
+                        {% else %}
+                        <a href="{% url 'account-login' %}" class="btn btn-primary"
+                            style="width: 96%;">LOGIN TO INVEST</a>
+                        {% endif %}
                     </div>
-                </div>
+                </div>    
             </div>
         </div>
     </div>
