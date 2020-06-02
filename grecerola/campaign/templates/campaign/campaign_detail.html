@@ -7,12 +7,12 @@
 <section class="bg-pure-white">
     <div class="container">
         <div class="row align-items-start">
-            <div class="text-center col-lg-7 mb-4 mr-auto" >
+            <div class="text-center col-lg-7  mr-auto ">
                 <img alt="{{ campaign.get_first_image_alt }}" class="rounded w-100 wow fadeInLeft"
                     src="{{ campaign.get_first_image_url }}" style="max-height: 360px; height: 360px; width: auto;">
             </div>
-            <div class="col-lg-5 box-shadow-v1">
-                <div class="mx-2 my-4">
+            <div class="col-lg-4">
+                <div class="">
                     <h4 class="u-fs-18 u-h-5vh">{{ campaign.name }}</h4>
                     <p class="d-flex u-fs-14 text-muted">
                         <span class="float-left mr-5"><i
@@ -21,27 +21,87 @@
                                 class="icon icon-Pointer mr-1 ml-3"></i>{{ campaign.location.city }}</span>
                     </p>
                     <div class="row">
-                        <div class="text-muted u-fs-14 col-sm-6">Share Price</div> 
-                        <div class="u-fs-14 text-muted  col-sm-6 d-flex justify-content-end ">R 500</div> 
+                        <div class="text-muted u-fs-14 col-sm-6">Share Price</div>
+                        <div class="u-fs-14 text-muted  col-sm-6 d-flex justify-content-end ">R 500</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6 text-muted u-fs-14">Est Rental Yield</div> 
-                        <div class="col-sm-6  text-muted u-fs-14 d-flex justify-content-end">9%</div> 
+                        <div class="col-sm-6 text-muted u-fs-14">Est Rental Yield</div>
+                        <div class="col-sm-6  text-muted u-fs-14 d-flex justify-content-end">9%</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6 text-muted u-fs-14">Cosing Date</div> 
-                        <div class="col-sm-6  text-muted u-fs-14 d-flex justify-content-end">20 May 20</div> 
+                        <div class="col-sm-6 text-muted u-fs-14">Cosing Date</div>
+                        <div class="col-sm-6  text-muted u-fs-14 d-flex justify-content-end">20 May 20</div>
                     </div>
                     <div class="row justify-content-center mt-4">
-                        {% if user.is_authenticated %}	
-                        <a href="#" class="btn btn-primary"
-                            style="width: 96%;">BUY SHARES</a>
+                        {% if user.is_authenticated %}
+                        <a href="#" class="btn btn-primary" style="width: 96%;">BUY SHARES</a>
                         {% else %}
-                        <a href="{% url 'account-login' %}" class="btn btn-primary"
-                            style="width: 96%;">LOGIN TO INVEST</a>
+                        <a href="{% url 'account-login' %}" class="btn btn-primary" style="width: 96%;">LOGIN TO
+                            INVEST</a>
                         {% endif %}
                     </div>
-                </div>    
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-lg-12 mt-4  ">
+                <h4 class="u-fs-18">About</h4>
+                <P class="text-muted   u-fs-15"> 
+                    We're offering shares in a 1 bedroom, 1 bath apartement unit at 44 Avenue rd, Mowbray. a 49 story
+                    apartment project located in the Historic Rainey Steet District of downtown. The development,
+                    located on the edge of Lady Bird Lake, include a spectacular mix of indoor and outdoor amenities.
+                    The project by intracoprp, is expected to be completed in Fall 2021, We intend to operate this unit
+                    as a rental property following acquisition.
+                </P>
+            </div>
+        </div>
+
+        <div class="row justify-content-end">
+            <div class="col-lg-12 mt-4 ">
+                <h4 class="u-fs-18">Financials</h4>
+
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-pills mb-3 nav-justified" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" href="#pills-home1" role="tab" aria-controls="pills-home" aria-selected="true">Purchase</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#pills-profile2" role="tab" aria-controls="pills-profile" aria-selected="false">Offering</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#pills-contact3" role="tab" aria-controls="pills-contact" aria-selected="false">Income</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="pills-home1" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <div class="row">
+                                    <div class="text-muted u-fs-14 col-sm-6">Share Price</div>
+                                    <div class="u-fs-14 text-muted  col-sm-6 d-flex justify-content-end ">R 500</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 text-muted u-fs-14">Est Rental Yield</div>
+                                    <div class="col-sm-6  text-muted u-fs-14 d-flex justify-content-end">9%</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 text-muted u-fs-14">Cosing Date</div>
+                                    <div class="col-sm-6  text-muted u-fs-14 d-flex justify-content-end">20 May 20</div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact3" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                
             </div>
         </div>
     </div>
