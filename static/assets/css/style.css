@@ -975,7 +975,7 @@ textarea::-webkit-input-placeholder {
 
 .tabs-v2 .nav-link.active,
 .tabs-v3 .nav-link.active {
-  background: #5D4970;
+  background: #14a1a8;
   color: #fff
 }
 
@@ -6630,7 +6630,7 @@ textarea::-webkit-input-placeholder {
 .bg-new-purple{background:#f1baf3 !important;}
 .text-light-white{color:#fff;}
 .list-group-item.active{background:#5D4970 !important;border-color: #5D4970;}
-.nav-pills .nav-link.active, .show>.nav-pills .nav-link{background:#5D4970 !important;}
+.nav-pills .nav-link.active, .show>.nav-pills {background:#14a1a8 !important;}
 
 .bg-image-bottom-invest{
   background-image: url(../img/about/bottom-bg.jpg); 
