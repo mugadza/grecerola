@@ -6551,16 +6551,18 @@ textarea::-webkit-input-placeholder {
 }
 
 .slick-arrow:hover {
-  background: #5D4970;
+  background: #14a1a8;
   color: #fff
 }
 
 .slick-prev {
-  left: -70px
+  left: -70px;
+  color: #14a1a8
 }
 
 .slick-next {
-  right: -70px
+  right: -70px;
+  color: #14a1a8
 }
 
 .slick-dots {
@@ -6587,7 +6589,7 @@ textarea::-webkit-input-placeholder {
 
 .slick-dots>li.slick-active>span {
   width: 22px;
-  background: #5D4970
+  background: #14a1a8
 }
 
 .slick-dots.dots-white>li>span {
