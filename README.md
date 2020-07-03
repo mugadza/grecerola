@@ -1,6 +1,6 @@
 # Grecerola
 
-# Workflow
+## Workflow
 - Create a branch
 - Implement a fancy feature
 - Push your feature up
