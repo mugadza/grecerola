@@ -25,12 +25,12 @@
                 <div class="card border-0 box-shadow-v1 u-h-100p">
                     <img src="{{ campaign.get_first_image_url }}" alt="{{ campaign.get_first_image_alt }}" style="max-height: 225px; height: 225px; width: auto;">
                     <div class="u-p-20">
-                        <h4 class="u-fs-18 u-h-5vh"><a href="#">{{ campaign.name }}</a></h4>
+                        <h4 class="u-fs-18 u-h-5vh"><a href="{% url 'campaign-detail' pk=campaign.pk %}">{{ campaign.name }}</a></h4>
                         <p class="d-flex u-fs-14 text-muted">
                             <span class="float-left mr-5"><i class="icon icon-House mr-1"></i>{{ campaign.campaign_type.name}} </span>
                             <span class="float-right"><i class="icon icon-Pointer mr-1 ml-3"></i>{{ campaign.location.city }}</span>
                         </p>
-                        
+
                         <div class="row">
                             <div class="col-md-4 border-right">
                                <div class="campaign-stat u-fw-400 text-muted u-fs-14"><span class="u-fs-14 text-muted">ERR</span>12%</div>
@@ -52,9 +52,6 @@
                         <div class="mb-3">
                             <span class="u-fs-14 text-primary">R{{ campaign.investment_raised_amount_formatted }}</span>
                             <span class="float-right u-fs-14 text-primary">R{{ campaign.total_investment_amount_formatted }}</span>
-                        </div>
-                        <div>
-                            <a href="#" class="btn btn-primary u-mt-1">More details</a>
                         </div>
                     </div>
                 </div>
