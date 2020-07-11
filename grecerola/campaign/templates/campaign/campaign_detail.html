@@ -15,15 +15,11 @@
              "arrows":false,
              "dotsClass": "slick-dots dots-white text-center"
            }'>
-            <div class="rounded u-mb-20 text-center">
-               <img alt="" class="rounded w-100 wow fadeInLeft" alt="{{ campaign.get_first_image_alt }}" src="{{ campaign.get_first_image_url }}" style="max-height: 360px; height: 360px; width: auto;">
-            </div>
-            <div class="rounded u-mb-20 text-center">
-               <img alt="" class="rounded w-100 wow fadeInLeft" alt="{{ campaign.get_first_image_alt }}" src="{{ campaign.get_first_image_url }}" style="max-height: 360px; height: 360px; width: auto;">
-            </div>
-            <div class="rounded u-mb-20 text-center">
-               <img alt="" class="rounded w-100 wow fadeInLeft" alt="{{ campaign.get_first_image_alt }}" src="{{ campaign.get_first_image_url }}" style="max-height: 360px; height: 360px; width: auto;">
-            </div>
+           {% for image in images %}
+              <div class="rounded u-mb-20 text-center">
+                 <img alt="" class="rounded w-100 wow fadeInLeft" alt="{{ image.alt }}" src="{{ image.image.url }}" style="max-height: 360px; height: 360px; width: auto;">
+              </div>
+           {% endfor %}
          </div>
        </div>
 
@@ -149,7 +145,7 @@
                 <div class="col-sm-6 d-flex justify-content-end">R 1 500</div>
             </div>
           </div>
-          
+
           <div class="tab-pane fade" id="v-pills-income" role="tabpanel" aria-labelledby="v-pills-income-tab">
             <div class="row justify-content-end">
                 <div class="col-sm-3 d-flex justify-content-end">Monthly</div>
@@ -189,8 +185,6 @@
         </div>
       </div>
     </div>
-
-
   </div>
 </section>
 {% endblock content %}

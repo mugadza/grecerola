@@ -16,7 +16,7 @@ def faq(request):
 
 def campaign_detail(request, pk):
     campaign = get_object_or_404 (Campaign, pk=pk)
-    return render(request,"campaign/campaign_detail.html", {'campaign':campaign})
+    return render(request,"campaign/campaign_detail.html", {'campaign':campaign, 'images': campaign.images.all()})
 
 
 class CampaignListView(ListView):
@@ -25,5 +25,11 @@ class CampaignListView(ListView):
     template_name = 'campaign/explore.html'
 
     def get_queryset(self):
-        self.campaign_type = get_object_or_404(CampaignType, name=self.kwargs['typename'])
-        return Campaign.objects.filter(campaign_type=self.campaign_type)
+        campains = []
+        if 'typename' in self.kwargs:
+            self.campaign_type = get_object_or_404(CampaignType, name=self.kwargs['typename'])
+            campaigns = Campaign.objects.filter(campaign_type=self.campaign_type)
+        else:
+            campaigns = Campaign.objects.all()
+
+        return campaigns
