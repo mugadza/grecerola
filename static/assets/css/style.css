@@ -6625,15 +6625,15 @@ textarea::-webkit-input-placeholder {
 .bg-light-white{background:#fff !important;}
 .bg-new-purple{background:#f1baf3 !important;}
 .text-light-white{color:#fff;}
-.list-group-item.active{background:#5D4970 !important;border-color: #5D4970;}
-.nav-pills .nav-link.active, .show>.nav-pills .nav-link{background:#5D4970 !important;}
+.list-group-item.active{background: #14a1a8 !important;border-color: #14a1a8;}
+.nav-pills .nav-link.active, .show>.nav-pills .nav-link{background: #14a1a8 !important;}
 
 .bg-image-bottom-invest{
-  background-image: url(../img/about/bottom-bg.jpg); 
-  width: 100%; 
-  position: relative; 
-  background-position: center center; 
-  background-repeat: no-repeat; 
+  background-image: url(../img/about/bottom-bg.jpg);
+  width: 100%;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
