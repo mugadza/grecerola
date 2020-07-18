@@ -1,5 +1,6 @@
 {% extends "base/_admin_application.html" %}
 {% load static %}
+{% load tags %}
 
 {% block content %}
 <div class="normalheader">
@@ -41,7 +42,7 @@
                 <div class="panel-footer contact-footer">
                     <div class="row">
                         <div class="col-md-4 border-right">
-                            <div class="contact-stat"><span>Own: </span> <strong>{{ user.get_campaigns_count }}</strong></div>
+                            <div class="contact-stat"><span>Own: </span> <strong>{{ user.campaigns_owened.count }}</strong></div>
                         </div>
                         <div class="col-md-4 border-right">
                             <div class="contact-stat"><span>Invested: </span> <strong>300</strong></div>
@@ -102,7 +103,7 @@
             <div class="hpanel">
                 <div class="panel-body text-center h-200 round-corners-down">
                     <i class="pe-7s-graph1 text-info fa-4x"></i>
-                    <h1 class="m-xs">R1 206,90</h1>
+                    <h1 class="m-xs">{{ bank.wallet.balance|money_value }}</h1>
                     <h3 class="font-extra-bold no-margins text-primary">
                         All Income
                     </h3>
@@ -133,7 +134,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for campaign in user.get_campaigns %}
+                                    {% for campaign in user.campaigns_owened.all %}
                                         <tr>
                                             <td>{{ campaign.name }}</td>
                                             <td>{{ campaign.campaign_type.name }}</td>
@@ -165,4 +166,3 @@
     </div>
 </div>
 {% endblock content %}
-

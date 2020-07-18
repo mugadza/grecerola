@@ -12,19 +12,19 @@ def signup(request):
         form.save()
         email = form.cleaned_data.get('email')
         messages.success(request, f'Account created with email {email}!')
-        
+
         raw_password = form.cleaned_data.get('password1')
         user = authenticate(email=email, password=raw_password)
         login(request, user)
-        
+
         return redirect('campaign-home')
 
     return render(request, 'account/signup.html', {'form': form})
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html')
+    return render(request, 'account/dashboard.html', {'bank': request.user.bank})
 
 @login_required
 def investor_wallet(request):
-    return render(request, 'account/investor_wallet.html')
+    return render(request, 'account/investor_wallet.html', {'bank': request.user.bank})

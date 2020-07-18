@@ -1,5 +1,6 @@
 {% extends "base/_admin_application.html" %}
 {% load static %}
+{% load tags %}
 
 {% block content %}
 <div class="normalheader">
@@ -28,8 +29,6 @@
 
  <div class="content">
    <div class="row">
-      <!-- <h4>Reference <small>ACC-9177283-2016</small></h4> -->
-
       <div class="col-md-4">
          <div class="hpanel stats">
             <div class="panel-heading">
@@ -41,37 +40,37 @@
             <div class="panel-body">
                <div class="m-b-xl">
                   <i class="pe-7s-culture fa-4x  m-b-sm"></i>
-                  <h2 class="m-xs text-gray">ACC-9277283-2026</h2>
+                  <h2 class="m-xs text-gray">{{ bank.account_reference_id }}</h2>
                </div>
-               
+
                <div class="row">
                   <div class="col-xs-6">
                      <small class="stat-label">Name</small>
-                     <h4>Student achiever</h4>
+                     <h4>{{ bank.account_name.title }}</h4>
                   </div>
                   <div class="col-xs-6">
                      <small class="stat-label">Bank</small>
-                     <h4>Standard bank</h4>
+                     <h4>{{ bank.bank_name.title }}</h4>
                   </div>
                </div>
                <div class="row">
                   <div class="col-xs-6">
                      <small class="stat-label">Holder</small>
-                     <h4>LM Mbele</h4>
+                     <h4>{{ bank.account_holder_name }}</h4>
                   </div>
                   <div class="col-xs-6">
                      <small class="stat-label">Account</small>
-                     <h4>828475658</h4>
+                     <h4>{{ bank.account_number }}</h4>
                   </div>
                </div>
                <div class="row">
                   <div class="col-xs-6">
                      <small class="stat-label">Type</small>
-                     <h4>Current</h4>
+                     <h4>{{ bank.account_type.title }}</h4>
                   </div>
                   <div class="col-xs-6">
                      <small class="stat-label">code</small>
-                     <h4>198765</h4>
+                     <h4>{{ bank.bank_branch_code }}</h4>
                   </div>
                </div>
             </div>
@@ -80,14 +79,14 @@
             Actions
          </div>
          <div class="row">
-            
+
             <div class="col-md-6">
                <div class="hpanel">
                   <div class="panel-body text-center">
                      <i class="pe-7s-piggy fa-4x"></i>
                      <div class="m-t-sm">
                         <strong>Deposit</strong>
-                        <p class="small">Deposit cash into yuor account</p>
+                        <p class="small">Deposit cash into your account</p>
                      </div>
                   </div>
                </div>
@@ -128,28 +127,39 @@
                            </tr>
                         </thead>
                         <tbody>
+                           {% for transaction in bank.wallet.transactions.all %}
                            <tr>
                               <td>
-                                    Contract with devdap Company
+                                    {{ transaction.reference }}
                                     <br />
                                     <small>
-                                       <i class="fa fa-clock-o"></i> Created 14.08.2018
+                                       <i class="fa fa-clock-o"></i> Created {{ transaction.confirmed_at|date:" M d, Y"}}
                                     </small>
                               </td>
                               <td>
-                                 <i class="fa fa-times-circle text-primary"></i>
+                                 {% if transaction.is_pending %}
+                                     <i class="fa fa-check-circle text-primary"></i>
+                                 {% else %}
+                                     <i class="fa fa-times-circle text-navy"></i>
+                                 {% endif %}
                               </td>
                               <td>
-                                    <strong>R1200</strong>
+                                    <strong>{{ transaction.transaction_amount|money_value }}</strong>
                               </td>
-                              <td>Jul 14, 2020</td>
+                              <td>{{ transaction.confirmed_at|date:" M d, Y" }}</td>
                               <td>
                                  <a href="#">
-                                    <i class="fa fa-level-up text-success"></i> 
+                                    {% if transaction.transaction_amount|is_negative %}
+                                        <i class="fa fa-level-down text-warning"></i>
+                                    {% else %}
+                                        <i class="fa fa-level-up text-success"></i>
+                                    {% endif %}
                                  </a>
                               </td>
                            </tr>
-                           <tr>
+                           {% endfor %}
+
+                           <!-- <tr>
                               <td>
                                  There are many variations of passages
                                  <br />
@@ -253,7 +263,7 @@
                                     <i class="fa fa-level-down text-warning"></i>
                                  </a>
                               </td>
-                           </tr>
+                           </tr> -->
                         </tbody>
                   </table>
                </div>
@@ -264,4 +274,3 @@
  </div>
 
 {% endblock content %}
-
