@@ -28,7 +28,7 @@
                         <h4 class="u-fs-18 u-h-5vh"><a href="{% url 'campaign-detail' pk=campaign.pk %}">{{ campaign.name }}</a></h4>
                         <div class="row">
                             <div class="u-fs-14 text-muted col-sm-6"><i class="icon icon-House mr-1"></i>{{ campaign.campaign_type.name }}</div>
-                            <div class="u-fs-14 text-muted col-sm-6 d-flex justify-content-end"><i class="mt-1 icon icon-Pointer mr-1"></i>{{ campaign.location.city }}</div>
+                            <div class="u-fs-14 text-muted col-sm-6 d-flex justify-content-end"><i class="mt-2 icon icon-Pointer mr-1"></i>{{ campaign.location.city }}</div>
 
                             <div class="u-my-20"></div>
 
@@ -54,6 +54,11 @@
                             <span class="u-fs-14 text-primary">R{{ campaign.investment_raised_amount_formatted }}</span>
                             <span class="float-right u-fs-14 text-primary">R{{ campaign.total_investment_amount_formatted }}</span>
                         </div>
+                        <div class="row my-4">
+                          <div class="col-sm-12">
+                            <a href="#" class="btn btn-primary" style="width: inherit;">DETAILS</a>
+                          </div>
+                       </div>
                     </div>
                 </div>
             </div>
