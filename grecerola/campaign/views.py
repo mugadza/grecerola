@@ -14,6 +14,9 @@ def contact_us(request):
 def faq(request):
     return render(request,"campaign/faq.html")
 
+def about(request):
+    return  render(request,"campaign/about.html")
+
 def campaign_detail(request, pk):
     campaign = get_object_or_404 (Campaign, pk=pk)
     return render(request,"campaign/campaign_detail.html", {'campaign':campaign, 'images': campaign.images.all()})
