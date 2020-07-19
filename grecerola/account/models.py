@@ -63,8 +63,8 @@ class User(PermissionsMixin, AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     note = models.TextField(null=True, blank=True)
     date_joined = models.DateTimeField(default=timezone.now, editable=False)
-    
-    
+
+
     avatar = VersatileImageField(upload_to="user-avatars", default='placeholder540x540.png')
 
     USERNAME_FIELD = "email"
@@ -85,25 +85,18 @@ class User(PermissionsMixin, AbstractBaseUser):
     def get_short_name(self):
         return self.email
 
-    def get_campaigns(self):
-        return self.campaigns_owened.all()
-
-    def get_campaigns_count(self):
-        return len(self.campaigns_owened.all())
-
     def get_city_country_address(self):
         address = ""
         if self.address == None:
             return address
-            
+
         if self.address.city == None:
             if self.address.country.name == None:
                 return address
             else:
-                return self.address.country.name 
+                return self.address.country.name
         else:
             if self.address.country.name == None:
                 return self.address.country.name
             else:
                 return self.address.country.name + ", " + self.address.city
-
