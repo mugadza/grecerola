@@ -1,0 +1,276 @@
+{% extends "base/_admin_application.html" %}
+{% load static %}
+{% load tags %}
+
+{% block content %}
+<div class="normalheader">
+    <div class="hpanel">
+       <div class="panel-body no-shadow th-border">
+          <a class="small-header-action" href="#">
+             <div class="clip-header">
+                <i class="fa fa-arrow-up"></i>
+             </div>
+          </a>
+          <div id="hbreadcrumb" class="pull-right m-t-lg">
+             <ol class="hbreadcrumb breadcrumb">
+               <li><a href="{% url 'campaign-home' %}">Home</a></li>
+               <li class="active">
+                  <span>Wallet</span>
+               </li>
+             </ol>
+          </div>
+          <h2 class="font-light m-b-xs">
+             Wallet
+          </h2>
+          <small>See all payment history of your investments and account balance.</small>
+       </div>
+    </div>
+ </div>
+
+ <div class="content">
+   <div class="row">
+      <div class="col-md-4">
+         <div class="hpanel stats">
+            <div class="panel-heading">
+               <div class="panel-tools">
+                  <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+               </div>
+               Banking details
+            </div>
+            <div class="panel-body">
+               <div class="m-b-xl">
+                  <i class="pe-7s-culture fa-4x  m-b-sm"></i>
+                  <h2 class="m-xs text-gray">{{ bank.account_reference_id }}</h2>
+               </div>
+
+               <div class="row">
+                  <div class="col-xs-6">
+                     <small class="stat-label">Name</small>
+                     <h4>{{ bank.account_name.title }}</h4>
+                  </div>
+                  <div class="col-xs-6">
+                     <small class="stat-label">Bank</small>
+                     <h4>{{ bank.bank_name.title }}</h4>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-6">
+                     <small class="stat-label">Holder</small>
+                     <h4>{{ bank.account_holder_name }}</h4>
+                  </div>
+                  <div class="col-xs-6">
+                     <small class="stat-label">Account</small>
+                     <h4>{{ bank.account_number }}</h4>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-6">
+                     <small class="stat-label">Type</small>
+                     <h4>{{ bank.account_type.title }}</h4>
+                  </div>
+                  <div class="col-xs-6">
+                     <small class="stat-label">code</small>
+                     <h4>{{ bank.bank_branch_code }}</h4>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="font-bold m-b-sm">
+            Actions
+         </div>
+         <div class="row">
+
+            <div class="col-md-6">
+               <div class="hpanel">
+                  <div class="panel-body text-center">
+                     <i class="pe-7s-piggy fa-4x"></i>
+                     <div class="m-t-sm">
+                        <strong>Deposit</strong>
+                        <p class="small">Deposit cash into your account</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-md-6">
+               <div class="hpanel">
+                  <div class="panel-body text-center">
+                     <i class="pe-7s-cash fa-4x"></i>
+                     <div class="m-t-sm">
+                        <strong>Withdraw</strong>
+                        <p class="small">Withdraw cash from your account</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-lg-8">
+         <div class="hpanel">
+            <div class="panel-heading">
+               <div class="panel-tools">
+                  <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+               </div>
+               Payments history
+            </div>
+            <div class="panel-body list">
+               <div class="table-responsive project-list">
+                  <table class="table table-striped">
+                        <thead>
+                           <tr>
+                              <th colspan="1">Reference</th>
+                              <th>Confirmed</th>
+                              <th>Amount</th>
+                              <th>Date confirmed</th>
+                              <th>Type</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {% for transaction in bank.wallet.transactions.all %}
+                           <tr>
+                              <td>
+                                    {{ transaction.reference }}
+                                    <br />
+                                    <small>
+                                       <i class="fa fa-clock-o"></i> Created {{ transaction.confirmed_at|date:" M d, Y"}}
+                                    </small>
+                              </td>
+                              <td>
+                                 {% if transaction.is_pending %}
+                                     <i class="fa fa-check-circle text-primary"></i>
+                                 {% else %}
+                                     <i class="fa fa-times-circle text-navy"></i>
+                                 {% endif %}
+                              </td>
+                              <td>
+                                    <strong>{{ transaction.transaction_amount|money_value }}</strong>
+                              </td>
+                              <td>{{ transaction.confirmed_at|date:" M d, Y" }}</td>
+                              <td>
+                                 <a href="#">
+                                    {% if transaction.transaction_amount|is_negative %}
+                                        <i class="fa fa-level-down text-warning"></i>
+                                    {% else %}
+                                        <i class="fa fa-level-up text-success"></i>
+                                    {% endif %}
+                                 </a>
+                              </td>
+                           </tr>
+                           {% endfor %}
+
+                           <!-- <tr>
+                              <td>
+                                 There are many variations of passages
+                                 <br />
+                                 <small>
+                                    <i class="fa fa-clock-o"></i> Created 21.07.2018
+                                 </small>
+                              </td>
+                              <td>
+                                 <i class="fa fa-check-circle text-navy"></i>
+                              </td>
+                              <td>
+                                    <strong>R1500</strong>
+                              </td>
+                              <td>Jul 16, 2020</td>
+                              <td>
+                                    <a href="#">
+                                       <i class="fa fa-level-up text-success"></i>
+                                    </a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                    Contrary to popular belief
+                                    <br />
+                                    <small>
+                                       <i class="fa fa-clock-o"></i> Created 12.06.2018
+                                    </small>
+                              </td>
+                              <td>
+                                 <i class="fa fa-check-circle text-navy"></i>
+                              </td>
+                              <td>
+                                    <strong>R1700</strong>
+                              </td>
+                              <td>Jul 18, 2020</td>
+                              <td>
+                                    <a href="#">
+                                    <i class="fa fa-level-down text-warning"></i>
+                                    </a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                    There are many variations of passages
+                                    <br />
+                                    <small>
+                                       <i class="fa fa-clock-o"></i> Created 21.07.2018
+                                    </small>
+                              </td>
+                              <td>
+                                 <i class="fa fa-check-circle text-navy"></i>
+                              </td>
+                              <td>
+                                    <strong>R2300</strong>
+                              </td>
+                              <td>Jul 16, 2022</td>
+                              <td>
+                                 <a href="#">
+                                    <i class="fa fa-level-down text-warning"></i>
+                                 </a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                    There are many variations of passages
+                                    <br />
+                                    <small>
+                                       <i class="fa fa-clock-o"></i> Created 21.07.2018
+                                    </small>
+                              </td>
+                              <td>
+                                 <i class="fa fa-check-circle text-navy"></i>
+                              </td>
+                              <td>
+                                    <strong>R2300</strong>
+                              </td>
+                              <td>Jul 16, 2022</td>
+                              <td>
+                                 <a href="#">
+                                    <i class="fa fa-level-down text-warning"></i>
+                                 </a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                    There are many variations of passages
+                                    <br />
+                                    <small>
+                                       <i class="fa fa-clock-o"></i> Created 21.07.2018
+                                    </small>
+                              </td>
+                              <td>
+                                 <i class="fa fa-times-circle text-navy"></i>
+                              </td>
+                              <td>
+                                    <strong>R2300</strong>
+                              </td>
+                              <td>Jul 16, 2022</td>
+                              <td>
+                                 <a href="#">
+                                    <i class="fa fa-level-down text-warning"></i>
+                                 </a>
+                              </td>
+                           </tr> -->
+                        </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+     </div>
+   </div>
+ </div>
+
+{% endblock content %}
