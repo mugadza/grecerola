@@ -28,3 +28,7 @@ def dashboard(request):
 @login_required
 def investor_wallet(request):
     return render(request, 'account/investor_wallet.html', {'bank': request.user.bank})
+
+@login_required
+def deposit(request):
+    return render(request, 'account/deposit.html')
