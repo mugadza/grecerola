@@ -1,0 +1,193 @@
+{% extends "base/_admin_application.html" %}
+{% load static %}
+
+{% block content %}
+<div class="small-header">
+  <div class="hpanel">
+     <div class="panel-body">
+        <div id="hbreadcrumb" class="pull-right">
+           <ol class="hbreadcrumb breadcrumb">
+              <li><a href="{% url 'campaign-home' %}">Home</a></li>
+              <li>
+                 <span>Wallet</span>
+              </li>
+              <li class="active">
+                 <span>Deposit</span>
+              </li>
+           </ol>
+        </div>
+        <h2 class="font-light m-b-xs">
+           Wizard
+        </h2>
+        <small>Build a form with wizard functionality.</small>
+     </div>
+  </div>
+</div>
+<div class="content">
+  <div class="row">
+     <div class="col-lg-12">
+        <div class="hpanel">
+           <div class="panel-heading">
+              <div class="panel-tools">
+                 <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                 <a class="closebox"><i class="fa fa-times"></i></a>
+              </div>
+              Example fo wizard form
+           </div>
+           <div class="panel-body">
+              <form name="simpleForm" novalidate id="simpleForm" action="#" method="post">
+                 <div class="text-center m-b-md" id="wizardControl">
+                    <a class="btn btn-default" href="#method1" data-toggle="tab">EFT Payment</a>
+                    <a class="btn btn-default" href="#method2" data-toggle="tab">Credit Card Payment</a>
+                    <a class="btn btn-default" href="#method3" data-toggle="tab">SID Payment </a>
+
+                 </div>
+                 <div class="tab-content">
+                    <div id="method1" class="p-m tab-pane active">
+                       <div class="row">
+                          <div class="col-lg-3 text-center">
+                             <i class="pe-7s-credit fa-5x text-muted"></i>
+                             <p class="small m-t-md">
+                                This method of payment can take up 2 hours. This method of payment is free.
+                                <br/><br/>
+                                Before depositing money into your account please consider the transaction cost associated with each method of deposit.
+                             </p>
+                          </div>
+                          <div class="col-lg-9">
+                             <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <small class="stat-label">Bank</small>
+                                    <h4>Standard bank</h4>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <small class="stat-label">Branch Name</small>
+                                    <h4>Sandton</h4>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <small class="stat-label">Branch Code</small>
+                                    <h4>019205</h4>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <small class="stat-label">Account Name</small>
+                                    <h4>Leafbark</h4>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <small class="stat-label">Account Number</small>
+                                    <h4>074589521</h4>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <small class="stat-label">EFT Reference</small>
+                                    <h4>{{ bank.account_reference_id }}</h4>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="m-t-md">
+                          <ul>
+                            <li>
+                              <small>Funds may take up to 48 hours to reflect, due to individual bank regulations.</small>
+                            </li>
+                            <li>
+                              <small>Use of the incorrect reference will result in fund allocation delays, and will require you to email us a formal proof of deposit.</small>
+                            </li>
+                            <li>
+                              <small>
+                                Deposited funds will be held for a 14-day "clearing period". If however the value of the
+                                deposited funds is covered by sufficient NAV / holdings in your account, you will be able to withdraw the funds.
+                              </small>
+                            </li>
+                         </ul>
+                       </div>
+                    </div>
+                    <div id="method2" class="p-m tab-pane">
+                       <div class="row">
+                          <div class="col-lg-3 text-center">
+                             <i class="pe-7s-credit fa-5x text-muted"></i>
+                             <p class="small m-t-md">
+                                <strong>It is a long</strong> established fact that a reader will be distracted by the readable
+                                <br/><br/>Many desktop publishing packages and web page editors now use
+                             </p>
+                          </div>
+                          <div class="col-lg-9">
+                             <div class="row">
+                                <div class="form-group col-lg-12">
+                                   <label>Name on Card</label>
+                                   <input type="" value="" id="" class="form-control" name="card_name">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                   <label>Card Number</label>
+                                   <input type="text" value="" id="" class="form-control" name="" name="card_number">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                   <label>Billing Address</label>
+                                   <input type="text" value="" id="" class="form-control" name="" name="billing_address">
+                                </div>
+                                <div class="form-group col-lg-12">
+                                   <div class="row">
+                                      <div class="col-xs-4 form-group">
+                                         <label>CVC</label>
+                                         <input class="form-control" placeholder="ex. 381" type="text" name="cvc">
+                                      </div>
+                                      <div class="col-xs-4 form-group">
+                                         <label>Expiration</label>
+                                         <input class="form-control" placeholder="MM" type="text" name="expire_month">
+                                      </div>
+                                      <div class="col-xs-4 form-group">
+                                         <label></label>
+                                         <input class="form-control" placeholder="YYYY" type="text" name="expire_year">
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="text-right m-t-xs">
+                          <a class="btn btn-default prev" href="#">Previous</a>
+                          <a class="btn btn-default next" href="#">Next</a>
+                       </div>
+                    </div>
+                    <div id="method3" class="tab-pane">
+                       <div class="row text-center m-t-lg m-b-lg">
+                          <div class="col-lg-12">
+                             <i class="pe-7s-check fa-5x text-muted"></i>
+                             <p class="small m-t-md">
+                                <strong>There are many</strong> variations of passages of Lorem Ipsum available, but the majority have suffered
+                             </p>
+                          </div>
+                          <div class="checkbox col-lg-12">
+                             <input type="checkbox" class="i-checks approveCheck" name="approve">
+                             Approve this form
+                          </div>
+                       </div>
+                       <div class="text-right m-t-xs">
+                          <a class="btn btn-default prev" href="#">Previous</a>
+                          <a class="btn btn-default next" href="#">Next</a>
+                          <a class="btn btn-success submitWizard" href="#">Submit</a>
+                       </div>
+                    </div>
+                 </div>
+              </form>
+              <!-- <div class="m-t-md">
+                 <ul>
+                   <li>
+                     <small>Funds may take up to 48 hours to reflect, due to individual bank regulations.</small>
+                   </li>
+                   <li>
+                     <small>Use of the incorrect reference will result in fund allocation delays, and will require you to email us a formal proof of deposit.</small>
+                   </li>
+                   <li>
+                     <small>
+                       Deposited funds will be held for a 14-day "clearing period". If however the value of the
+                       deposited funds is covered by sufficient NAV / holdings in your account, you will be able to withdraw the funds.
+                     </small>
+                   </li>
+                </ul>
+              </div> -->
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+
+
+{% endblock content %}
