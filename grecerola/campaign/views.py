@@ -21,6 +21,10 @@ def campaign_detail(request, pk):
     campaign = get_object_or_404 (Campaign, pk=pk)
     return render(request,"campaign/campaign_detail.html", {'campaign':campaign, 'images': campaign.images.all()})
 
+def investment_detail(request, pk):
+    campaign = get_object_or_404(Campaign, pk=pk)
+    return render(request,"campaign/investment_detail.html", {'campaign':campaign})
+
 
 class CampaignListView(ListView):
     model = Campaign
