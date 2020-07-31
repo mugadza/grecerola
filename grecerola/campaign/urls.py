@@ -19,5 +19,5 @@ urlpatterns = [
     path('faq/', faq, name='faq'),
     path('about/', about, name='about'),
     path('explore/campaign-no=?<int:pk>/', campaign_detail, name='campaign-detail'),
-    path('invest-no=?<int:pk>/', investment_detail, name='investment-detail')
+    path('invest=?<int:pk>/', investment_detail, name='investment-detail')
 ]
