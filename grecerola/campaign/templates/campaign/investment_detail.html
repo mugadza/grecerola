@@ -10,35 +10,85 @@
         <div class="row">
             <div class="col-lg-8">
                 <h2 class="u-h-5vh">Invest in {{ campaign.name }}</h2>
-                <div class="u-mb-20 text-muted">By investing in {{ campaign.name }}, you are purchasing shares at R200 per share.</div>
+                <div class=" text-muted">By investing in {{ campaign.name }}, you are purchasing shares at R200 per
+                    share.</div>
 
-                <hr class="mt-sm-1 u-mb-20">
+                <hr class="mt-sm-1 u-my-30">
 
                 <form action="#" method="POST">
-                        <div class="col-md-12 text-muted">
-                            <div class="row">
-                            </div>
-                            <div class="row border rounded">
-                                <div class="col-md-6 align-self-center">
-                                    Number of Shares
-                                </div>
-                                <div class="col-md-6 pr-0">
-                                    <input class="border-0" placeholder="Enter # of shares..." type="number" min="1" required>
-                                </div>
-                             </div>
-                            
+                    <div class="col-md-12 text-muted">
+                        <div class="row">
+                            <h4 class="col-sm-6 u-fs-16 pl-0">Your investment</h4>
+                            <h4 class="col-sm-6 u-fs-16 d-flex justify-content-end pr-0">R 2500</h4>
                         </div>
-                        <!--div class="col-md-6 u-mb-30">
-                            <input type="tel" placeholder="Phone number">
-                        </div-->
-                        
-                        
-                    
-                    <div class="text-center">
-                        <button class="btn btn-primary"> Send Request</button>
+                        <div class="row border rounded">
+                            <div class="col-md-6 align-self-center">
+                                Number of Shares
+                            </div>
+                            <div class="col-md-6 pr-0">
+                                <input class="border-0" placeholder="Enter # of shares here..." type="number" min="1"
+                                    required>
+                            </div>
+                        </div>
                     </div>
-             </form>
-        </div>
+                    <hr class="mt-sm-1 u-mb-20 u-mt-60">
+                    <h4 class="col-sm-6 u-fs-16 pl-0">Select a payment method</h4>
+                    <div class="row">
+                        <div class="col-12 text-muted">
+                            <ul class="nav nav-tabs mb-2 u-fs-14" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#wallet" role="tab"
+                                        aria-controls="wallet" aria-selected="true">WALLET</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#direct-deposit" role="tab"
+                                        aria-controls="direct-deposit" aria-selected="false">DIRECT DEPOSIT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#instant-eft" role="tab"
+                                        aria-controls="instant-eft" aria-selected="false">INSTANT EFT</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content border-left" id="myTabContent">
+                                <div class="tab-pane" id="wallet" role="tabpanel" aria-labelledby="wallet-tab">
+                                    <p class="font-weight-bold u-fs-14 mb-0">Wallet payments are subject to sufficient
+                                        funds in your Leafbark wallet.</p>
+                                    <p class="u-fs-13" style="line-height:1.5;">No transaction fees charged for wallet
+                                        payments. Deposit funds into your wallet some time before your next investment
+                                        to enjoy instant purchases with zero transaction fees. Deposits take up to 3
+                                        days to reflect in your wallet.</p>
+                                    <hr class="mt-sm-1 u-mb-20 u-mt-60">
+                                    <h4 class="col-sm-6 u-fs-16 pl-0">Terms</h4>
+                                    <!--input  type="checkbox"  required-->
+                                </div>
+                                <div class="tab-pane" id="direct-deposit" role="tabpanel"
+                                    aria-labelledby="direct-deposit-tab">
+                                    <p class="font-weight-bold u-fs-14 mb-0">Deposit your payment amount directly into
+                                        Leafbark's bank account.</p>
+                                    <p class="u-fs-13" style="line-height:1.5;">No transaction fees charged. Deposit
+                                        instructions will be shown to you upon confirming your investment. Your payment
+                                        may take up to 3 days to reflect. if it reflects after the offering closing
+                                        date, it will be refunded back into your wallet.</p>
+
+                                </div>
+                                <div class="tab-pane" id="instant-eft" role="tabpanel"
+                                    aria-labelledby="instant-eft-tab">
+                                    <p class="font-weight-bold u-fs-14 mb-0">You will be redirected to PayFast portal to
+                                        make an EFT</p>
+                                    <p class="u-fs-13" style="line-height:1.5;">2% + R2 transaction fees will be charged
+                                        for this payment method. You will be able to EFT the amount from your bank
+                                        account into our account using internet banking. Your payment will reflect
+                                        immediately.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--div class="text-center">
+                        <button class="btn btn-primary"> Send Request</button>
+                    </div-->
+                </form>
+            </div>
         </div>
     </div>
 </section>
