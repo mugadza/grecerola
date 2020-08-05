@@ -8,7 +8,7 @@
 <section class="big-pure-white">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-sm-8">
                 <h2 class="u-h-5vh">Invest in {{ campaign.name }}</h2>
                 <div class="text-muted">By investing in {{ campaign.name }}, you are purchasing shares at R200 per
                     share.</div>
@@ -127,9 +127,8 @@
                                     and agreemnts as related to my investment.</p>
                             </li>
                             <li class="list-group-item align-items-start">
-                                <label class="checkbox-inline">
-                                <input type="checkbox" value="">Option 1
-                                </label>
+            
+                                <label><input type="checkbox" value="">Option 2</label>
                             </li>
                             
                         </div>
@@ -140,6 +139,26 @@
                     </div>
                 </form>
             </div>
+
+            <aside id="sidebar" class="col-sm-4">
+                <h4 class="u-fs-16 pl-0">Your investment summary:</h4>
+                <div class="widget sidebar-widget">
+                    <div class="widget-content">
+                        <div class="row">
+                            <div class="text-muted col-sm-8">Investment amount:</div>
+                            <div class=" text-muted col-sm-4 d-flex justify-content-end ">R 2500</div>
+                
+                            <div class="col-sm-6 text-muted ">Transaction fee</div>
+                            <div class="col-sm-6 text-muted d-flex justify-content-end">R50</div>
+                            
+                             <hr class="mt-sm-1 u-my-20">
+                            <div class="col-sm-6 text-muted font-weight-bold">Total Funded</div>
+                            <div class="col-sm-6 text-muted  d-flex justify-content-end font-weight-bold">R2550</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
         </div>
     </div>
 </section>
