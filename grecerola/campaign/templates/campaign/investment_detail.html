@@ -127,10 +127,10 @@
                                     and agreemnts as related to my investment.</p>
                             </li>
                             <li class="list-group-item align-items-start">
-            
-                                <label><input type="checkbox" value="">Option 2</label>
+
+                                <label><input type="checkbox" required value="">Option 2</label>
                             </li>
-                            
+
                         </div>
                     </div>
                     <div class="col-sm-12 mt-2 px-0">
@@ -142,20 +142,28 @@
 
             <aside id="sidebar" class="col-sm-4" style="position: fixed; right: 0;">
                 <h4 class="u-fs-16 pl-0">Your investment summary:</h4>
-                <div class="widget sidebar-widget">
+                <div class="widget sidebar-widget mb-2">
                     <div class="widget-content">
                         <div class="row">
                             <div class="text-muted col-sm-8">Investment amount:</div>
                             <div class=" text-muted col-sm-4 d-flex justify-content-end ">R 2500</div>
-                
+
                             <div class="col-sm-6 text-muted ">Transaction fee:</div>
                             <div class="col-sm-6 text-muted d-flex justify-content-end">R50</div>
-                            
-                             <hr class="mt-sm-1 u-my-20">
+
+                            <hr class="mt-sm-1 u-my-20">
                             <div class="col-sm-6 text-muted font-weight-bold">Total Funded:</div>
                             <div class="col-sm-6 text-muted  d-flex justify-content-end font-weight-bold">R2550</div>
                         </div>
                     </div>
+                </div>
+                <div class="u-fs-13 text-muted">
+                    <p>The funds for your investment will be placed in a trust account and released upon 
+                        raising full funds and a scheduled closing of the offering. In the case your
+                        investment is canceled or the minimum funding goal is not reached, you will be immediately notified and all
+                        funds related to your investment will be promptly returned.</p>
+                    <a a href="{% url 'contact-us' %}" class=" u-fs-14 text-primary">Having trouble copleting your
+                        investment? Contact Us.</a>
                 </div>
             </aside>
 
