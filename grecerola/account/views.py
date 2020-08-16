@@ -23,12 +23,4 @@ def signup(request):
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard/dashboard.html', {'bank': request.user.bank})
-
-@login_required
-def investor_wallet(request):
-    return render(request, 'account/dashboard/investor_wallet.html', {'bank': request.user.bank})
-
-@login_required
-def deposit(request):
-    return render(request, 'account/dashboard/deposit.html', {'bank': request.user.bank})
+    return render(request, 'account/dashboard.html', {'bank': request.user.bank})

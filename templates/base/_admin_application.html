@@ -17,6 +17,7 @@
       <link rel="stylesheet" href="{% static 'assets/admin/vendor/metisMenu/dist/metisMenu.css' %}" />
       <link rel="stylesheet" href="{% static 'assets/admin/vendor/animate.css/animate.css' %}" />
       <link rel="stylesheet" href="{% static 'assets/admin/vendor/bootstrap/dist/css/bootstrap.css' %}" />
+      <link rel="stylesheet" href="{% static 'assets/admin/vendor/sweetalert/lib/sweet-alert.css' %}" />
       <link rel="stylesheet" href="{% static 'assets/admin/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css' %}" />
       <link rel="stylesheet" href="{% static 'assets/admin/fonts/pe-icon-7-stroke/css/helper.css' %}" />
       <link rel="stylesheet" href="{% static 'assets/admin/styles/style.css' %}" />
@@ -267,8 +268,12 @@
       <script src="{% static 'assets/admin/vendor/metisMenu/dist/metisMenu.min.js' %}"></script>
       <script src="{% static 'assets/admin/vendor/iCheck/icheck.min.js' %}"></script>
       <script src="{% static 'assets/admin/vendor/sparkline/index.js' %}"></script>
+      <script src="{% static 'assets/admin/vendor/sweetalert/lib/sweet-alert.min.js' %}"></script>
       <script src="{% static 'assets/admin/vendor/peity/jquery.peity.min.js' %}"></script>
       <script src="{% static 'assets/admin/scripts/devdap.js' %}"></script>
       <script src="{% static 'assets/admin/scripts/charts.js' %}"></script>
+      <script>
+      $(function(){$('a[data-toggle="tab"]').on("shown.bs.tab",function(a){$('a[data-toggle="tab"]').removeClass("btn-primary");$('a[data-toggle="tab"]').addClass("btn-default");$(this).removeClass("btn-default");$(this).addClass("btn-primary")});$(".next").click(function(){var a=$(this).parents(".tab-pane").next().attr("id");$("[href=#"+a+"]").tab("show")});$(".prev").click(function(){var a=$(this).parents(".tab-pane").prev().attr("id");$("[href=#"+a+"]").tab("show")});$(".submitWizard").click(function(){var b=$(".approveCheck").is(":checked");if(b){$("[href=#step1]").tab("show");var a=$("#simpleForm").serialize();swal({title:"Thank you!",text:"You approved our example form!",type:"success"})}else{swal({title:"Error!",text:"You have to approve form checkbox.",type:"error"})}})});
+    </script>
    </body>
 </html>

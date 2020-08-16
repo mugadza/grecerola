@@ -35,11 +35,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'grecerola.core',
     'grecerola.account',
     'grecerola.campaign',
     'grecerola.investment',
     'grecerola.wallet',
+    'grecerola.payfast',
 ]
 
 MIDDLEWARE = [

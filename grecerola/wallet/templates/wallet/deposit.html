@@ -36,70 +36,40 @@
            </div>
            <div class="panel-body">
               <form name="simpleForm" novalidate id="simpleForm" action="#" method="post">
-                 <div class="text-center m-b-md" id="wizardControl">
-                    <a class="btn btn-default" href="#method1" data-toggle="tab">EFT Payment</a>
-                    <a class="btn btn-default" href="#method2" data-toggle="tab">Credit Card Payment</a>
-                    <a class="btn btn-default" href="#method3" data-toggle="tab">SID Payment </a>
-
-                 </div>
                  <div class="tab-content">
                     <div id="method1" class="p-m tab-pane active">
+                      <!-- <div class="stats-title text-center m-b-md">
+                         <h2 class="m-b-xs">Investment details</h2>
+                      </div> -->
                        <div class="row">
                           <div class="col-lg-3 text-center">
-                             <i class="pe-7s-credit fa-5x text-muted"></i>
+                             <i class="pe-7s-user fa-5x text-muted"></i>
                              <p class="small m-t-md">
                                 This method of payment can take up 2 hours. This method of payment is free.
-                                <br/><br/>
-                                Before depositing money into your account please consider the transaction cost associated with each method of deposit.
                              </p>
                           </div>
                           <div class="col-lg-9">
                              <div class="row">
-                                <div class="form-group col-lg-6">
-                                    <small class="stat-label">Bank</small>
-                                    <h4>Standard bank</h4>
+                                <div class="form-group col-lg-12">
+                                   <label>Reference</label>
+                                   <input type="" value="" id="" class="form-control" name="username" placeholder="username">
                                 </div>
-                                <div class="form-group col-lg-6">
-                                    <small class="stat-label">Branch Name</small>
-                                    <h4>Sandton</h4>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <small class="stat-label">Branch Code</small>
-                                    <h4>019205</h4>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <small class="stat-label">Account Name</small>
-                                    <h4>Leafbark</h4>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <small class="stat-label">Account Number</small>
-                                    <h4>074589521</h4>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <small class="stat-label">EFT Reference</small>
-                                    <h4>{{ bank.account_reference_id }}</h4>
+                                <div class="form-group col-lg-12">
+                                   <label>Investment amount</label>
+                                   <input type="" value="" id="" class="form-control" name="investment-amount" placeholder="investment-amount">
                                 </div>
                              </div>
                           </div>
-                       </div>
-                       <div class="m-t-md">
-                          <ul>
-                            <li>
-                              <small>Funds may take up to 48 hours to reflect, due to individual bank regulations.</small>
-                            </li>
-                            <li>
-                              <small>Use of the incorrect reference will result in fund allocation delays, and will require you to email us a formal proof of deposit.</small>
-                            </li>
-                            <li>
-                              <small>
-                                Deposited funds will be held for a 14-day "clearing period". If however the value of the
-                                deposited funds is covered by sufficient NAV / holdings in your account, you will be able to withdraw the funds.
-                              </small>
-                            </li>
-                         </ul>
+                          <div class="text-right m-t-xs">
+                             <a class="btn btn-default prev" href="#" data-toggle="tab">Previous</a>
+                             <a class="btn btn-default next" href="#method2" data-toggle="tab">Next</a>
+                          </div>
                        </div>
                     </div>
                     <div id="method2" class="p-m tab-pane">
+                      <!-- <div class="stats-title text-center m-b-md">
+                         <h2 class="m-b-xs">Card details</h2>
+                      </div> -->
                        <div class="row">
                           <div class="col-lg-3 text-center">
                              <i class="pe-7s-credit fa-5x text-muted"></i>
@@ -142,11 +112,14 @@
                           </div>
                        </div>
                        <div class="text-right m-t-xs">
-                          <a class="btn btn-default prev" href="#">Previous</a>
-                          <a class="btn btn-default next" href="#">Next</a>
+                         <a class="btn btn-default prev" href="#method1" data-toggle="tab">Previous</a>
+                         <a class="btn btn-default next" href="#method3" data-toggle="tab">Next</a>
                        </div>
                     </div>
                     <div id="method3" class="tab-pane">
+                      <!-- <div class="stats-title text-center m-b-md">
+                         <h2 class="m-b-xs">Transaction approval</h2>
+                      </div> -->
                        <div class="row text-center m-t-lg m-b-lg">
                           <div class="col-lg-12">
                              <i class="pe-7s-check fa-5x text-muted"></i>
@@ -160,29 +133,13 @@
                           </div>
                        </div>
                        <div class="text-right m-t-xs">
-                          <a class="btn btn-default prev" href="#">Previous</a>
-                          <a class="btn btn-default next" href="#">Next</a>
-                          <a class="btn btn-success submitWizard" href="#">Submit</a>
+                          <a class="btn btn-default prev" href="#method2" data-toggle="tab">Previous</a>
+                          <a class="btn btn-success submitWizard" href="#">Invest now</a>
                        </div>
                     </div>
                  </div>
               </form>
-              <!-- <div class="m-t-md">
-                 <ul>
-                   <li>
-                     <small>Funds may take up to 48 hours to reflect, due to individual bank regulations.</small>
-                   </li>
-                   <li>
-                     <small>Use of the incorrect reference will result in fund allocation delays, and will require you to email us a formal proof of deposit.</small>
-                   </li>
-                   <li>
-                     <small>
-                       Deposited funds will be held for a 14-day "clearing period". If however the value of the
-                       deposited funds is covered by sufficient NAV / holdings in your account, you will be able to withdraw the funds.
-                     </small>
-                   </li>
-                </ul>
-              </div> -->
+
            </div>
         </div>
      </div>
@@ -191,3 +148,35 @@
 
 
 {% endblock content %}
+
+
+
+
+<!-- <div class="col-lg-9">
+   <div class="row">
+      <div class="form-group col-lg-6">
+          <small class="stat-label">Bank</small>
+          <h4>Standard bank</h4>
+      </div>
+      <div class="form-group col-lg-6">
+          <small class="stat-label">Branch Name</small>
+          <h4>Sandton</h4>
+      </div>
+      <div class="form-group col-lg-6">
+          <small class="stat-label">Branch Code</small>
+          <h4>019205</h4>
+      </div>
+      <div class="form-group col-lg-6">
+          <small class="stat-label">Account Name</small>
+          <h4>Leafbark</h4>
+      </div>
+      <div class="form-group col-lg-6">
+          <small class="stat-label">Account Number</small>
+          <h4>074589521</h4>
+      </div>
+      <div class="form-group col-lg-6">
+          <small class="stat-label">EFT Reference</small>
+          <h4>{{ bank.account_reference_id }}</h4>
+      </div>
+   </div>
+</div> -->
