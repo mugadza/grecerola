@@ -1280,11 +1280,11 @@ textarea::-webkit-input-placeholder {
 }
 
 .widget ul>li>a:hover {
-  color: #8c47e2
+  color: #1f3c4a
 }
 
 .widget ul>li>a:hover .badge {
-  background: #f1baf3;
+  background: #14a1a8;
   color: #fff
 }
 
