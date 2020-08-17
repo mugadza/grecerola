@@ -5,10 +5,10 @@
 <section class="u-py-40 u-pt-lg-50 u-pb-lg-50 u-flex-center bg-primary">
 </section>
 
-<section class="big-pure-white">
+<section class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-lg-8">
                 <h2 class="u-h-5vh">Invest in {{ campaign.name }}</h2>
                 <div class="text-muted">By investing in {{ campaign.name }}, you are purchasing shares at R200 per
                     share.</div>
@@ -37,7 +37,7 @@
                         <div class="col-12 text-muted">
                             <ul class="nav nav-tabs mb-2 u-fs-15" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#wallet" role="tab"
+                                    <a class="nav-link active" data-toggle="tab" href="#wallet" role="tab"
                                         aria-controls="wallet" aria-selected="true">WALLET</a>
                                 </li>
                                 <li class="nav-item">
@@ -50,7 +50,7 @@
                                 </li>
                             </ul>
                             <div class="tab-content border-left" id="myTabContent">
-                                <div class="tab-pane" id="wallet" role="tabpanel" aria-labelledby="wallet-tab">
+                                <div class="tab-pane fade active show" id="wallet" role="tabpanel" aria-labelledby="wallet-tab">
                                     <p class="font-weight-bold u-fs-14 mb-0">Wallet payments are subject to sufficient
                                         funds in your Leafbark wallet.</p>
                                     <p class="u-fs-13" style="line-height:1.5;">No transaction fees charged for wallet
@@ -58,7 +58,7 @@
                                         to enjoy instant purchases with zero transaction fees. Deposits take up to 3
                                         days to reflect in your wallet.</p>
                                 </div>
-                                <div class="tab-pane" id="direct-deposit" role="tabpanel"
+                                <div class="tab-pane fade" id="direct-deposit" role="tabpanel"
                                     aria-labelledby="direct-deposit-tab">
                                     <p class="font-weight-bold u-fs-14 mb-0">Deposit your payment amount directly into
                                         Leafbark's bank account.</p>
@@ -68,7 +68,7 @@
                                         date, it will be refunded back into your wallet.</p>
 
                                 </div>
-                                <div class="tab-pane" id="instant-eft" role="tabpanel"
+                                <div class="tab-pane fade" id="instant-eft" role="tabpanel"
                                     aria-labelledby="instant-eft-tab">
                                     <p class="font-weight-bold u-fs-14 mb-0">You will be redirected to PayFast portal to
                                         make an EFT</p>
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <!--hr class="mt-sm-1 u-mb-20 u-mt-60"-->
-                    <h4 class="col-sm-12 u-fs-16 pl-0 u-mt-60">Terms</h4>
+                    <h4 class="col-sm-12 u-fs-16 pl-0 u-mt-40">Terms</h4>
                     <div class="col-lg-12 p-0">
                         <div class="list-group u-fs-14" style="line-height:1.5;">
                             <li class="list-group-item list-group-item-action flex-column align-items-start">
@@ -128,7 +128,11 @@
                             </li>
                             <li class="list-group-item align-items-start">
 
-                                <label><input type="checkbox" required value="">Option 2</label>
+                                <label class="custom-control custom-checkbox text-left">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator mt-1"></span>
+                                    <span class="custom-control-description mt-1">I agree to the above <a class="text-primary" href="#" target="_blank">terms</a> and conditions.</span>
+                                </label>
                             </li>
 
                         </div>
@@ -140,8 +144,8 @@
                 </form>
             </div>
 
-            <aside id="sidebar" class="col-sm-4" style="position: fixed; right: 0;">
-                <h4 class="u-fs-16 pl-0">Your investment summary:</h4>
+            <aside id="sidebar" class="col-lg-4">
+                <h4 class="u-fs-16 pl-0">Your investment summary</h4>
                 <div class="widget sidebar-widget mb-2">
                     <div class="widget-content">
                         <div class="row">
@@ -162,7 +166,7 @@
                         raising full funds and a scheduled closing of the offering. In the case your
                         investment is canceled or the minimum funding goal is not reached, you will be immediately notified and all
                         funds related to your investment will be promptly returned.</p>
-                    <a a href="{% url 'contact-us' %}" class=" u-fs-14 text-primary">Having trouble copleting your
+                    <a a href="{% url 'contact-us' %}" class=" u-fs-14 text-primary">Having trouble completing your
                         investment? Contact Us.</a>
                 </div>
             </aside>
