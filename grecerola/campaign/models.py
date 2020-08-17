@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.urls import reverse
+
 from django.conf import settings
 from django.utils.timezone import now
 
@@ -29,6 +31,9 @@ class CampaignType(models.Model):
 
     class Meta:
         app_label = "campaign"
+
+    def get_absolute_url(self):
+        return reverse('explore-by-campaign-type', args=[self.slug])
 
     def __str__(self) -> str:
         return self.name
@@ -124,6 +129,9 @@ class Campaign(PublishableModel, TimeStampMixin):
 
     def total_investment_amount_formatted(self):
         return round(self.total_investment_amount, 0)
+
+    def get_absolute_url(self):
+        return reverse('campaign-detail', args=[self.id, self.slug])
 
     def __repr__(self) -> str:
         class_ = type(self)

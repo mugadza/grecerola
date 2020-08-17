@@ -1,0 +1,179 @@
+{% extends "base/_application_navigation.html" %}
+{% load static %}
+
+{% block content %}
+<section class="u-py-40 u-pt-lg-50 u-pb-lg-50 u-flex-center bg-primary">
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="u-h-5vh">Invest in {{ campaign.name }}</h2>
+                <div class="text-muted">By investing in {{ campaign.name }}, you are purchasing shares at R200 per
+                    share.</div>
+
+                <hr class="mt-sm-1 u-my-30">
+
+                <form action="#" method="POST">
+                    <div class="col-md-12 text-muted">
+                        <div class="row">
+                            <h4 class="col-sm-6 u-fs-16 pl-0">Your investment</h4>
+                            <h4 class="col-sm-6 u-fs-16 d-flex justify-content-end pr-0">R 2500</h4>
+                        </div>
+                        <div class="row border rounded">
+                            <div class="col-md-6 align-self-center">
+                                Number of Shares
+                            </div>
+                            <div class="col-md-6 pr-0">
+                                <input class="border-0" placeholder="Enter # of shares here..." type="number" min="1"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <!--hr class="mt-sm-1 u-mb-20 u-mt-60"-->
+                    <h4 class="col-sm-6 u-fs-16 pl-0 u-mt-60">Select a payment method</h4>
+                    <div class="row">
+                        <div class="col-12 text-muted">
+                            <ul class="nav nav-tabs mb-2 u-fs-15" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#wallet" role="tab"
+                                        aria-controls="wallet" aria-selected="true">WALLET</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#direct-deposit" role="tab"
+                                        aria-controls="direct-deposit" aria-selected="false">DIRECT DEPOSIT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#instant-eft" role="tab"
+                                        aria-controls="instant-eft" aria-selected="false">INSTANT EFT</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content border-left" id="myTabContent">
+                                <div class="tab-pane fade active show" id="wallet" role="tabpanel" aria-labelledby="wallet-tab">
+                                    <p class="font-weight-bold u-fs-14 mb-0">Wallet payments are subject to sufficient
+                                        funds in your Leafbark wallet.</p>
+                                    <p class="u-fs-13" style="line-height:1.5;">No transaction fees charged for wallet
+                                        payments. Deposit funds into your wallet some time before your next investment
+                                        to enjoy instant purchases with zero transaction fees. Deposits take up to 3
+                                        days to reflect in your wallet.</p>
+                                </div>
+                                <div class="tab-pane fade" id="direct-deposit" role="tabpanel"
+                                    aria-labelledby="direct-deposit-tab">
+                                    <p class="font-weight-bold u-fs-14 mb-0">Deposit your payment amount directly into
+                                        Leafbark's bank account.</p>
+                                    <p class="u-fs-13" style="line-height:1.5;">No transaction fees charged. Deposit
+                                        instructions will be shown to you upon confirming your investment. Your payment
+                                        may take up to 3 days to reflect. if it reflects after the offering closing
+                                        date, it will be refunded back into your wallet.</p>
+
+                                </div>
+                                <div class="tab-pane fade" id="instant-eft" role="tabpanel"
+                                    aria-labelledby="instant-eft-tab">
+                                    <p class="font-weight-bold u-fs-14 mb-0">You will be redirected to PayFast portal to
+                                        make an EFT</p>
+                                    <p class="u-fs-13" style="line-height:1.5;">2% + R2 transaction fees will be charged
+                                        for this payment method. You will be able to EFT the amount from your bank
+                                        account into our account using internet banking. Your payment will reflect
+                                        immediately.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--hr class="mt-sm-1 u-mb-20 u-mt-60"-->
+                    <h4 class="col-sm-12 u-fs-16 pl-0 u-mt-40">Terms</h4>
+                    <div class="col-lg-12 p-0">
+                        <div class="list-group u-fs-14" style="line-height:1.5;">
+                            <li class="list-group-item list-group-item-action flex-column align-items-start">
+                                <p class="mb-1 text-muted">I understand that investing this amount into several deals
+                                    would better diversify my risk.</p>
+                            </li>
+                            <li class="list-group-item  flex-column align-items-start">
+
+                                <p class="mb-1 text-muted">I understand that I can cancel my investment up to 72 hours
+                                    prior to the deals deadline.</p>
+                            </li>
+                            <li class="list-group-item  flex-column align-items-start">
+
+                                <p class="mb-1 text-muted">I understand that my investment <a href="#"
+                                        class="text-primary">won't be transferrable</a> for 12 months and may not have a
+                                    market for resale.</p>
+                            </li>
+                            <li class="list-group-item  flex-column align-items-start">
+
+                                <p class="mb-1 text-muted">I consent to electronic delivery of all documents, notices
+                                    and agreements as related to my investment.</p>
+                            </li>
+                            <li class="list-group-item  flex-column align-items-start">
+
+                                <p class="mb-1 text-muted">I have read all the documents that comes with this offering
+                                    and agree to the <a href="#" class="text-primary">terms of service</a>, including
+                                    arbitration provisions.</p>
+                            </li>
+                            <li class="list-group-item  flex-column align-items-start">
+
+                                <p class="mb-1 text-muted">I understand this investment is <a href="#"
+                                        class="text-primary">risky</a> and that I shouldn't invest unless I can afford
+                                    to lose all invested funds.</p>
+                            </li>
+                            <li class="list-group-item  flex-column align-items-start">
+
+                                <p class="mb-1 text-muted">I understand I am responsible for all fees and charges
+                                    associated with the use of my payment method.</p>
+                            </li>
+                            <li class="list-group-item  flex-column align-items-start">
+
+                                <p class="mb-1 text-muted">I understand to electronic delivery of all documents, notices
+                                    and agreemnts as related to my investment.</p>
+                            </li>
+                            <li class="list-group-item align-items-start">
+
+                                <label class="custom-control custom-checkbox text-left">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator mt-1"></span>
+                                    <span class="custom-control-description mt-1">I agree to the above <a class="text-primary" href="#" target="_blank">terms</a> and conditions.</span>
+                                </label>
+                            </li>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mt-2 px-0">
+                        <button class="btn btn-primary" style="width: inherit;">CONFIRM INVESTMENT & PAY WITH
+                            WALLET</button>
+                    </div>
+                </form>
+            </div>
+
+            <aside id="sidebar" class="col-lg-4">
+                <h4 class="u-fs-16 pl-0">Your investment summary</h4>
+                <div class="widget sidebar-widget mb-2">
+                    <div class="widget-content">
+                        <div class="row">
+                            <div class="text-muted col-sm-8">Investment amount:</div>
+                            <div class=" text-muted col-sm-4 d-flex justify-content-end ">R 2500</div>
+
+                            <div class="col-sm-6 text-muted ">Transaction fee:</div>
+                            <div class="col-sm-6 text-muted d-flex justify-content-end">R50</div>
+
+                            <hr class="mt-sm-1 u-my-20">
+                            <div class="col-sm-6 text-muted font-weight-bold">Total Funded:</div>
+                            <div class="col-sm-6 text-muted  d-flex justify-content-end font-weight-bold">R2550</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-fs-13 text-muted">
+                    <p>The funds for your investment will be placed in a trust account and released upon 
+                        raising full funds and a scheduled closing of the offering. In the case your
+                        investment is canceled or the minimum funding goal is not reached, you will be immediately notified and all
+                        funds related to your investment will be promptly returned.</p>
+                    <a a href="{% url 'contact-us' %}" class=" u-fs-14 text-primary">Having trouble completing your
+                        investment? Contact Us.</a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

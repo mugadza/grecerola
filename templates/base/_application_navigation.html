@@ -39,13 +39,13 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 				  <ul class="navbar-nav ml-auto">
 					<li class="nav-item dropdown">
-					  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  <a class="nav-link dropdown-toggle" href="{% url 'explore' %}"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Explore
 						<i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
 					  </a>
 					  <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
 						{% for type in campaign_types %}
-							<a class="dropdown-item" href="/explore/{{ type.name }}">{{ type.name }}</a>
+							<a class="dropdown-item" href="{{ type.get_absolute_url }}">{{ type.name }}</a>
 						{% endfor %}
 					  </div>
 					</li>
