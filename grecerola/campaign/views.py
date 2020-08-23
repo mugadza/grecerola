@@ -43,25 +43,3 @@ def campaign_detail(request, pk, slug):
     campaign = get_object_or_404 (Campaign, pk=pk, slug=slug, is_published=True)
     return render(request,"campaign/campaign_detail.html", {'campaign':campaign, 'images': campaign.images.all()})
 
-@login_required
-def investment_detail(request, pk):
-    campaign = get_object_or_404(Campaign, pk=pk)
-
-    if request.method == 'POST':
-        form = InvestmentCreateForm(request.POST)
-
-        if form.is_valid():
-            form.cleaned_data['invester'] = request.user
-            form.cleaned_data['campaign'] = campaign
-            form.cleaned_data['status'] = False
-            form.cleaned_data['total_investment_amount'] = campaign.share_price * form.cleaned_data['shares']
-
-            investment = form.save()
-            
-            # clear the cart
-            return render(request, 'campaign/investment_detail.html', {'investment': investment})
-    else:
-        form = InvestmentCreateForm()
-    
-    return render(request, 'campaign/investment_detail.html', {'campaign': campaign, 'form': form})
-
