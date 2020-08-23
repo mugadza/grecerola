@@ -80,6 +80,13 @@ class Campaign(PublishableModel, TimeStampMixin):
     )
     mininum_allowed_investment = MoneyField(amount_field="mininum_allowed_investment_amount", currency_field="currency")
 
+    share_price_amount = models.DecimalField(
+        max_digits=settings.DEFAULT_MAX_DIGITS,
+        decimal_places=settings.DEFAULT_DECIMAL_PLACES,
+    )
+    share_price = MoneyField(amount_field="share_price_amount", currency_field="currency")
+
+
     location = models.OneToOneField(
         Address, related_name="location", on_delete=models.CASCADE, blank=True, null=True
     )
