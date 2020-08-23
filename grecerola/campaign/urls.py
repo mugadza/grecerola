@@ -4,7 +4,6 @@ from .views import (
     campaign_detail,
     explore,
     campaign_management,
-    investment_detail,
     contact_us,
     faq,
     about,
@@ -19,5 +18,4 @@ urlpatterns = [
     path('faq/', faq, name='faq'),
     path('about/', about, name='about'),
     path('explore/<int:pk>/<slug:slug>/', campaign_detail, name='campaign-detail'),
-    path('invest=?<int:pk>/', investment_detail, name='investment-detail')
 ]

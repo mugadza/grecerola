@@ -1,6 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+
 from django.db.models import Q
+
+from grecerola.investment.forms import InvestmentCreateForm
 
 from .models import Campaign, CampaignType
 from . import CampaignStatus
@@ -42,5 +46,22 @@ def campaign_detail(request, pk, slug):
 @login_required
 def investment_detail(request, pk):
     campaign = get_object_or_404(Campaign, pk=pk)
-    return render(request,"campaign/investment_detail.html", {'campaign':campaign})
+
+    if request.method == 'POST':
+        form = InvestmentCreateForm(request.POST)
+
+        if form.is_valid():
+            form.cleaned_data['invester'] = request.user
+            form.cleaned_data['campaign'] = campaign
+            form.cleaned_data['status'] = False
+            form.cleaned_data['total_investment_amount'] = campaign.share_price * form.cleaned_data['shares']
+
+            investment = form.save()
+            
+            # clear the cart
+            return render(request, 'campaign/investment_detail.html', {'investment': investment})
+    else:
+        form = InvestmentCreateForm()
+    
+    return render(request, 'campaign/investment_detail.html', {'campaign': campaign, 'form': form})
 

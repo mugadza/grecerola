@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = get_bool_from_env("DEBUG", True)
 
-INVESTMENT_SESSION_ID = 'investment'
+CART_SESSION_ID = 'investment'
 
 ALLOWED_HOSTS = get_list(os.environ.get("ALLOWED_HOSTS", "localhost, tatendamugadza.herokuapp.com"))
 

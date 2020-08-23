@@ -8,5 +8,6 @@ class InvestmentAdmin(admin.ModelAdmin):
         "invester",
         "campaign",
         "status",
+        "shares",
         "total_investment_amount",
     )
