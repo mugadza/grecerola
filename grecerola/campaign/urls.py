@@ -4,7 +4,6 @@ from .views import (
     campaign_detail,
     explore,
     campaign_management,
-    CampaignListView,
     investment_detail,
     contact_us,
     faq,

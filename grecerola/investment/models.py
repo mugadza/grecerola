@@ -5,9 +5,10 @@ from django.utils.timezone import now
 from django_prices.models import MoneyField
 
 from . import InvestmentStatus
-from ..campaign.models import Campaign
+from grecerola.campaign.models import Campaign
+from grecerola.core.models import TimeStampMixin
 
-class Investment(models.Model):
+class Investment(TimeStampMixin):
     created = models.DateTimeField(default=now, editable=False)
 
     invester = models.ForeignKey(
@@ -38,3 +39,14 @@ class Investment(models.Model):
     )
 
     total_investment = MoneyField(amount_field="total_investment_amount", currency_field="currency")
+
+    shares = models.PositiveIntegerField(default=1)
+
+    class Meta:
+        ordering = ('-created',)
+
+    def __str__(self):
+        return f'Investment {self.pk}'
+    
+    def get_total_investment_cost(self):
+        return campaign.share_price_amount * campaign.shares

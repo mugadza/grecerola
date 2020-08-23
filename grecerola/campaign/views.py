@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
@@ -45,18 +44,3 @@ def investment_detail(request, pk):
     campaign = get_object_or_404(Campaign, pk=pk)
     return render(request,"campaign/investment_detail.html", {'campaign':campaign})
 
-
-class CampaignListView(ListView):
-    model = Campaign
-    context_object_name = 'campaigns'
-    template_name = 'campaign/explore.html'
-
-    def get_queryset(self):
-        campains = []
-        if 'typename' in self.kwargs:
-            self.campaign_type = get_object_or_404(CampaignType, name=self.kwargs['typename'])
-            campaigns = Campaign.objects.filter(campaign_type=self.campaign_type)
-        else:
-            campaigns = Campaign.objects.all()
-
-        return campaigns
