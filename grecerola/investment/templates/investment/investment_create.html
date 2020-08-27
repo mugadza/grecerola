@@ -12,17 +12,14 @@
                 <h2 class="u-h-5vh">Invest in {{ campaign.name }}</h2>
                 <div class="text-muted">By investing in {{ campaign.name }}, you are purchasing shares at R200 per
                     share.</div>
-
                 <hr class="mt-sm-1 u-my-30">
-
-               
 
                 <form action="#" method="POST">
                     {% csrf_token %}
                     <div class="col-md-12 text-muted">
                         <div class="row">
                             <h4 class="col-sm-6 u-fs-16 pl-0">Your investment</h4>
-                            <h4 class="col-sm-6 u-fs-16 d-flex justify-content-end pr-0">R 2500</h4>
+                            <h4 class="col-sm-6 u-fs-16 d-flex justify-content-end pr-0">R <span id="shares_price" style="padding-left: .5em;">{{ campaign.share_price_amount }}</span></h4>
                         </div>
                         <div class="row border rounded">
                             <div class="col-md-6 align-self-center">
@@ -151,14 +148,14 @@
                     <div class="widget-content">
                         <div class="row">
                             <div class="text-muted col-sm-8">Investment amount:</div>
-                            <div class=" text-muted col-sm-4 d-flex justify-content-end ">R 2500</div>
+                            <div class=" text-muted col-sm-4 d-flex justify-content-end ">R <span id="summary_shares_price" style="padding-left: .5em;">{{ campaign.share_price_amount }}</span></div>
 
                             <div class="col-sm-6 text-muted ">Transaction fee:</div>
-                            <div class="col-sm-6 text-muted d-flex justify-content-end">R50</div>
+                            <div class="col-sm-6 text-muted d-flex justify-content-end">R <span id="transaction_fee" style="padding-left: .5em;">{{ campaign.get_transaction_fee }}</span></div>
 
                             <hr class="mt-sm-1 u-my-20">
                             <div class="col-sm-6 text-muted font-weight-bold">Total Funded:</div>
-                            <div class="col-sm-6 text-muted  d-flex justify-content-end font-weight-bold">R2550</div>
+                            <div class="col-sm-6 text-muted  d-flex justify-content-end font-weight-bold">R <span id="total_investment_fund" style="padding-left: .5em;">{{ campaign.get_total_investment_fund }}</span></div>
                         </div>
                     </div>
                 </div>
@@ -176,5 +173,23 @@
     </div>
 </section>
 
-
 {% endblock content %}
+
+{% block domready %}
+    $("input#id_shares").on("input", function(){
+        // Update investment form
+        var shares = parseInt($("input#id_shares").val());
+        var share_price = {{ campaign.share_price_amount }};
+        $("span#shares_price").text(Number(shares*share_price).toFixed(2));
+
+        // Update investment summary
+        $("span#summary_shares_price").text(Number(shares*share_price).toFixed(2));
+        $("span#transaction_fee").text(Number(shares*share_price*0.035).toFixed(2));
+
+        var total = shares*share_price + shares*share_price*0.035
+
+        $("span#total_investment_fund").text(total);
+
+        
+    })
+{% endblock %}

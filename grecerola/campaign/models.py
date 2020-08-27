@@ -137,6 +137,12 @@ class Campaign(PublishableModel, TimeStampMixin):
     def total_investment_amount_formatted(self):
         return round(self.total_investment_amount, 0)
 
+    def get_transaction_fee(self):
+        return round(float(self.share_price_amount)*0.035, 2)
+
+    def get_total_investment_fund(self):
+        return round(float(self.share_price_amount) + float(self.share_price_amount)*0.035 , 2)
+
     def get_absolute_url(self):
         return reverse('campaign-detail', args=[self.id, self.slug])
 

@@ -130,11 +130,11 @@
                            {% for transaction in bank.wallet.transactions.all %}
                            <tr>
                               <td>
-                                    {{ transaction.reference }}
-                                    <br />
-                                    <small>
-                                       <i class="fa fa-clock-o"></i> Created {{ transaction.confirmed_at|date:" M d, Y"}}
-                                    </small>
+                                 {{ transaction.reference }}
+                                 <br />
+                                 <small>
+                                    <i class="fa fa-clock-o"></i> Created {{ transaction.confirmed_at|date:" M d, Y"}}
+                                 </small>
                               </td>
                               <td>
                                  {% if transaction.is_pending %}
@@ -158,112 +158,6 @@
                               </td>
                            </tr>
                            {% endfor %}
-
-                           <!-- <tr>
-                              <td>
-                                 There are many variations of passages
-                                 <br />
-                                 <small>
-                                    <i class="fa fa-clock-o"></i> Created 21.07.2018
-                                 </small>
-                              </td>
-                              <td>
-                                 <i class="fa fa-check-circle text-navy"></i>
-                              </td>
-                              <td>
-                                    <strong>R1500</strong>
-                              </td>
-                              <td>Jul 16, 2020</td>
-                              <td>
-                                    <a href="#">
-                                       <i class="fa fa-level-up text-success"></i>
-                                    </a>
-                              </td>
-                           </tr>
-                           <tr>
-                              <td>
-                                    Contrary to popular belief
-                                    <br />
-                                    <small>
-                                       <i class="fa fa-clock-o"></i> Created 12.06.2018
-                                    </small>
-                              </td>
-                              <td>
-                                 <i class="fa fa-check-circle text-navy"></i>
-                              </td>
-                              <td>
-                                    <strong>R1700</strong>
-                              </td>
-                              <td>Jul 18, 2020</td>
-                              <td>
-                                    <a href="#">
-                                    <i class="fa fa-level-down text-warning"></i>
-                                    </a>
-                              </td>
-                           </tr>
-                           <tr>
-                              <td>
-                                    There are many variations of passages
-                                    <br />
-                                    <small>
-                                       <i class="fa fa-clock-o"></i> Created 21.07.2018
-                                    </small>
-                              </td>
-                              <td>
-                                 <i class="fa fa-check-circle text-navy"></i>
-                              </td>
-                              <td>
-                                    <strong>R2300</strong>
-                              </td>
-                              <td>Jul 16, 2022</td>
-                              <td>
-                                 <a href="#">
-                                    <i class="fa fa-level-down text-warning"></i>
-                                 </a>
-                              </td>
-                           </tr>
-                           <tr>
-                              <td>
-                                    There are many variations of passages
-                                    <br />
-                                    <small>
-                                       <i class="fa fa-clock-o"></i> Created 21.07.2018
-                                    </small>
-                              </td>
-                              <td>
-                                 <i class="fa fa-check-circle text-navy"></i>
-                              </td>
-                              <td>
-                                    <strong>R2300</strong>
-                              </td>
-                              <td>Jul 16, 2022</td>
-                              <td>
-                                 <a href="#">
-                                    <i class="fa fa-level-down text-warning"></i>
-                                 </a>
-                              </td>
-                           </tr>
-                           <tr>
-                              <td>
-                                    There are many variations of passages
-                                    <br />
-                                    <small>
-                                       <i class="fa fa-clock-o"></i> Created 21.07.2018
-                                    </small>
-                              </td>
-                              <td>
-                                 <i class="fa fa-times-circle text-navy"></i>
-                              </td>
-                              <td>
-                                    <strong>R2300</strong>
-                              </td>
-                              <td>Jul 16, 2022</td>
-                              <td>
-                                 <a href="#">
-                                    <i class="fa fa-level-down text-warning"></i>
-                                 </a>
-                              </td>
-                           </tr> -->
                         </tbody>
                   </table>
                </div>

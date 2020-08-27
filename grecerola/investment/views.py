@@ -4,6 +4,7 @@ from .forms import InvestmentCreateForm
 
 from grecerola.campaign.models import Campaign
 from grecerola.investment.models import Investment
+from grecerola.wallet.models import Transaction
 
 
 @login_required
@@ -27,6 +28,13 @@ def investment_create(request, pk):
                 total_investment_amount=campaign.share_price_amount * form.cleaned_data['shares'],
                 shares=form.cleaned_data['shares']
             )
+
+            transaction = Transaction.objects.create(
+                reference=campaign.name,
+                transaction_amount=-1*investment.total_investment_amount,
+                wallet=request.user.bank.wallet,
+                is_pending=False
+            ) 
 
             # clear the cart
             return render(request, 'investment/investment_success.html', {'investment': investment})
