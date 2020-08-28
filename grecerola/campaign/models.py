@@ -129,7 +129,7 @@ class Campaign(PublishableModel, TimeStampMixin):
         return images[0].alt if images else "placeholder image"
 
     def get_campaign_progress(self):
-        return round(((self.investment_raised_amount)/(self.total_investment_amount))*100, 1)
+        return '{0:.1f}'.format(round(((self.investment_raised_amount)/(self.total_investment_amount))*100, 1))
 
     def investment_raised_amount_formatted(self):
         return round(self.investment_raised_amount, 0)
@@ -138,10 +138,10 @@ class Campaign(PublishableModel, TimeStampMixin):
         return round(self.total_investment_amount, 0)
 
     def get_transaction_fee(self):
-        return round(float(self.share_price_amount)*0.035, 2)
+        return '{0:.2f}'.format(round(float(self.share_price_amount)*0.035, 2))
 
     def get_total_investment_fund(self):
-        return round(float(self.share_price_amount) + float(self.share_price_amount)*0.035 , 2)
+        return '{0:.2f}'.format(round(float(self.share_price_amount) + float(self.share_price_amount)*0.035 , 2))
 
     def get_absolute_url(self):
         return reverse('campaign-detail', args=[self.id, self.slug])

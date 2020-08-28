@@ -19,7 +19,7 @@
                     <div class="col-md-12 text-muted">
                         <div class="row">
                             <h4 class="col-sm-6 u-fs-16 pl-0">Your investment</h4>
-                            <h4 class="col-sm-6 u-fs-16 d-flex justify-content-end pr-0">R <span id="shares_price" style="padding-left: .5em;">{{ campaign.share_price_amount }}</span></h4>
+                            <h4 class="col-sm-6 u-fs-16 d-flex justify-content-end pr-0">R <span id="shares_price" class="ml-1">{{ campaign.share_price_amount }}</span></h4>
                         </div>
                         <div class="row border rounded">
                             <div class="col-md-6 align-self-center">
@@ -178,7 +178,8 @@
 {% block domready %}
     $("input#id_shares").on("input", function(){
         // Update investment form
-        var shares = parseInt($("input#id_shares").val());
+        var temp = $("input#id_shares").val()
+        var shares = (temp === "") ? 1 : parseInt($("input#id_shares").val());
         var share_price = {{ campaign.share_price_amount }};
         $("span#shares_price").text(Number(shares*share_price).toFixed(2));
 
@@ -188,8 +189,6 @@
 
         var total = shares*share_price + shares*share_price*0.035
 
-        $("span#total_investment_fund").text(total);
-
-        
+        $("span#total_investment_fund").text(Number(total).toFixed(2));
     })
 {% endblock %}
