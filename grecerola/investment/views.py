@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+
+from decimal import Decimal
+
 from .forms import InvestmentCreateForm
 
 from grecerola.campaign.models import Campaign
@@ -28,10 +31,14 @@ def investment_create(request, pk):
                 total_investment_amount=campaign.share_price_amount * form.cleaned_data['shares'],
                 shares=form.cleaned_data['shares']
             )
+            
+            transaction_fee_percentage = Decimal(0.035)
+            transaction_fee = investment.total_investment_amount*transaction_fee_percentage
 
             transaction = Transaction.objects.create(
                 reference=campaign.name,
-                transaction_amount=-1*investment.total_investment_amount,
+                transaction_fee_amount=transaction_fee,
+                transaction_amount=-1*(investment.total_investment_amount + transaction_fee),
                 wallet=request.user.bank.wallet,
                 is_pending=False
             ) 

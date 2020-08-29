@@ -30,6 +30,7 @@ class TransactionAdmin(admin.ModelAdmin):
         "wallet",
         "reference",
         "transaction_amount",
+        "transaction_fee_amount",
         "is_pending",
         "confirmed_at",
     )

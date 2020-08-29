@@ -160,6 +160,13 @@ class Transaction(TimeStampedModel, SoftDeletableModel):
     )
     amount = MoneyField(amount_field="transaction_amount", currency_field="currency")
 
+    transaction_fee_amount = models.DecimalField(
+        max_digits=settings.DEFAULT_MAX_DIGITS,
+        decimal_places=settings.DEFAULT_DECIMAL_PLACES,
+    )
+    
+    transaction_fee = MoneyField(amount_field="transaction_fee_amount", currency_field="currency")
+
     is_pending = models.BooleanField(default=False)
 
     confirmed_at = models.DateTimeField(null=True, blank=True)
